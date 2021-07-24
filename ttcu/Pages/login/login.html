@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Stylelogin.css">
+    <link rel=icon  href="16X16.ico" >
+    <title>ورود</title>
+</head>
+<body>
+  <div id="container">
+    <div id="left"> </div>
+  
+    <div id="right">
+ 
+
+      <p id="login" >ورود</p>
+      <a href="../signup/Signup.html"><p id="link">یا ساخت حساب کاربری</p></a>
+
+      
+<form >
+<input type=text id="username" placeholder="نام کابری خود را وارد کنبد" class="client-info" id="email">
+<input type="password" id="password" class="client-info" placeholder="رمزعبور خود را وارد کنبد"><br>
+<input type="checkbox" onclick="myFunction()" class="checkbox"> نمایش رمزعبور
+
+
+
+
+
+
+<a href="#"><p id="link2">رمزعبور خود را فراموش کردید؟</p></a>
+    
+<input type="button" id="submit" class="client-info" value="ثبت" onclick="login()">
+</form>
+    
+    </div>
+  </div>
+
+  <script>
+    
+    function login(){
+    var detailArr={};
+    detailArr["username"]=document.getElementById("username").value;
+    detailArr["password"]=document.getElementById("password").value;
+   var detailArrstr=JSON.stringify(detailArr);
+    var xmlhttp;
+    if(window.XMLHttpRequest){
+     xmlhttp=new XMLHttpRequest;
+    }
+    else{
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+xmlhttp.onreadystatechange=respond;
+function respond (){
+
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+      
+      var resonse = JSON.parse(this.responseText);
+        if(resonse.code == 200){
+          var token=resonse.object;
+          window.localStorage.setItem("Token",token);
+        }else {
+          window.location = 'welcome.html';
+
+        }
+
+    }
+    else{
+      console.log("Hello");
+
+    }
+  
+}
+
+
+xmlhttp.open('POST','http://127.0.0.1:8082/auth/login',true);
+xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+
+xmlhttp.send(detailArrstr);
+}
+
+  </script>
+  <script src="hide-password.js"></script>
+</body>
+</html>

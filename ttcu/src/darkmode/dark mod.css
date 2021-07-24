@@ -1,0 +1,19 @@
+
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+  
+
+input:checked
++ .background{
+    background:#32323d;
+}
+
+input:checked
++ .background.knob{
+    transform:
+translateX(54px);
+}
+

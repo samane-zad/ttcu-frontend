@@ -1,0 +1,65 @@
+
+body {
+  font-family:"Lato",sans-serif;}
+
+
+.mySlides {display: none}
+
+.dark-mode {
+  background-color: rgba(1, 1, 2, 0.911);
+  color: white;
+}
+
+
+.label{
+position: relative;
+width:90px;
+height:36px;
+}
+
+input{
+    transform: scale(0);
+}
+.background{
+  position: absolute;
+  left: 0;
+  height:0.9cm;
+  width: 2cm;
+  border-radius: 20px;
+  background: #c6c8d6;
+  transition: b 0.4s;
+
+
+}
+
+
+
+
+
+
+.knob{
+    position: absolute;
+    top: 2x;
+    left: 2px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f7f7f7;
+    transition: transform 0.4s;
+    
+}
+input:checked
++ .background{
+    background:#32323d;
+}
+input:checked
++ .background.knob{
+    transform:
+translateX(54px);
+}
+
+
+.nextround{
+  padding-top:100px ;
+  
+}

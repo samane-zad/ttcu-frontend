@@ -1,0 +1,35 @@
+
+
+
+.moon:before {
+    font-size: 33px;
+  content: "🌕";
+  animation: moon 0.8s linear infinite;
+}
+
+@keyframes moon {
+  0% {
+    content: "🌕";
+  }
+  12.5% {
+    content: "🌖";
+  }
+  25% {
+    content: "🌗";
+  }
+  37.5% {
+    content: "🌘";
+  }
+  50% {
+    content: "🌑";
+  }
+  62.5% {
+    content: "🌒";
+  }
+  75% {
+    content: "🌓";
+  }
+  87.5% {
+    content: "🌔";
+  }
+}

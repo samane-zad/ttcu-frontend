@@ -1,0 +1,8 @@
+body{
+    background-color: #0c0b0b;
+    top: 10px;
+    left: 50%;
+    display: inline-block;
+    position: absolute;
+    transform: translateX(-50%);
+    border-radius: 50px;}

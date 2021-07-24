@@ -1,0 +1,16 @@
+
+
+
+.top-header {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  background-color: #1abc9c;
+  transition: all 1s;
+}
+
+.container {
+  height: 1000px;
+  background-color: #34495e;
+}
+
