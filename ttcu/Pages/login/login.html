@@ -60,13 +60,14 @@ function respond (){
         if(resonse.code == 200){
           var token=resonse.object;
           window.localStorage.setItem("Token",token);
+          window.location='../user/html/index/index.html';
         }else {
           window.location = 'welcome.html';
 
         }
 
     }
-    
+
     else{
       console.log("Hello");
 
