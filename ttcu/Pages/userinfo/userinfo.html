@@ -110,6 +110,7 @@
          
             </div>
         </div>
+    
         <div class="col-md-8">
             <div class="tab-content profile-tab" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -118,7 +119,7 @@
                                     <label>نام کاربری </label>
                                 </div>
                                 <div class="col-md-6"  >
-                                    <p id="username">hani</p>
+                                    <p id="username"></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -126,7 +127,7 @@
                                     <label>نام</label>
                                 </div>
                                 <div class="col-md-6" >
-                                    <p id="fName">haniye</p>
+                                    <p id="fName"></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -134,7 +135,7 @@
                                     <label>نام خانوادگی</label>
                                 </div>
                                 <div class="col-md-6" >
-                                    <p id="lName">zadabbas</p>
+                                    <p id="lName"></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -142,7 +143,7 @@
                                     <label>نوع کاربر</label>
                                 </div>
                                 <div class="col-md-6" >
-                                    <p id="userType">student</p>
+                                    <p id="userType"></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -155,7 +156,7 @@
                                     <label>رشته</label>
                                 </div>
                                 <div class="col-md-6" >
-                                    <p id="major">SOFTWARE</p>
+                                    <p id="major"></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -163,40 +164,10 @@
                                     <label>دانشگاه</label>
                                 </div>
                                 <div class="col-md-6" >
-                                    <p id="uni">SHARIATY_TECHNICAL_COLLEGE</p>
+                                    <p id="uni"></p>
                                 </div>
                             </div>
-                            <!--
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Total Projects</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>230</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>English Level</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>Expert</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Availability</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>6 months</p>
-                                </div>
-                            </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label>Your Bio</label><br/>
-                            <p>Your detail description</p>
-                        </div>
-                    </div>-->
+                        
                 </div>
             </div>
         </div>
@@ -263,7 +234,66 @@
   </section>
 </footer>
 
+<script>
+loadUserInfo();
+    function loadUserInfo(){
+    var detailArr={};
+    var xmlhttp;
+    if(window.XMLHttpRequest){
+     xmlhttp=new XMLHttpRequest;
+    }
+    else{
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=respond;
+    function respond (){
+    console.log(xmlhttp.readyState);
+    console.log(xmlhttp.status);
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+      
+      var response = JSON.parse(this.responseText);
+        if(response.code == 200){
+            console.log(response);
+            var info = response.object;
+            let username =info.username;
+            let fName =info.fName;
+            let lName =info.lName;
+            let userType =info.userType;
+            let uni =info.uniMajor.uni;
+            let major =info.uniMajor.major;
 
+            document.getElementById("username").innerHTML = username;
+            document.getElementById("fName").innerHTML = fName;
+            document.getElementById("lName").innerHTML = lName;
+            document.getElementById("userType").innerHTML = userType;
+            document.getElementById("uni").innerHTML = uni;
+            document.getElementById("major").innerHTML = major;
+        
+         
+        }else {
+          window.location = 'welcome.html';
+    
+        }
+    
+    }
+    
+    else{
+      console.log("Hello");
+    
+    }
+    
+    }
+    
+    
+    xmlhttp.open('GET','http://127.0.0.1:8082/api/getUserInfo',true);
+    xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xmlhttp.setRequestHeader('Authorization',window.localStorage.getItem("Token"));
+    
+    xmlhttp.send(JSON.stringify(detailArr));
+    }
+    
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="../../public/darkmode/darkmod.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
