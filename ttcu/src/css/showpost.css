@@ -1,6 +1,7 @@
 
 * {
   box-sizing: border-box;
+  color:black;
 }
 
 /* Add a gray background color with some padding */
@@ -66,14 +67,15 @@
 .text{
   direction: rtl;
   text-align: right;
-align-content: initial;}
+align-content: initial;
+}
 
 
 .button{
   background:
   linear-gradient(to right,#732FDF,#b545da);
   color:#fff;
-float:right;
+ float:right;
   border-radius:20px;
   font-size:inherit;
   box-shadow:none;
@@ -86,6 +88,66 @@ float:right;
 .text2{
 font-size: 20px;
 }
+
+
+ .dropdownpost-menu {
+  margin-top:-5px;
+  box-shadow:0 4px 8px rgba(0,0,0,.1);
+  background-color:rgb(237, 15, 15);
+  border-radius:2px;
+  text-align: right;
+align-content: initial;
+/**/
+
+
+  }
+  
+.dropdownpost-menu .dropdownpost-item {
+  line-height:2;
+  font-size:14px;
+  direction: rtl;
+  color:#1b3777;
+  float:right;
+
+}
+  
+.dropdownpost-menu .dropdownpost-item:hover {
+  background:#0098ca;
+
+  }
+
+
+
+.dropdownpost{
+float: left;
+width: 100;
+padding-left: 30px;
+padding-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
