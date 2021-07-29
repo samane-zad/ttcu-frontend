@@ -84,7 +84,7 @@
         <div class="col-md-6">
             <div class="profile-head" id="fullname">
                        
-              <h5> haniye zadabbas</h5>
+              <h5 id="fullName"> haniye zadabbas</h5>
                         <br>
                         
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -260,15 +260,21 @@ loadUserInfo();
             let fName =info.fName;
             let lName =info.lName;
             let userType =info.userType;
-            let uni =info.uniMajor.uni;
-            let major =info.uniMajor.major;
+            if(info.uniMajor!=null )
+            { 
+              let uni =info.uniMajor.uni;
+              let major =info.uniMajor.major;
+              document.getElementById("uni").innerHTML = uni;
+              document.getElementById("major").innerHTML = major;
+            }
+           
 
             document.getElementById("username").innerHTML = username;
             document.getElementById("fName").innerHTML = fName;
             document.getElementById("lName").innerHTML = lName;
             document.getElementById("userType").innerHTML = userType;
-            document.getElementById("uni").innerHTML = uni;
-            document.getElementById("major").innerHTML = major;
+            document.getElementById("fullName").innerHTML = fName+" "+lName;
+            
         
          
         }else {

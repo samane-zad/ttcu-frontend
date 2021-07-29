@@ -29,20 +29,19 @@
 
 <label></label>
 
-<input type="text"  placeholder="نام خود را وارد کنید" name="fname" id="fname" class="client-info" required="required" >
+<input type="text"  placeholder="نام خود را وارد کنید" name="fname" id="fName" class="client-info" required="required" >
 
 
-<input type="text"  placeholder="نام خانوادگی خود را وارد کنید " name="lname" id="lname" class="client-info"  required="required" >
+<input type="text"  placeholder="نام خانوادگی خود را وارد کنید " name="lname" id="lName" class="client-info"  required="required" >
 
 <input type=text name="username"  id="username" placeholder="username"  id="username" class="client-info" required="required" >
 
 <label class="select" for="slct">
-  <select id="slct" required="required" name="Usertypes">
-    <option value="" disabled="disabled" selected="selected">Select option</option>
-    <option value="ADMIN">Admin</option>
-    <option value="TEACHER">Teacher</option>
-    <option value="STUDENT">Student</option>
-    <option value="MASTER">Master</option>
+  <select id="userType" required="required" name="Usertypes">
+    <option value="" disabled="disabled" selected="selected">نوع کاربر را انتخاب کنبد</option>
+    <option value="ADMIN">مدیر گروه</option>
+    <option value="TEACHER">استاد</option>
+    <option value="STUDENT">دانشجو</option>
 
   </select>
   <svg>
@@ -51,15 +50,13 @@
 </label>
 
 
-<input type="text" placeholder="Enter Email" name="email" class="client-info" required >
-
 <div class="container">
-    <input type="password" name="password" id="password" placeholder="Enter the password" class="client-info"  />
+    <input type="password" name="password" id="password" placeholder="گذرواژه" class="client-info"  />
 
     <i class="bi bi-eye-slash" id="togglePassword"></i>
 </div>
 
-<input type="password" name="comfirmPassword" id="comfirmPassword" placeholder="Enter the Comfirm password" class="client-info"  />
+<input type="password" name="comfirmPassword" id="comfirmPassword" placeholder="تکرار گذرواژه" class="client-info"  />
 
 
 
@@ -72,13 +69,13 @@
 
 
 
-<label class="select" for="slct">
-  <select id="slct" required="required" name="University" >
-    <option value="" disabled="disabled" selected="selected">Select option</option>
-    <option value="SHARIATY_TECHNICAL_COLLEGE">Shariaty Technical College</option>
-    <option value="VALIASR_TECHNICAL_COLLEGE">Valiasr Technical College</option>
-    <option value="ENGHELAB_TECHNICAL_COLLEGE">Enghelab Technical College</option>
-    <option value="SHAMSIPOUR_TECHNICAL_COLLEGE">Shamsipour Technical College</option>
+<label class="select" for="uni">
+  <select id="uni" required="required" name="University" >
+    <option value="" disabled="disabled" selected="selected">دانشگاه خود را انتخاب کنبد</option>
+    <option value="SHARIATY_TECHNICAL_COLLEGE">دانشکده فنی دکتر شریعتی</option>
+    <option value="VALIASR_TECHNICAL_COLLEGE"> دانشکده فنی ولیعصر</option>
+    <option value="ENGHELAB_TECHNICAL_COLLEGE">دانشکده فنی انقلاب اسلامی</option>
+    <option value="SHAMSIPOUR_TECHNICAL_COLLEGE">دانشکده فنی شمسی پور</option>
 
   </select>
   <svg>
@@ -89,18 +86,18 @@
 
 
 
-<label class="select" for="slct" >
-  <select id="slct" required="required" name="UniversityMajor" >
-    <option value="" disabled="disabled" selected="selected">Select option</option>
-    <option value="SOFTWARE">Software</option>
-    <option value="ELECTRONICS">Electronics</option>
-    <option value="MECHANICS">Mechanics</option>
+<label class="select" for="major" >
+  <select id="major" required="required" name="UniversityMajor" >
+    <option value="" disabled="disabled" selected="selected">رشته خود را انتخاب کنید</option>
+    <option value="SOFTWARE">نرم افزار</option>
+    <option value="ELECTRONICS">الکترونیک</option>
+    <option value="MECHANICS">مکانیک</option>
     <option value="ICT">ICT</option>
-   <option value="ARCHITECTURE">Architecture</option>   
-   <option value="GRAPHICS">Graphics</option>
-   <option value="ACCOUNTING">Accounting</option>
-   <option value="CLOTHING_DESIGN">Clothing_Design</option>
-   <option value="PHYSICAL_EDUCATION">Physical_Education</option>
+   <option value="ARCHITECTURE">نقشه کشی معماری</option>   
+   <option value="GRAPHICS">گرافیک</option>
+   <option value="ACCOUNTING">حسابداری</option>
+   <option value="CLOTHING_DESIGN">طراحی دوخت</option>
+   <option value="PHYSICAL_EDUCATION">تربیت بدنی</option>
    <option value="IT">IT</option>
   </select>
   <svg>
@@ -120,12 +117,68 @@
 <!--<button  class="client-info"  id="get-btn">Get data</button>
 <button  class="client-info"   id="post-btn">Post data</button>-->
 
-<input type="submit" id="submit" class="client-info" value="Submit">
-<p id="Terms" >By creating an account you agree to our <a href="#" >Terms & Privacy</a></p>
+<input type="button" id="submit" class="client-info" onclick="signUp()" value="ثبت">
 </form>
     </div>
   </div>
+  <script>
+    
+    function signUp(){
+    var detailArr={};
 
+    var uniMajor={};
+    uniMajor["uni"]=document.getElementById("uni").value;
+    uniMajor["major"]=document.getElementById("major").value;
+
+    detailArr["username"]=document.getElementById("username").value;
+    detailArr["password"]=document.getElementById("password").value;
+    detailArr["password"]=document.getElementById("password").value;
+    detailArr["userType"]=[document.getElementById("userType").value];
+    detailArr["uniMajor"]=uniMajor;
+  
+
+   var detailArrstr=JSON.stringify(detailArr);
+   console.log(detailArrstr);
+    var xmlhttp;
+    if(window.XMLHttpRequest){
+     xmlhttp=new XMLHttpRequest;
+    }
+    else{
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+xmlhttp.onreadystatechange=respond;
+function respond (){
+
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+      
+      var resonse = JSON.parse(this.responseText);
+        if(resonse.code == 200){
+          var token=resonse.object;
+         
+          window.location='../userpage/html/index/index.html';
+        }else {
+          window.location = 'welcome.html';
+
+        }
+
+    }
+
+    else{
+      console.log("Hello");
+
+    }
+  
+}
+
+
+xmlhttp.open('POST','http://127.0.0.1:8082/auth/signUp',true);
+xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+xmlhttp.setRequestHeader('Authorization',window.localStorage.getItem("Token"));
+
+xmlhttp.send(detailArrstr);
+}
+
+  </script>
   <script src="signup.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="app-signup.js"></script>
