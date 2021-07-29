@@ -90,7 +90,7 @@
       </li>
          </ul>
          <h10 id="postType">#NEWS</h10>
-
+     
       <h6 id="major" class="unimajor" >SOFTWARE</h6>
       <h6 id="uni" class="unimajor" >SHARIATY_TECHNICAL_COLLEGE</h6>
       <h2 id="title"  class="text1">پست آزمایشی</h2>
@@ -104,7 +104,41 @@
 خداوند متعال روح پاک آن مرحومه را با مولایش علی (ع) محشور نماید.
 حوزه ریاست و و روابط عمومی دانشکده فنی و حرفه ای دکتر شریعتی </p>
 <label class="text">تلفن:<p id="contact">09397037100</p></label>
-<button class="button">دانلود</button>
+<!--input file-->
+<svg version="1.1"  display="none" aria-hidden="true" width="0" height="0" hidden>
+  <defs>
+    <symbol id="sprite-close" viewBox="0 0 24 24">
+      <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+    </symbol>
+  </defs>
+</svg>
+
+<div class="containerr" js-file-manager>
+  <fieldset class="file-input">
+    <legend class="file-input__label">انتخاب فایل</legend>
+    <label class="file-input__real" hidden aria-hidden="true">
+      <!--  accept=".json" -->
+      <input type="file" id="applications" multiple js-real-file-input>
+    </label>
+    <div class="file-input__input input input__container">
+      <span class="input__left">
+        <button type="button" class="input__choose" js-fake-file-input>انتغاب فایل</button>
+        <span class="input__no-file" js-no-file>فایلی انتخاب نشد</span>
+      </span>
+      <span class="input__files chip__container" js-chip-container></span>
+      <button type="button" class="input__remove" hidden js-remove-files>
+        <svg>
+          <use xlink:href="#sprite-close"></use>
+        </svg>
+      </button>
+    </div>
+  </fieldset>
+  <span class="file-input__helper"></span>
+  <button class="buttondow">ارسال</button>
+
+</div>
+
+
 
     </div>
 
@@ -132,12 +166,49 @@
 خداوند متعال روح پاک آن مرحومه را با مولایش علی (ع) محشور نماید.
 حوزه ریاست و و روابط عمومی دانشکده فنی و حرفه ای دکتر شریعتی </p>
 <label class="text">تلفن:<p id="contact">09397037100</p></label>
-<button class="button">دانلود</button>
+<svg version="1.1"  display="none" aria-hidden="true" width="0" height="0" hidden>
+  <defs>
+    <symbol id="sprite-close" viewBox="0 0 24 24">
+      <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+    </symbol>
+  </defs>
+</svg>
+
+<div class="containerr" js-file-manager>
+  <fieldset class="file-input">
+    <legend class="file-input__label">انتخاب فایل</legend>
+    <label class="file-input__real" hidden aria-hidden="true">
+      <!--  accept=".json" -->
+      <input type="file" id="applications" multiple js-real-file-input>
+    </label>
+    <div class="file-input__input input input__container">
+      <span class="input__left">
+        <button type="button" class="input__choose" js-fake-file-input>انتغاب فایل</button>
+        <span class="input__no-file" js-no-file>فایلی انتخاب نشد</span>
+      </span>
+      <span class="input__files chip__container" js-chip-container></span>
+      <button type="button" class="input__remove" hidden js-remove-files>
+        <svg>
+          <use xlink:href="#sprite-close"></use>
+        </svg>
+      </button>
+    </div>
+  </fieldset>
+  <span class="file-input__helper"></span>
+  <button class="buttondow">ارسال</button>
+
+</div>
 
      
 
 
     </div>
+
+
+
+
+
+    
   </div>
 
 
