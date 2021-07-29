@@ -1,14 +1,13 @@
    
-   /* function getuserinfo(){
-        var detailArr={};*/
+    function getuserinfo(){
+        var detailArr={};
         detailArr["username"]=document.getElementById("username").value;
         detailArr["fName"]=document.getElementById("fName").value;
         detailArr["lName"]=document.getElementById("lName").value;
         detailArr["userType"]=document.getElementById("userType").value;
         detailArr["uni"]=document.getElementById("uni").value;
         detailArr["major"]=document.getElementById("major").value;
-  
-
+  }
     /*   var detailArrstr=JSON.stringify(detailArr);
         var xmlhttp;
         if(window.XMLHttpRequest){
