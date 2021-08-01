@@ -107,7 +107,7 @@
 
 
 /* pay attention: file input for one input*/
-console.clear();
+/* console.clear();
 
 const fileManager = document.querySelector('[js-file-manager]');
 
@@ -186,4 +186,5 @@ class FileManager {
   }
 }
 
-const fileManagerReference = new FileManager(fileManager);
+const fileManagerReference = new FileManager(fileManager);*/
+
