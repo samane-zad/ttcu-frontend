@@ -62,7 +62,7 @@ function respond (){
         if(resonse.code == 200){
           var token=resonse.object;
           window.localStorage.setItem("Token",token);
-          window.location='../userpage/html/index/index.html';
+          window.location='../user/html/index/index.html';
         }else {
           window.location = 'welcome.html';
 
