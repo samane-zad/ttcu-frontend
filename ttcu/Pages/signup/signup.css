@@ -10,16 +10,30 @@
   --second-color: #347deb;
   --box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 
-
 }
+
+@font-face {
+  font-family: 'IranianSans';
+  src: url('../../src/font/IranianSans.eot');
+  src: url('../../src/font/IranianSans.eot?#iefix') format('embedded-opentype'),
+       url('../../src/font/IranianSans.svg#IranianSans') format('svg'),
+       url('../../src/font/IranianSans.ttf') format('truetype'),
+       url('../../src/font/IranianSans.woff') format('woff'),
+       url('../../src/font/IranianSans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 html {
   height: 100%;
+  font-family:IranianSans ;
 
 }
 body {
   background-image: linear-gradient(310deg, #df98fa, #9055ff);
+  font-family:IranianSans ;
 }
 
 #container {
@@ -99,6 +113,7 @@ label {
   color: white;
   width: 60%;
   align-items: center;
+  font-family:IranianSans ;
 
   
   
@@ -167,6 +182,7 @@ input[type=text], input[type=password]{
   border-radius: 4px;
   font-size: 16px;
   transition: all 0.2s ease-out;
+  font-family:IranianSans ;
 
 }
 .row {
