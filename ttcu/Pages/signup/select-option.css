@@ -3,10 +3,14 @@
     position: relative;
     min-width: 200px;
     box-sizing: border-box;
+    margin: 5px auto;
+    width: 86%;
+
   }
   .select svg {
+
     position: absolute;
-    right: 12px;
+    right: 5px;
     top: calc(50% - 3px);
     width: 10px;
     height: 6px;
@@ -18,6 +22,7 @@
     pointer-events: none;
   }
   .select select {
+
     -webkit-appearance: none;
     padding: 7px 40px 7px 12px;
     width: 100%;
@@ -40,6 +45,8 @@
     display: none;
   }
   .select select:focus {
+    padding-right: 20px;
+
     outline: none;
     border-color: #07f;
     box-shadow: 0 0 0 2px rgba(0,119,255,0.2);

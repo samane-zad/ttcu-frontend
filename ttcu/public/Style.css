@@ -10,6 +10,18 @@ body {
   color: white;
 }
 
+@font-face {
+  font-family:'IranianSans';
+  src: url('../src/font/IranianSans.eot');
+  src: url('../src/font/IranianSans.eot?#iefix') format('embedded-opentype'),
+       url('../src/font/IranianSans.svg#IranianSans') format('svg'),
+       url('../src/font/IranianSans.ttf') format('truetype'),
+       url('../src/font/IranianSans.woff') format('woff'),
+       url('../src/font/IranianSans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 .label{
 position: relative;
