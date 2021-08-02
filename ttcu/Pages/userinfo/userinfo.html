@@ -263,15 +263,15 @@ loadUserInfo();
             { 
               let uni =info.uniMajor.uni;
               let major =info.uniMajor.major;
-              document.getElementById("uni").innerHTML = uni;
-              document.getElementById("major").innerHTML = major;
+              document.getElementById("uni").innerHTML =convertUni(uni);
+              document.getElementById("major").innerHTML = convertMajor(major);
             }
            
 
             document.getElementById("username").innerHTML = username;
             document.getElementById("fName").innerHTML = fName;
             document.getElementById("lName").innerHTML = lName;
-            document.getElementById("userType").innerHTML = userType;
+            document.getElementById("userType").innerHTML = convertUserType(userType);
             document.getElementById("fullName").innerHTML = fName+" "+lName;
             
         
@@ -298,9 +298,10 @@ loadUserInfo();
     }
     
     </script>
+<script src="../../src/app/enumConverter.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="../../public/darkmode/darkmod.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 <script src="../../src/app/userinfo.js"></script>
 </body>

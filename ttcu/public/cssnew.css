@@ -9,9 +9,20 @@
 /* transition: 0.1s; /* Add a transition effect (when scrolling - and font size is decreased) */
 /*}*/
 
+@font-face {
+  font-family: 'IranianSans';
+  src: url('../../src/font/IranianSans.eot');
+  src: url('../../src/font/IranianSans.eot?#iefix') format('embedded-opentype'),
+       url('../../src/font/IranianSans.svg#IranianSans') format('svg'),
+       url('../../src/font/IranianSans.ttf') format('truetype'),
+       url('../../src/font/IranianSans.woff') format('woff'),
+       url('../../src/font/IranianSans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
-  font-family:"Lato",sans-serif;
+  font-family:IranianSans ;
 background-color: #DFF6FE;
 }
 .background{
