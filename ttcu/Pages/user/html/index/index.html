@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="cssnew.css">
     <link rel="stylesheet" href="darkmode/moon.css">
-    <link rel="stylesheet" href="makepost.css">
+   <link rel="stylesheet" href="../../../../src/css/showpost.css">
     <link rel=icon href="aa0r2-xtkx1.ico">
 
 
@@ -66,7 +66,7 @@
 
                         </form>
                         <span class="navbar-text">
-                            <a href="../../../userinfo/userinfo.html" ><img src="img/per.PNG"></a>
+                            <a href="../../../userinfo/userinfo.html" onclick="deletePost(this)" ><img src="img/per.PNG"></a>
 
                    </span>
                  
@@ -79,11 +79,26 @@
 <div class="grid-container">
 <div class="grid-img">
 
-    <div id="root"></div>
+    <div class="row">
+        <div class="leftcolumn" id="posts">
+        </div>
+      
+      
+      
+      
+        <div class="rightcolumn">
+      
+          <div class="card">
+            <h3>Posts Review</h3>
+            <div class="fakeimg" id="top"></div>
+          </div>
+      
+        </div>
+      </div>
+      
    
     <!---->
 </form>
-<p id="posts"></p>
 </div>
 </div>
 
@@ -100,8 +115,6 @@ else{
 }
 xmlhttp.onreadystatechange=respond;
 function respond (){
-console.log(xmlhttp.readyState);
-console.log(xmlhttp.status);
 if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
   
   var response = JSON.parse(this.responseText);
@@ -109,11 +122,36 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
         console.log(response);
         let len = response.object.length;
         let text ="";
+        let images="";
         for (let i = 0; i < len; i++) {
-             text += "<div>" + response.object[i].id + "</div>";
-             console.log(text);
+             text += "<div class=\"card\">"+
+            "<ul>"+
+              "<li class=\"dropdown\"><a class=\"dropdown-toggle nav-link dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\" href=\"#\"> </a>"+
+                "<div  class=\"dropdown-menu\" role=\"menu\"><a id=\"card"+i+"\" class=\"dropdown-item\" role=\"presentation\" onclick=\"deletePost(this)\"> پاک کردن</a>"+
+                    "<a class=\"dropdown-item\" role=\"presentation\" href=\"#\"> ویرایش کردن </a>"+
+                "</div>"+
+              "</li>"+
+            "</ul>"+
+                     "<h10>#" + response.object[i].postType + "</h10>"+
+                     "<h6 id=\"postId"+i+"\">"  + response.object[i].id +"</h6>"+
+                     "<h6>"  + response.object[i].uniMajor.major +"</h6>"+
+                     "<h6>"  + response.object[i].uniMajor.uni +"</h6>" +
+                     "<h2 class=\"text\">"  + response.object[i].title +"</h2>" + 
+                     "<h17>@" + response.object[i].username +"</h17>" +
+                     "<h20>"  + response.object[i].userType +"</h20>" +
+                     "<div class=\"fakeimg\" style=\"height:200px\">"  + response.object[i].image +"</div>" +
+                     "<P class=\"text\">توضیحات:</P>" +
+                     "<p class=\"text\">"  + response.object[i].description +"</p>" +
+                     "<label class=\"text\">تلفن:<p id=\"contact\">"+response.object[i].contact +"</p></label>" +
+                     "<button class=\"button\">دانلود</button>";
+
+              images+=response.object[i].image+"<br>";
+            
             }
+            console.log(text);
             document.getElementById("posts").innerHTML = text;
+            document.getElementById("top").innerHTML = images;
+
      
     }else {
       window.location = 'welcome.html';
@@ -138,6 +176,57 @@ xmlhttp.send(JSON.stringify(detailArr));
 }
 
 </script>
+
+
+<script>
+
+  function deletePost(element){
+  var cardId=element.getAttribute('id').replace('card','');
+  
+  var id = document.getElementById("postId"+cardId);
+
+  var detailArr={};
+  detailArr["id"]=id.innerHTML;
+  var xmlhttp;
+  if(window.XMLHttpRequest){
+   xmlhttp=new XMLHttpRequest;
+  }
+  else{
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=respond;
+  function respond (){
+  if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+    
+    var response = JSON.parse(this.responseText);
+      if(response.code == 200){
+         
+        loadPosts();
+       
+      }else {
+        window.location = 'welcome.html';
+  
+      }
+  
+  }
+  
+  else{
+    console.log("Hello");
+  
+  }
+  
+  }
+  
+  
+  xmlhttp.open('POST','http://127.0.0.1:8082/api/postDelete',true);
+  xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+  xmlhttp.setRequestHeader('Authorization',window.localStorage.getItem("Token"));
+  
+  xmlhttp.send(JSON.stringify(detailArr));
+  }
+  
+  </script>
+
     <script src="makepost.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="darkmode/darkmod.js"></script>
