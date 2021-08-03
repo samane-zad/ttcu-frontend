@@ -146,7 +146,8 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
                      "<div class=\"fakeimg\" style=\"height:200px;\">"  + response.object[i].image +"</div>" +
                      "<P class=\"text\">توضیحات:</P>" +
                      "<p class=\"text\">"  + response.object[i].description +"</p>" +
-                     "<label class=\"text\"><p id=\"contact\">"+response.object[i].contact +"</p></label></div> ";
+                     "<label class=\"text\"><p id=\"contact\">"+response.object[i].contact +"</p></label> "+
+                     "<h6>تاریخ :"+response.object[i].pDate+"  "+response.object[i].pTime+"</h6></div>";
 
               images+="<a href=\"#post"+i+"\">"+response.object[i].title+"</a><br>";
             
@@ -165,7 +166,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 else if( xmlhttp.status == 403){
     window.location = 'login.html';
   
-  }
+  } 
 else{
   console.log("Hello");
 
