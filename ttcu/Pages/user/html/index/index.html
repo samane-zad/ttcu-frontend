@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="cssnew.css">
+    <link rel="stylesheet" href="cssnew.css"> 
     <link rel="stylesheet" href="darkmode/moon.css">
-   <link rel="stylesheet" href="../../../../src/css/showpost.css">
+    <link rel="stylesheet" href="../../../../src/css/showpost.css">
     <link rel=icon href="aa0r2-xtkx1.ico">
 
 
@@ -79,7 +79,7 @@
 <div class="grid-container">
 <div class="grid-img">
 
-    <div class="row">
+    <div class="row" style="align-content: center;">
         <div class="leftcolumn" id="posts">
         </div>
       
@@ -88,13 +88,13 @@
       
         <div class="rightcolumn">
       
-          <div class="card">
-            <h3>پیش نمایش پست ها</h3>
+          <div class="card" style="height:200px;width:500px;text-align: center;">
+            <h4>پیش نمایش پست ها</h4>
             <div class="fakeimg" id="top"></div>
           </div>
       
         </div>
-      </div>
+    </div>
       
    
     <!---->
@@ -124,27 +124,31 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
         let text ="";
         let images="";
         for (let i = 0; i < len; i++) {
-             text += "<div class=\"card\">"+
-            "<ul>"+
-              "<li class=\"dropdown\"><a class=\"dropdown-toggle nav-link dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\" href=\"#\"> </a>"+
-                "<div  class=\"dropdown-menu\" role=\"menu\"><a id=\"card"+i+"\" class=\"dropdown-item\" role=\"presentation\" onclick=\"deletePost(this)\"> پاک کردن</a>"+
-                    "<a class=\"dropdown-item\" role=\"presentation\" href=\"#\"> ویرایش کردن </a>"+
-                "</div>"+
-              "</li>"+
-            "</ul>"+
+             text += "<div id=\"post"+i+"\" class=\"card\">"+
+              "<div class=\"btn-group\" >"+
+        "<button type=\"button\" class=\"btn btn-danger dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
+          
+        "</button>"+
+        "<div class=\"dropdown-menu\">"+
+     
+          "<a class=\"dropdown-item\" href=\"#\">ویرایش</a>"+
+          "<a id=\"card"+i+"\" class=\"dropdown-item\" onclick=\"deletePost(this)\">پاک کردن</a>"+
+        "</div>"+
+      "</div>"+
+      "<br/>"+
                      "<h10>#" +convertPostType(response.object[i].postType) + "</h10>"+
                      "<h6 id=\"postId"+i+"\"> کد پست: "  + response.object[i].id +"</h6>"+
                      "<h6>"  + convertMajor(response.object[i].uniMajor.major) +"</h6>"+
                      "<h6>"  + convertUni(response.object[i].uniMajor.uni) +"</h6>" +
-                     "<h2 class=\"text\">"  + response.object[i].title +"</h2>" + 
+                     "<h2 id=\"textId"+i+"\"class=\"text\">"  + response.object[i].title +"</h2>" + 
                      "<h17>@" + response.object[i].username +"</h17>" +
                      "<h20>"  + convertUserType(response.object[i].userType) +"</h20>" +
-                     "<div class=\"fakeimg\" style=\"height:200px\">"  + response.object[i].image +"</div>" +
+                     "<div class=\"fakeimg\" style=\"height:200px;\">"  + response.object[i].image +"</div>" +
                      "<P class=\"text\">توضیحات:</P>" +
                      "<p class=\"text\">"  + response.object[i].description +"</p>" +
                      "<label class=\"text\"><p id=\"contact\">"+response.object[i].contact +"</p></label>";
 
-              images+=response.object[i].title+"<br>";
+              images+="<a href=\"#post"+i+"\">"+response.object[i].title+"</a><br>";
             
             }
             console.log(text);
@@ -185,7 +189,7 @@ xmlhttp.send(JSON.stringify(detailArr));
   var id = document.getElementById("postId"+cardId);
 
   var detailArr={};
-  detailArr["id"]=id.innerHTML;
+  detailArr["id"]=id.innerHTML.replace(' کد پست:','');
   var xmlhttp;
   if(window.XMLHttpRequest){
    xmlhttp=new XMLHttpRequest;
