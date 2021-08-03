@@ -88,7 +88,7 @@
       
         <div class="rightcolumn">
       
-          <div class="card" style="height:200px;width:500px;text-align: center;">
+          <div class="card" style="width:500px;text-align: center;">
             <h4>پیش نمایش پست ها</h4>
             <div class="fakeimg" id="top"></div>
           </div>
@@ -123,6 +123,11 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
         let len = response.object.length;
         let text ="";
         let images="";
+        if(len==0)
+        {
+          text="<div class=\"card\"><h6>پستی برای نمایش وجود ندارد</h6></div>"
+        }else
+        {
         for (let i = 0; i < len; i++) {
              text += "<div id=\"post"+i+"\" class=\"card\">"+
               "<div class=\"btn-group\" >"+
@@ -151,8 +156,8 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 
               images+="<a href=\"#post"+i+"\">"+response.object[i].title+"</a><br>";
             
-            }
-            console.log(text);
+            }}
+          
             document.getElementById("posts").innerHTML = text;
             document.getElementById("top").innerHTML = images;
 
@@ -164,7 +169,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 
 }
 else if( xmlhttp.status == 403){
-    window.location = 'login.html';
+    window.location = '../Pages/login/login.html';
   
   } 
 else{
