@@ -1,0 +1,149 @@
+
+.row {
+  border-bottom: 1px solid #d8d8d8;
+  padding: 5px 0;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.row:first-of-type {
+  margin-top: 0;
+}
+.row:last-of-type {
+  border-bottom: 1px solid #fff;
+}
+.row .field {
+  display: inline-block;
+  position: relative;
+  border-right: 1px solid #d8d8d8;
+  margin-left: 20px;
+  padding-right: 20px;
+  -webkit-transition: all 80ms ease-in-out;
+  -moz-transition: all 80ms ease-in-out;
+  -o-transition: all 80ms ease-in-out;
+  transition: all 80ms ease-in-out;
+}
+.row .field:first-of-type {
+  margin-left: 0;
+}
+.row .field:last-of-type {
+  border-right: 1px solid #fff;
+  padding-right: 0;
+}
+.row .field label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #9aa9aa;
+  -webkit-transition: all 80ms ease-in-out;
+  -moz-transition: all 80ms ease-in-out;
+  -o-transition: all 80ms ease-in-out;
+  transition: all 80ms ease-in-out;
+  margin-top: 10px;
+  margin-bottom: -10px;
+}
+.row .field input , textarea {
+  background: transparent;
+  font-size: 16px;
+  color: #444;
+  border: 1px solid rgba(150, 150, 150, 0);
+  margin: 0 0 0 -2px;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+  -webkit-transition: all 80ms ease-in-out;
+  -moz-transition: all 80ms ease-in-out;
+  -o-transition: all 80ms ease-in-out;
+  transition: all 80ms ease-in-out;
+}
+
+.row .field input[type="email"] {
+  text-decoration: underline;
+  color: #336699;
+  cursor: pointer;
+}
+
+.button {
+  margin-bottom: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.button a {
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 0 15px;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+}
+.button a.edit {
+  color: #3e4550;
+  text-shadow: 1px 1px 0 #fff;
+  -webkit-transition: all 80ms ease-in-out;
+  -moz-transition: all 80ms ease-in-out;
+  -o-transition: all 80ms ease-in-out;
+  transition: all 80ms ease-in-out;
+}
+
+.button a.save {
+  display: none;
+  color: rgb(34, 32, 32);
+
+}
+
+html.active .row {
+  border-bottom: 1px solid #fff;
+}
+html.active .row .field {
+  margin-left: 13px;
+  padding-right: 13px;
+  border-right: 1px solid #fff;
+}
+html.active .row .field:first-of-type {
+  margin-left: 0;
+}
+html.active .row .field:last-of-type {
+  border: none;
+  padding-right: 0;
+}
+html.active .row .field label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+html.active .row .field input {
+  margin-left: -16px;
+  padding: 0 15px;
+  background: #ffffff;
+  border: 1px solid #d8d8d8;
+  -moz-box-shadow: inset 1px 1px 4px 0px rgba(220, 220, 220, 0.5);
+  box-shadow: inset 1px 1px 4px 0px rgba(220, 220, 220, 0.5);
+  height: 40px;
+  line-height: 40px;
+}
+html.active .row .field textarea {
+  margin-left: -16px;
+  padding: 0 15px;
+  background: #ffffff;
+  border: 1px solid #d8d8d8;
+  -moz-box-shadow: inset 1px 1px 4px 0px rgba(220, 220, 220, 0.5);
+  box-shadow: inset 1px 1px 4px 0px rgba(220, 220, 220, 0.5);
+  width:800px;
+  line-height: 40px;
+}
+html.active .row .field input:focus {
+  outline: none;
+  border: 1px solid #18a6f5;
+}
+
+html.active .button a.edit {
+  display: none;
+}
+html.active .button a.save {
+  display: inline-block;
+}
