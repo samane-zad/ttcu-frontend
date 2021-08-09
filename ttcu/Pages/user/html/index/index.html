@@ -129,6 +129,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
         }else
         {
         for (let i = 0; i < len; i++) {
+          var randomPic=choosePic(response.object[i].postType);
              text += "<div id=\"post"+i+"\" class=\"card\">"+
               "<div class=\"btn-group\" >"+
         "<button type=\"button\" class=\"btn btn-danger dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
@@ -148,7 +149,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
                      "<h2 id=\"textId"+i+"\"class=\"text\">"  + response.object[i].title +"</h2>" + 
                      "<h17>@" + response.object[i].username +"</h17>" +
                      "<h20>"  + convertUserType(response.object[i].userType) +"</h20>" +
-                     "<div class=\"fakeimg\" style=\"height:200px;\">"  + response.object[i].image +"</div>" +
+                     "<div> <img  class=\"fakeimg\"   height='400' id='postImage' src='"+randomPic+"'> </div>" +
                      "<P class=\"text\">توضیحات:</P>" +
                      "<p class=\"text\">"  + response.object[i].description +"</p>" +
                      "<label class=\"text\"><p id=\"contact\">"+response.object[i].contact +"</p></label> "+
@@ -183,6 +184,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
           
             document.getElementById("posts").innerHTML = text;
             document.getElementById("top").innerHTML = images;
+            
 
      
     }else {
@@ -263,7 +265,21 @@ xmlhttp.send(JSON.stringify(detailArr));
   
   xmlhttp.send(JSON.stringify(detailArr));
   }
+
+
   
+  </script>
+
+
+  <script>
+ 
+
+    var myPix = new Array("1.jpg","2.jpg","3.jpg","4.jpg");
+
+    function choosePic(postType) {
+     var randomNum = Math.floor(Math.random() * myPix.length);
+     return "../../../../src/img/post/"+postType+"/"+ myPix[randomNum];
+    }
   </script>
 
     <script src="makepost.js"></script>
