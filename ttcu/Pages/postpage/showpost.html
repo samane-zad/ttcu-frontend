@@ -79,25 +79,21 @@
 <button id="expander" class="btn"><b>فیلتر پست +</b> <span class="glyphicon glyphicon-plus"></span></button>
 <div id="cssmenu">
   <ul id="top-menu">
-    <li class="scroll-li text-center header">فیلتر</li>
+    <li class="scroll-li text-center header"> فیلتر بر اساس</li>
 
     <li class="scroll-li"><div  class="items">
+
+      
 
       <button class="dropdown-btn" style="text-align: right;">دانشگاه ها 
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-container" style="text-align: right; font-size: 16px;">
         <a href="#" style="font-size: 16px; padding-top: 10px; padding-left: 10px;" >دانشکده فنی دکتر شریعتی</a>
-        <hr>
-
         <a href="#">دانشکده فنی  ولیعصر</a>
-        <hr>
         <a href="#">دانشکده فنی انقلاب اسلامی</a>
-        <hr>
-
         <a href="#" style="padding-bottom:10px ;">دانشکده فنی  شمسی پور</a>
-    
-      </div></li>
+        </div></li>
       
     <li class="scroll-li"><div  class="items">
 
@@ -106,19 +102,15 @@
       </button>
     
       <div class="dropdown-container" style="text-align: right; font-size: 16px;">
-        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;" >نرم افزار</a>
-
-        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;"  >الکترونیک</a>
-        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;"  >مکانیک</a>
-
-        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;" >ICT</a>
-
-        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;"  >نقشه کشی معماری</a>
-        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;" >حسابداری</a>
-       <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;" >طراحی دوخت</a>
-      
-        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;"  >تربیت بدنی</a>
-        <a href="#" style="font-size: 16px; padding-top: 10px; ; padding-right: 10px;" >IT</a>
+        <a href="#" >نرم افزار</a>
+        <a href="#">الکترونیک</a>
+        <a href="#">مکانیک</a>
+        <a href="#">ICT</a>
+        <a href="#">نقشه کشی معماری</a>
+        <a href="#">حسابداری</a>
+        <a href="#">طراحی دوخت</a>
+        <a href="#">تربیت بدنی</a>
+        <a href="#" >IT</a>
         <a href="#" style="font-size: 16px; padding-top: 10px; padding-bottom:10px ; padding-right: 10px;" >گرافیک</a>
 
       </div></li>
@@ -126,26 +118,17 @@
 
   <li class="scroll-li"><div  class="items">
 
-    <button class="dropdown-btn" style="text-align: right;">Dropdown 
+    <button class="dropdown-btn" style="text-align: right;">نوع پست 
       <i class="fa fa-caret-down"></i>
     </button>
-  
-    <div class="dropdown-container" style="text-align: right; font-size: 16px;">
-      <a href="#" style="font-size: 16px; padding-top: 10px;" >دانشگاه فنی دکتر شریعتی</a>
-      <hr>
-
-      <a href="#">دانشگاه فنی دکتر شریعتی</a>
-      <hr>
-      <a href="#">دانشگاه فنی دکتر شریعتی</a>
-      <hr>
-
-      <a href="#">دانشگاه فنی دکتر شریعتی</a>
-      <hr>
-
-      <a href="#">دانشگاه فنی دکتر شریعتی</a>
-      <hr>
-
-      <a href="#" style="padding-bottom:10px ;" >دانشگاه فنی دکتر شریعتی</a>
+      <div class="dropdown-container" style="text-align: right; font-size: 16px;">
+      <a href="#" style="font-size: 16px; padding-top: 10px;" id="INVITATION" >فراخوان</a>
+      <a href="#" id="BEST_PROJECTS">بهترین پایان نامه ها</a>
+      <a href="#" id="NEWS">اخبار دانشگاهی</a>
+      <a href="#"id="TOP_ENTRIES">رتبه های برتر کنکور</a>
+      <a href="#" id="MASTERS_NOTES">جزوات اساتید</a>
+      <a href="#" id="ENTRANCE_EXAM_GUIDANCE">راهنمای کنکور کاردانی به کارشناسی</a>
+      <a href="#" id="STUDENT_SERVICES" style="padding-bottom:10px ;" >خدمات دانشجویی</a>
 
     </div></li>
     
@@ -202,7 +185,7 @@
       <a class="save" href="#">ذخیره تغییرات</a>
     </div>
 
-            <a class="dropdown-item"   data-toggle="modal" data-target="#exampleModalCenter">حذف</a>
+            <a class="dropdown-item"   data-toggle="modal" data-target="#exampleModalCenter" style="text-align: right;">حذف</a>
         </div>
       </div>
 <br/>
@@ -263,12 +246,14 @@
          <label style="text-align: right;">توضیحات</label>
          <br>
 
-         <textarea  cols="90"  placeholder="توضیحات" style="  width: 100%;          padding: 12px;
-         border: 1px solid rgba(204, 204, 204, 0.645);
+         <textarea  id="decsription" cols="90"  placeholder="توضیحات" style="  width: 100%;          padding: 12px;
+         border: 1px solid rgba(155, 155, 155, 0.645);
          border-radius:4 px;
          box-sizing: border-box;
-         resize: vertical;">         
-         </textarea>
+         resize: vertical;"> Sam sam kojaei???    </textarea>
+                        
+
+       
 
 
        </fieldset>
@@ -412,11 +397,11 @@
          
     
               <div class="button">
-                <a class="edit" href="#">ویرایش</a>
+                <a class="edit" href="#" >ویرایش</a>
                 <a class="save" href="#">ذخیره تغییرات</a>
               </div>
     
-                <a class="dropdown-item"   data-toggle="modal" data-target="#exampleModalCenter">حذف</a>
+                <a class="dropdown-item"   data-toggle="modal" data-target="#exampleModalCenter" style="text-align: right;">حذف</a>
             </div>
           </div>
     <br/>
@@ -499,11 +484,10 @@
 
       <div class="field">
 
-        <fieldset>
          <label style="text-align: right;">توضیحات</label>
          <br>
 
-         <textarea  cols="90"  placeholder="توضیحات" style="  width: 100%;          padding: 12px;
+         <textarea  id="decsription" cols="90"  placeholder="توضیحات" style="  width: 100%;          padding: 12px;
          border: 1px solid rgba(204, 204, 204, 0.645);
          border-radius:4 px;
          box-sizing: border-box;
@@ -511,7 +495,6 @@
          </textarea>
 
 
-       </fieldset>
        </div>
      </div>
 
@@ -647,5 +630,6 @@
 <script src="../../src/app/showpost.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
