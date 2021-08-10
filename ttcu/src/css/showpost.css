@@ -23,7 +23,7 @@
 /* Left column */
 .leftcolumn {   
   float: left;
-  width: 85%;
+  width: 75%;
   padding-left: 100px;
   padding-right: 40px;
   padding-bottom: 30px;
@@ -33,16 +33,16 @@
 /* Right column */
 .rightcolumn {
   float: right;
-  width: 5%;
-  padding-left: 150px;
-  padding-right: 30px;
+  width: 10%;
+  padding-left: 100px;
+  padding-right: 60px;
 }
 
 /* Fake image */
 .fakeimg {
     
   background-color: #aaa;
-  width: 100%;
+  width: 80%;
   padding: 20px;
 }
 

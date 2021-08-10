@@ -132,7 +132,8 @@
 
     detailArr["username"]=document.getElementById("username").value;
     detailArr["password"]=document.getElementById("password").value;
-    detailArr["password"]=document.getElementById("password").value;
+    detailArr["fName"]=document.getElementById("fName").value;
+    detailArr["lName"]=document.getElementById("lName").value;
     detailArr["userType"]=[document.getElementById("userType").value];
     detailArr["uniMajor"]=uniMajor;
   
@@ -155,7 +156,7 @@ function respond (){
         if(resonse.code == 200){
           
          
-          window.location='../userpage/html/index/index.html';
+          window.location='../Login/login.html';
         }else {
           window.location = 'welcome.html';
 
