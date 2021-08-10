@@ -116,8 +116,8 @@
          
 
 
-            <label class="select" for="postType" >
-              <select id="postType" required="required" name="postTypes" dir="rtl" >
+            <label class="select" for="postType" id="typeLabel" >
+              <!-- <select id="postType" required="required" name="postTypes" dir="rtl" >
                 <option value="" disabled="disabled" selected="selected">پست را انتخاب کنید</option>
                 <option value="INVITATION">فراخوان</option>
                 <option value="BEST_PROJECTS">بهترین پایان نامه ها</option>
@@ -126,7 +126,7 @@
                <option value="MASTERS_NOTES">جزوات اساتید</option>   
                <option value="ENTRANCE_EXAM_GUIDANCE">راهنمای کنکور کاردانی به کارشناسی</option>
                <option value="STUDENT_SERVICES">خدمات دانشجویی</option>
-               </select>
+               </select> -->
        
             </label>
 <hr>
@@ -254,6 +254,78 @@ xmlhttp.send(detailArrstr);
 }
 
 </script>
+
+<script>
+  loadUserInfo();
+      function loadUserInfo(){
+      var detailArr={};
+      var xmlhttp;
+      if(window.XMLHttpRequest){
+       xmlhttp=new XMLHttpRequest;
+      }
+      else{
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=respond;
+      function respond (){
+      console.log(xmlhttp.readyState);
+      console.log(xmlhttp.status);
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+        
+        var response = JSON.parse(this.responseText);
+          if(response.code == 200){
+              console.log(response);
+              var info = response.object;
+              let userType =info.userType;
+              let text="";
+              if(userType=='STUDENT')
+              {
+                  text="<select id='postType' required='required' name='postTypes' dir='rtl' >"+
+                "<option value='' disabled='disabled' selected='selected'>پست را انتخاب کنید</option>"+
+                "<option value='MASTERS_NOTES'>جزوات اساتید</option>"+   
+                "<option value='ENTRANCE_EXAM_GUIDANCE'>راهنمای کنکور کاردانی به کارشناسی</option>"+
+                "<option value='STUDENT_SERVICES'>خدمات دانشجویی</option>"+
+                "</select>"
+              }else
+              {
+                text="<select id='postType' required='required' name='postTypes' dir='rtl' >"+
+                "<option value='' disabled='disabled' selected='selected'>پست را انتخاب کنید</option>"+
+                "<option value='INVITATION'>فراخوان</option>"+
+                "<option value='BEST_PROJECTS'>بهترین پایان نامه ها</option>"+
+                "<option value='NEWS'>اخبار دانشگاهی</option>"+
+			        	"<option value='TOP_ENTRIES'>رتبه های برتر کنکور</option>"+
+                "<option value='MASTERS_NOTES'>جزوات اساتید</option>"+   
+                "<option value='ENTRANCE_EXAM_GUIDANCE'>راهنمای کنکور کاردانی به کارشناسی</option>"+
+                "<option value='STUDENT_SERVICES'>خدمات دانشجویی</option>"+
+                "</select>"
+              }
+              document.getElementById("typeLabel").innerHTML = text;
+   
+              
+          
+           
+          }else {
+            window.location = 'welcome.html';
+      
+          }
+          }
+      
+      else{
+        console.log("Hello");
+      
+      }
+      
+      }
+      
+      
+      xmlhttp.open('GET','http://127.0.0.1:8082/api/getUserInfo',true);
+      xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+      xmlhttp.setRequestHeader('Authorization',window.localStorage.getItem("Token"));
+      
+      xmlhttp.send(JSON.stringify(detailArr));
+      }
+      
+      </script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/ttcu/public/darkmode/darkmod.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
