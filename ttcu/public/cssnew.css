@@ -22,8 +22,10 @@
 }
 
 body {
+
   font-family:IranianSans ;
 background-color: #DFF6FE;
+
 }
 .background{
   border-radius: 20px;
@@ -49,7 +51,6 @@ background-color: #DFF6FE;
 .header {
   padding:0px;
   background-color: #FFFFFF;
-
   border-bottom-right-radius:50px;
   border-radius:70px;
   font-size:inherit;

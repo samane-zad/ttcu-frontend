@@ -1,82 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمایش پست ها</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <!-- <link rel="stylesheet" href="/ttcu/public/Style.css"> -->
+    <link rel="stylesheet" href="/ttcu/public/cssnew.css">
+   <link rel="stylesheet" href="../../src/css/dropdown.css">   
+   <link rel="stylesheet" href="/ttcu/public/darkmode/moon.css">
+   <link rel="stylesheet" href="/ttcu/src/footer.css">
+   <link rel=icon href="../../src/Logo/ttcu-icon.ico">
+   <link rel="stylesheet" href="../../src/css/showpost.css">
+   <link rel="stylesheet" href="../../src/css/updatepost.css">
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <link href="style10.css" rel="stylesheet" type="text/css">
+   <script src="https://kit.fontawesome.com/fc383a6465.js" crossorigin="anonymous"></script>
 
-    <!DOCTYPE html>
-    <html lang="en"><head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
-        <link rel="stylesheet" href="/ttcu/public/Style.css">
-        <link rel="stylesheet" href="/ttcu/public/cssnew.css">
-       <link rel="stylesheet" href="/ttcu/public/darkmode/moon.css">
-       <link rel="stylesheet" href="/ttcu/src/footer.css">
-       <link rel=icon href="../../src/Logo/ttcu-icon.ico">
-       <link rel="stylesheet" href="../../src/css/showpost.css">
-       <link rel="stylesheet" href="../../src/css/deletePost.css">
-        <title>نمایش پست ها</title>
-    </head>
-    <body>
-     
-    
-    
-    
-            <div class="grid-header">
-        <div>
-            <div class="header-dark">
-                <div class="header" id="myHeader">  
-                              <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
-                    <div class="container"><img src="../../public/Icon.png"><a class="navbar-brand" href="#">TTCU </a>
-                        
+</head>
+
+<body>
+  <div class="grid-header">
+    <div>
+        <div class="header-dark">
+            <div class="header" id="myHeader">  
+                          <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+                <div class="container"><img src="Icon.png"><a class="navbar-brand" href="#">TTCU </a>
                     
-                        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
-                            <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                        <div class="collapse navbar-collapse" id="navcol-1">
-    
-    
-                            <ul class="nav navbar-nav">
-                                <li class="nav-item" role="presentation">  
-                                    <div class="moon" onclick="myFunction()" class= dark-mode ></div></li>
-    
-                                
-            
-        
-                                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">خانه</a></li>
-                                    <li class="nav-item" role="presentation"><a class="nav-link" href="../Pages/about/about.html">درباره ما</a></li>
-        
-                                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">بلاگ</a></li>
-        
-                                    <li class="nav-item" role="presentation"><a class="nav-link" href="../Pages/contact-us/contact.html">تماس باما</a></li>
-        
-                                    <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">منو </a>
-                                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-                             
-    
-                                </li>
-                            </ul>
-    
-    
-    
+                
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                        <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
 
-                            <form class="form-inline mr-auto" target="_self">
-                              <div class="form-group"><label for="search-field">
-                                  <i class="fa fa-search"></i></label>
-                                  <input class="form-control search-field" type="search" name="search" id="search-field"></div>
-  
-  
-                          </form>
-                          
-                              
-                            <span class="navbar-text">
-                                <a href="../userinfo/userinfo.html" ><img src="../../src/img/per.PNG"></a>
+
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item" role="presentation">  
+                                <div class="moon" onclick="myFunction()" class= dark-mode ></div></li>
+
+                            
+        
     
-                                <a class="btn btn-light action-button" role="button" href="../signup/Signup.html">ثبت نام</a>
-                                <a href="../login/login.html" class="login">ورود</a></span>
-                     
-                </nav>
-            </div>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">خانه</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="../Pages/about/about.html">درباره ما</a></li>
+    
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="#">بلاگ</a></li>
+    
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="../Pages/contact-us/contact.html">تماس باما</a></li>
+    
+                                <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">منو </a>
+                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                         
+
+                            </li>
+                        </ul>
+
+
+
+
+
+                        <form class="form-inline mr-auto" target="_self">  </form>
+                          
+                        <span class="navbar-text">
+                            <a href="../userinfo/userinfo.html" ><img src="../../src/img/per.PNG"></a>
+
+                            <a class="btn btn-light action-button" role="button" href="../signup/Signup.html">ثبت نام</a>
+                            <a href="../login/login.html" class="login">ورود</a></span>
+                 
+            </nav>
         </div>
     </div>
+</div>
+</div>
+
+
+<!----->
+
+<button id="expander" class="btn"><b>فیلتر پست +</b> <span class="glyphicon glyphicon-plus"></span></button>
+<div id="cssmenu">
+  <ul id="top-menu">
+    <li class="scroll-li text-center header">فیلتر</li>
+
+    <li class="scroll-li"><div  class="items">
+
+      <button class="dropdown-btn" style="text-align: right;">دانشگاه ها 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container" style="text-align: right; font-size: 16px;">
+        <a href="#" style="font-size: 16px; padding-top: 10px; padding-left: 10px;" >دانشکده فنی دکتر شریعتی</a>
+        <hr>
+
+        <a href="#">دانشکده فنی  ولیعصر</a>
+        <hr>
+        <a href="#">دانشکده فنی انقلاب اسلامی</a>
+        <hr>
+
+        <a href="#" style="padding-bottom:10px ;">دانشکده فنی  شمسی پور</a>
+    
+      </div></li>
+      
+    <li class="scroll-li"><div  class="items">
+
+      <button class="dropdown-btn" style="text-align: right;">رشته ها 
+        <i class="fa fa-caret-down"></i>
+      </button>
+    
+      <div class="dropdown-container" style="text-align: right; font-size: 16px;">
+        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;" >نرم افزار</a>
+
+        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;"  >الکترونیک</a>
+        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;"  >مکانیک</a>
+
+        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;" >ICT</a>
+
+        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;"  >نقشه کشی معماری</a>
+        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;" >حسابداری</a>
+       <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;" >طراحی دوخت</a>
+      
+        <a href="#" style="font-size: 16px; padding-top: 10px;  padding-right: 10px;"  >تربیت بدنی</a>
+        <a href="#" style="font-size: 16px; padding-top: 10px; ; padding-right: 10px;" >IT</a>
+        <a href="#" style="font-size: 16px; padding-top: 10px; padding-bottom:10px ; padding-right: 10px;" >گرافیک</a>
+
+      </div></li>
+      
+
+  <li class="scroll-li"><div  class="items">
+
+    <button class="dropdown-btn" style="text-align: right;">Dropdown 
+      <i class="fa fa-caret-down"></i>
+    </button>
+  
+    <div class="dropdown-container" style="text-align: right; font-size: 16px;">
+      <a href="#" style="font-size: 16px; padding-top: 10px;" >دانشگاه فنی دکتر شریعتی</a>
+      <hr>
+
+      <a href="#">دانشگاه فنی دکتر شریعتی</a>
+      <hr>
+      <a href="#">دانشگاه فنی دکتر شریعتی</a>
+      <hr>
+
+      <a href="#">دانشگاه فنی دکتر شریعتی</a>
+      <hr>
+
+      <a href="#">دانشگاه فنی دکتر شریعتی</a>
+      <hr>
+
+      <a href="#" style="padding-bottom:10px ;" >دانشگاه فنی دکتر شریعتی</a>
+
+    </div></li>
+    
+    <li class="scroll-li"><a href="#" class="scrollItem" style="text-align: right;">نمایش همه</a></li>
+    
+    <li id="unexpander" style="text-align: right;"><a onclick="return false;"><span class="glyphicon glyphicon-minus" ></span> بستن -</a>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="text-align: right;">
+        <h5 class="modal-title" id="exampleModalCenterTitle"> حذف</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="text-align: right;"> آیا واقعاً می خواهید این پست را حذف کنید؟ این روند قابل برگشت نیست</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن </button>
+        <button type="button" class="btn btn-primary">حذف</button>
+      </div>
     </div>
+  </div>
+</div>
+<!--modal--->
     
     <!---->
 
@@ -90,37 +196,163 @@
         </button>
         <div class="dropdown-menu">
      
-          <a class="dropdown-item" href="#">ویرایش</a>
-          <a class="dropdown-item" href="#delete" class="delete">پاک کردن</a>
+
+         <div class="button">
+      <a class="edit" href="#">ویرایش</a>
+      <a class="save" href="#">ذخیره تغییرات</a>
+    </div>
+
+            <a class="dropdown-item"   data-toggle="modal" data-target="#exampleModalCenter">حذف</a>
         </div>
       </div>
 <br/>
-      
-         <h10 id="postType"class="text">#NEWS</h10>
+<!---->
+
+<div class="content-area" style="padding-left: 5px; ">
+  <div class="row">
+
+  <div class="field">
+          <label style="padding-bottom: 10px;" >نام کاربری</label>
+    <h6 id="username" >@hani</h17>
+    </div>
+
+        <div class="field">
+          <label style="padding-bottom: 10px;">نوع کاربر</label>
+
+  <h6 id="userType">TEACHER</h6>
+        </div>
+
+</div>
+
+
+    <div class="row">
+        <div class="field">
+        <label style="text-align: right;">دانشگاه</label>
+        <input type="text"class="unimajor"  value="دانشگاه فنی دکتر شریعتی" />
+      </div>
+   
+      <div class="field">
+        <label style="text-align: right;">رشته</label>
+        <input id="major" class="unimajor" type="text" value="نرم افزار" />
+      </div>
+    </div>
 
 
 
-      <h6 id="major" class="unimajor" >SOFTWARE</h6>
-      <h6 id="uni" class="unimajor" >SHARIATY_TECHNICAL_COLLEGE</h6>
-      <h2 id="title"  class="text1">پست آزمایشی</h2>
-      <h17 id="username">@hani</h17>
-      <h20 id="userType">TEACHER</h20>
+   
+
+     
+      <div class="row">
+      <div class="field">
+        <label style="text-align: right;">نوع پست</label>
+        <input  id="postType" type="text" value="#NEWS" />
+      </div>
+      <div class="field">
+        <label style="text-align: right;">عنوان</label>
+        <input  id="title" type="text" class="text1"   value="پست آزمایشی"  />
+      </div>
+</div>
+
+
+    <div class="row">
       <div class="fakeimg" style="height:200px;" id="image">Image</div>
 
-      <P class="text">توضیحات:</P>
-      <p id="description"  class="text">پنجمین پست وبسایت ttcug,
-        خبر درگذشت والده مکرمه جناب آقای دکتر صالحی عمران رئیس دانشگاه فنی و حرفه ای، موجب  تاسف و تاثر شد. غم فقدان مادر که عمری را در مسیر تربیت و تعالی فرزندان و خانواده سپری کرده است، سنگین است. این مصیبت بزرگ را به ایشان و خانواده محترمشان تسلیت عرض نموده و برای این عزیز سفر کرده از درگاه ایزد منان، مغفرت و برای بازماندگان صبر جمیل و اجر جزیل خواهانیم.
-خداوند متعال روح پاک آن مرحومه را با مولایش علی (ع) محشور نماید.
-حوزه ریاست و و روابط عمومی دانشکده فنی و حرفه ای دکتر شریعتی </p>
-<label class="text">تلفن:<p id="contact">09397037100</p></label>
-<!--input file-->
+      <div class="field">
+
+        <fieldset>
+         <label style="text-align: right;">توضیحات</label>
+         <br>
+
+         <textarea  cols="90"  placeholder="توضیحات" style="  width: 100%;          padding: 12px;
+         border: 1px solid rgba(204, 204, 204, 0.645);
+         border-radius:4 px;
+         box-sizing: border-box;
+         resize: vertical;">         
+         </textarea>
+
+
+       </fieldset>
+       </div>
+     </div>
+
+
+<!-- important!!!!!!!!! be careful('*')
+         <div class="container">
+          <div class="text-right my-3">
+            <button class="btn btn-info" id="getHTML" get-data="editor-1">Get HTML</button>
+          </div>
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-12 col-lg-8">
+              <div class="editor" id="editor-1">
+              <div class="toolbar">
+                <a href="#" data-command='undo' data-toggle="tooltip" data-placement="top" title="Undo"><i class='fa fa-undo'></i></a>
+                <a href="#" data-command='redo' data-toggle="tooltip" data-placement="top" title="Redo"><i class='fa fa-redo '></i></a>
+                <a href="#" data-command='removeFormat' data-toggle="tooltip" data-placement="top" title="Clear format"><i class='fa fa-times '></i></a>
+                <div class="fore-wrapper"><i class='fa fa-font' data-toggle="tooltip" data-placement="top" title="text color" style='color:#C96;'></i>
+                  <div class="fore-palette">
+                  </div>
+                </div>
+                <div class="back-wrapper"><i class='fa fa-font'  data-toggle="tooltip" data-placement="top" title="Background color" style='background:#C96;'></i>
+                  <div class="back-palette">
+                  </div>
+                </div>
+                <a href="#" data-command='bold' data-toggle="tooltip" data-placement="top" title="Bold"><i class='fa fa-bold'></i></a>
+                <a href="#" data-command='italic' data-toggle="tooltip" data-placement="top" title="Italic"><i class='fa fa-italic'></i></a>
+                <a href="#" data-command='underline' data-toggle="tooltip" data-placement="top" title="Underline"><i class='fa fa-underline'></i></a>
+                <a href="#" data-command='strikeThrough' data-toggle="tooltip" data-placement="top" title="Stike through"><i class='fa fa-strikethrough'></i></a>
+                <a href="#" data-command='justifyLeft' data-toggle="tooltip" data-placement="top" title="Left align"><i class='fa fa-align-left'></i></a>
+                <a href="#" data-command='justifyCenter'><i class='fa fa-align-center' data-toggle="tooltip" data-placement="top" title="Center align"></i></a>
+                <a href="#" data-command='justifyRight' data-toggle="tooltip" data-placement="top" title="Right align"><i class='fa fa-align-right'></i></a>
+                <a href="#" data-command='justifyFull' data-toggle="tooltip" data-placement="top" title="Justify"><i class='fa fa-align-justify'></i></a>
+                <a href="#" data-command='indent' data-toggle="tooltip" data-placement="top" title="Indent"><i class='fa fa-indent'></i></a>
+                <a href="#" data-command='outdent'  data-toggle="tooltip" data-placement="top" title="Outdent"><i class='fa fa-outdent'></i></a>
+                <a href="#" data-command='insertUnorderedList'  data-toggle="tooltip" data-placement="top" title="Unordered list"><i class='fa fa-list-ul'></i></a>
+                <a href="#" data-command='insertOrderedList' data-toggle="tooltip" data-placement="top" title="Ordered list"><i class='fa fa-list-ol'></i></a>
+                <a href="#" data-command='h1' data-toggle="tooltip" data-placement="top" title="H1">H1</a>
+                <a href="#" data-command='h2'  data-toggle="tooltip" data-placement="top" title="H2">H2</a>
+                <a href="#" data-command='createlink' data-toggle="tooltip" data-placement="top" title="Inser link"><i class='fa fa-link'></i></a>
+                <a href="#" data-command='unlink' data-toggle="tooltip" data-placement="top" title="Unlink"><i class='fa fa-unlink'></i></a>
+                <a href="#" data-command='insertimage' data-toggle="tooltip" data-placement="top" title="Insert image"><i class='fa fa-image'></i></a>
+                <a href="#" data-command='p' data-toggle="tooltip" data-placement="top" title="Paragraph">P</a>
+                <a href="#" data-command='subscript' data-toggle="tooltip" data-placement="top" title="Subscript"><i class='fa fa-subscript'></i></a>
+                <a href="#" data-command='superscript'  data-toggle="tooltip" data-placement="top" title="Superscript"><i class='fa fa-superscript'></i></a>
+              </div>
+              <div id='editor' class="editorAria" contenteditable>
+                <h1>Rich Text Editor.</h1>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                <img src="https://images.pexels.com/photos/2067423/pexels-photo-2067423.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+              </div>
+                </div>
+            </div>
+          </div>
+        </div> -->
+
+
+
+
+
+
+
+
+    <div class="row">
+
+      <div class="field" style="padding-left:70%;" >
+    <label style="text-align: right;" style="padding-right:50px;" >:راه ارتباطی</label>
+    <input  id="contact" type="text" value="09397037100" />
+  </div>
+ </div>
+  <!--input file-->
+
+    
 <svg version="1.1"  display="none" aria-hidden="true" width="0" height="0" hidden>
   <defs>
     <symbol id="sprite-close" viewBox="0 0 24 24">
       <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
     </symbol>
   </defs>
-</svg>
+</svg>  
+
+
 
 <div class="containerr" js-file-manager>
   <fieldset class="file-input">
@@ -152,57 +384,157 @@
 
     </div>
 
+
+
+
+  </div>
+
+
+
+  <!--End card1-->
+
+
+
+
+
+<!----Start Card2----->
+
+
     
     <div class="card">
 
 
-      <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          
+        <div class="btn-group" >
+            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+              
+            </button>
+            <div class="dropdown-menu">
+         
+    
+              <div class="button">
+                <a class="edit" href="#">ویرایش</a>
+                <a class="save" href="#">ذخیره تغییرات</a>
+              </div>
+    
+                <a class="dropdown-item"   data-toggle="modal" data-target="#exampleModalCenter">حذف</a>
+            </div>
+          </div>
+    <br/>
+    
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="text-align: right;">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h5 class="modal-title" id="exampleModalCenterTitle" > حذف</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
         </button>
-        <div class="dropdown-menu">
-     
-          <a class="dropdown-item" href="#">ویرایش</a>
-          <a class="dropdown-item" href="#">پاک کردن</a>
-        </div>
       </div>
-<br/>
+      <div class="modal-body"  style="text-align: right;">
+        <p >آیا واقعاً می خواهید این پست را حذف کنید؟ این روند قابل برگشت نیست</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن </button>
+        <button type="button" class="btn btn-primary">پاک کردن</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--ENDmodal--->
 
 
 
+<div class="content-area">
+  <div class="row">
+
+  <div class="field">
+          <label style="padding-bottom: 8px;">نام کاربری</label>
+    <h6 id="username">@hani</h17>
+    </div>
+
+        <div class="field">
+          <label style="padding-bottom: 8px;">نوع کاربر</label>
+
+  <h6 id="userType">TEACHER</h6>
+        </div>
+
+</div>
+
+
+    <div class="row">
+        <div class="field">
+        <label style="text-align: right;">دانشگاه</label>
+        <input type="text"class="unimajor"  value="دانشگاه فنی دکتر شریعتی" />
+      </div>
+   
+      <div class="field">
+        <label style="text-align: right;">رشته</label>
+        <input id="major" class="unimajor" type="text" value="نرم افزار" />
+      </div>
+    </div>
 
 
 
+   
+
+     
+      <div class="row">
+      <div class="field">
+        <label style="text-align: right;">نوع پست</label>
+        <input  id="postType" type="text" value="#NEWS" />
+      </div>
+      <div class="field">
+        <label style="text-align: right;">عنوان</label>
+        <input  id="title" type="text" class="text1"   value="پست آزمایشی"  />
+      </div>
+</div>
 
 
-
-
-
-
-
-
-<h10 id="postType"class="text">#NEWS</h10>
-
-      <h6 id="major" class="unimajor" >SOFTWARE</h6>
-      <h6 id="uni" class="unimajor" >SHARIATY_TECHNICAL_COLLEGE</h6>
-      <h2 id="title"  class="text1">پست آزمایشی</h2>
-      <h17 id="username">@hani</h17>
-      <h20 id="userType">TEACHER</h20>
+    <div class="row">
       <div class="fakeimg" style="height:200px;" id="image">Image</div>
 
-      <P class="text">توضیحات:</P>
-      <p id="description"  class="text">پنجمین پست وبسایت ttcug,
-        خبر درگذشت والده مکرمه جناب آقای دکتر صالحی عمران رئیس دانشگاه فنی و حرفه ای، موجب  تاسف و تاثر شد. غم فقدان مادر که عمری را در مسیر تربیت و تعالی فرزندان و خانواده سپری کرده است، سنگین است. این مصیبت بزرگ را به ایشان و خانواده محترمشان تسلیت عرض نموده و برای این عزیز سفر کرده از درگاه ایزد منان، مغفرت و برای بازماندگان صبر جمیل و اجر جزیل خواهانیم.
-خداوند متعال روح پاک آن مرحومه را با مولایش علی (ع) محشور نماید.
-حوزه ریاست و و روابط عمومی دانشکده فنی و حرفه ای دکتر شریعتی </p>
-<label class="text">تلفن:<p id="contact">09397037100</p></label>
+      <div class="field">
+
+        <fieldset>
+         <label style="text-align: right;">توضیحات</label>
+         <br>
+
+         <textarea  cols="90"  placeholder="توضیحات" style="  width: 100%;          padding: 12px;
+         border: 1px solid rgba(204, 204, 204, 0.645);
+         border-radius:4 px;
+         box-sizing: border-box;
+         resize: vertical;">         
+         </textarea>
+
+
+       </fieldset>
+       </div>
+     </div>
+
+
+    <div class="row">
+
+      <div class="field" style="padding-left:70%;" >
+    <label style="text-align: right;" style="padding-right:50px;" >:راه ارتباطی</label>
+    <input  id="contact" type="text" value="09397037100" />
+  </div>
+ </div>
+  <!--input file-->
+
+    
 <svg version="1.1"  display="none" aria-hidden="true" width="0" height="0" hidden>
   <defs>
     <symbol id="sprite-close" viewBox="0 0 24 24">
-      <path id="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+      <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
     </symbol>
   </defs>
-</svg>
+</svg>  
+
+
 
 <div class="containerr" js-file-manager>
   <fieldset class="file-input">
@@ -227,9 +559,9 @@
   <span class="file-input__helper"></span>
   <button class="buttondow">ارسال</button>
 
+  
 </div>
 
-     
 
 
     </div>
@@ -237,6 +569,8 @@
 
 
 
+
+    </div>
 
     
   </div>
@@ -247,7 +581,7 @@
   <div class="rightcolumn">
 
     <div class="card">
-      <h3>Popular Post</h3>
+      <h3 style="font-size: 20px;">پست های محبوب</h3>
       <div class="fakeimg">Image</div><br>
       <div class="fakeimg">Image</div><br>
       <div class="fakeimg">Image</div>
@@ -259,72 +593,59 @@
 
 
 <!---->
-<footer class="flex-rw">
-  
-  <ul class="footer-list-top">
-    <li>
-      <h4 class="footer-list-header">About Pavilion</h4></li>
-    <li><a href='/shop/about-mission' class="generic-anchor footer-list-anchor" itemprop="significantLink">GET TO KNOW US</a></li>
-    <li><a href='/promos.html' class="generic-anchor footer-list-anchor" itemprop="significantLink">PROMOS</a></li>
-    <li><a href='/retailers/new-retailers.html' class="generic-anchor footer-list-anchor" itemprop="significantLink">BECOME A RETAILER</a></li>
-
-    <li><a href='/job-openings.html' itemprop="significantLink" class="generic-anchor footer-list-anchor">JOB OPENINGS</a></li>
-
-    <li><a href='/shop/about-show-schedule' class="generic-anchor footer-list-anchor" itemprop="significantLink">EVENTS</a></li>
-  </ul>
-  <ul class="footer-list-top">
-    <li>
-      <h4 class="footer-list-header">The Gift Selection</h4></li>
 
 
-    <li><a href='/Angels/cat/id/70' class="generic-anchor footer-list-anchor">ANGEL FIGURINES</a></li>
-    <li><a href='/Home-Decor/cat/id/64' class="generic-anchor footer-list-anchor">HOME DECOR</a></li>
-    <li><a href='/Mugs/cat/id/32' class="generic-anchor footer-list-anchor">MUGS</a></li>
-    <li><a href='/Pet-Lover/cat/id/108' class="generic-anchor footer-list-anchor">PET LOVER</a></li>
-    <li><a href='/Ladies-Accessories/cat/id/117' class="generic-anchor footer-list-anchor" target="_blank">HANDBAGS & JEWELRY</a></li>
-  </ul>
-  <ul class="footer-list-top">
-    <li id='help'>
-      <h4 class="footer-list-header">Please Help Me</h4></li>
-    <li><a href='/shop/about-contact' class="generic-anchor footer-list-anchor" itemprop="significantLink">CONTACT</a></li>
-    <li><a href='/faq.html' class="generic-anchor footer-list-anchor" itemprop="significantLink">FAQ</a></li>
-    <li id='find-a-store'><a href='/shop/store-locator' class="generic-anchor footer-list-anchor" itemprop="significantLink">STORE LOCATOR</a></li>
-    <li id='user-registration'><a href='/shop/user-registration?URL=' class="generic-anchor footer-list-anchor" itemprop="significantLink">NEW USERS</a></li>
-    <li id='order-tracking'><a href='/shop/order-status' itemprop="significantLink" class="generic-anchor footer-list-anchor">ORDER STATUS</a></li>
-  </ul>
-  <section class="footer-social-section flex-rw">
-      <span class="footer-social-overlap footer-social-connect">
-      CONNECT <span class="footer-social-small">with</span> US
-      </span>
-      <span class="footer-social-overlap footer-social-icons-wrapper">
-      <a href="https://www.pinterest.com/paviliongift/" class="generic-anchor" target="_blank" title="Pinterest" itemprop="significantLink"><i class="fa fa-pinterest"></i></a>
-      <a href="https://www.facebook.com/paviliongift" class="generic-anchor" target="_blank" title="Facebook" itemprop="significantLink"><i class="fa fa-facebook"></i></a>
-      <a href="https://twitter.com/PavilionGiftCo" class="generic-anchor" target="_blank" title="Twitter" itemprop="significantLink"><i class="fa fa-twitter"></i></a>
-      <a href="http://instagram.com/paviliongiftcompany" class="generic-anchor" target="_blank" title="Instagram" itemprop="significantLink"><i class="fa fa-instagram"></i></a>
-      <a href="https://www.youtube.com/channel/UCYgUODvd0qXbu_LkUWpTVEg" class="generic-anchor" target="_blank" title="Youtube" itemprop="significantLink"><i class="fa fa-youtube"></i></a>
-      <a href="https://plus.google.com/+Paviliongift/posts" class="generic-anchor" target="_blank" title="Google Plus" itemprop="significantLink"><i class="fa fa-google-plus"></i></a>
-      </span>
-  </section>
-  <section class="footer-bottom-section flex-rw">
-<div class="footer-bottom-wrapper">   
-<i class="fa fa-copyright" role="copyright">
- 
-</i> 2021  <address class="footer-address" role="company address">Tehran, IR</address><span class="footer-bottom-rights"> - All Rights Reserved - </span>
+<footer class="footer">
+  <div class="footer-left col-md-4 col-sm-6">
+    <p class="about" dir="rtl" style="text-align: right;">
+      <a href="../../Pages/about/about.html"><span> درباره ما</span> </a>
+      در این صفحه شرح داده می شود که سایت آن ها چه طور به مخاطبان کمک می کند و چطور به سؤالات آن ها پاسخ می دهد:
+       «ما عمیقاً برای سؤالات شما ارزش قائلیم و سعی می کنیم به بهترین شکل ممکن به سؤالات شما پاسخ دهیم.» 
+      بعد از آن توضیح داده شده است که چطور به سؤالات مخاطبان پاسخ داده می شود، مثلاً به مخاطبان قول داده
+       است که در کمتر از ۱۲ ساعت یک جواب کوتاه دریافت کنند. همچنین این صفحه شامل یک اطلاعات تماس ساده و واضح، 
+      دکمه های مربوط به لینک شبکه های اجتماعی، لینک های پیشنهادی و حتی یک لیست از مطالب اخیر بلاگ سایت است.
+
+    </p>
+    <div class="icons">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-google-plus"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
     </div>
-    <div class="footer-bottom-wrapper">
-    <a href="/terms-of-use.html" class="generic-anchor" rel="nofollow">Terms</a> | <a href="/privacy-policy.html" class="generic-anchor" rel="nofollow">Privacy</a>
-      </div>
-  </section>
+  </div>
+  <div class="footer-center col-md-4 col-sm-6">
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span> Street name and number</span> تهران , ایران</p>
+    </div>
+    <div>
+      <i class="fa fa-phone"></i>
+      <p> (+98) 21 22 44 70 53</p>
+    </div>
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="NezhadLotfi@protonmail.com"> office@ttcu.com</a></p>
+    </div>
+  </div>
+  <div class="footer-right col-md-4 col-sm-6">
+    <h2> TTCU<span> <img src="../../public/Icon.png"></span></h2>
+    <p class="menu">
+      <a href="../../public/index.html"> خانه</a> |
+      <a href="../about/about.html"> درباره ما</a> |
+      <a href="../guidepage/guide.html"> راهنما</a> |
+      <a href="../contact-us/contact.html"> تماس با ما</a>
+    </p>
+    <p class="name"> SamFa &copy; 2021</p>
+  </div>
 </footer>
+<script src="../../src/app/fiter-and-sidbar.js"></script>
 
-
+<script src="../../src/app/updatepost.js"></script>
+<script src="../../src/app/deletePost.js"></script>
 <script src="../../public/darkmode/darkmod.js"></script>
 <script src="../../src/app/showpost.js"></script>
-<script src="../../src/app/deletePost.js"></script>
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-
-
 </body>
 </html>

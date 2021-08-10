@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود</title>
     <link rel="stylesheet" href="Stylelogin.css">
     <link rel=icon  href="16X16.ico" >
     <link rel=icon href="../../src/Logo/ttcu-icon.ico">
+    <link  rel="stylesheet" href="../../src/css/validaition.css">
+    <script src="hide-password.js"></script>
+    <script src="../../src/app/validaition.js"></script>
 
-    <title>ورود</title>
 </head>
 <body>
   <div id="container">
@@ -22,6 +25,8 @@
 
       
 <form >
+  <ul class="errorMessages"></ul>
+
 <input type=text id="username" placeholder="نام کابری خود را وارد کنبد" class="client-info" id="email">
 <input type="password" id="password" class="client-info" placeholder="رمزعبور خود را وارد کنبد"><br>
 <input type="checkbox" onclick="myFunction()" class="checkbox"> نمایش رمزعبور
@@ -39,6 +44,13 @@
     </div>
   </div>
 
+
+
+
+
+
+
+  
   <script>
     
     function login(){
@@ -85,6 +97,6 @@ xmlhttp.send(detailArrstr);
 }
 
   </script>
-  <script src="hide-password.js"></script>
+  
 </body>
 </html>

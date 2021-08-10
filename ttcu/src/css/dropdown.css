@@ -1,0 +1,278 @@
+/* .wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .object {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: none;
+  }
+  
+  .circle {
+    border-radius: 50px;
+  }
+
+  .show {
+    display: block;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  .blue {
+    background-color: blue;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  
+  .purple {
+    background-color: purple;
+  }
+  
+
+  
+  .left {
+    float: left;
+    width: 40%;
+  }
+  .right {
+    float: right;
+    width: 60%;
+  }
+  h1 {
+    font-size: 125%;
+  }
+  
+  #no-results {
+    display: none;
+  } */
+  
+  /*filter post*/
+  
+  #cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+
+.items{
+    margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: right;
+  font-size: 20px;
+}
+
+
+
+
+
+
+#cssmenu ul li.header {
+  background:#2D8474;
+  color: white;
+  font-size: 120%;
+  padding: 5px
+}
+
+#expander {
+  position: fixed;
+  top: 160px;
+  left: -31px;
+  transform: rotate(90deg);
+  transition: .2s background ease;
+}
+
+#expander:hover {
+  background:#FFEDD9;
+  color: white;
+}
+
+#cssmenu,
+#expander {
+  z-index: 1029;
+}
+
+#unexpander > a {
+  background: lightgray !important;
+  color: rgb(247, 9, 9) !important;
+}
+#unexpander > .items {
+  background: lightgray !important;
+  color: rgb(233, 61, 61) !important;
+}
+
+#unexpander > li > a {
+  background: lightgray !important;
+  color: rgb(114, 214, 171) !important;
+}
+
+#unexpander > li > .items {
+  background: lightgray !important;
+  color: rgb(114, 214, 171) !important;
+}
+
+#cssmenu {
+  font-size: 15px;
+  width: 250px;
+  color: #ffffff;
+  position: fixed;
+  left: -250px;
+  top: 120px;
+  z-index: 10000;
+  background:#2D8474;
+}
+
+@media screen and (max-width: 600px) {
+  #expander {
+    top: 160px
+  }
+  #cssmenu.expanded {
+    width: 100%;
+  }
+}
+
+#cssmenu ul ul {
+  display: none;
+}
+
+.align-right {
+  float: right;
+}
+
+#cssmenu > ul > li > a {
+  padding: 15px 20px;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  cursor: pointer;
+  z-index: 2;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+  text-overflow: ellipsis;
+  background:#354B46;
+  transition: .1s all;
+}
+.items{
+  padding:0px 0px 0px 0px;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  cursor: pointer;
+  z-index: 2;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+  text-overflow: ellipsis;
+  background:#354B46;
+  transition: .1s all;
+}
+#cssmenu > ul > li > a:hover {
+  color: #eeeeee;
+  background: #D3D3D3;
+}
+
+#cssmenu > ul > li > .items:hover {
+  color: #eeeeee;
+  background: dimgrey;
+} 
+
+
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li.open > a {
+  background: rgb(233, 51, 51);
+}
+
+#cssmenu > ul > li.active > .items,
+#cssmenu > ul > li.open > .items {
+  background: rgb(233, 51, 51);
+}
+
+#cssmenu > ul > li:last-child > .items,
+#cssmenu > ul > li.last > a {
+  border-bottom: 1px solid #000;
+}
+#cssmenu > ul > li:last-child > a,
+#cssmenu > ul > li.last > a {
+  border-bottom: 1px solid #000;
+}
+
+a.breakpoint {
+  height: 0 !important
+}
+
+.items.breakpoint {
+  height: 0 !important
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffff;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color:#00C5A5;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color:#1E3137;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
