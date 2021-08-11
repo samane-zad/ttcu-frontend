@@ -1,7 +1,7 @@
 
 .row {
-  border-bottom: 1px solid #d8d8d8;
-  padding: 5px 0;
+  border-bottom: 0px solid #d8d8d8;
+  padding: 0px 0px 0px;
   width: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -11,13 +11,14 @@
 .row:first-of-type {
   margin-top: 0;
 }
+
 .row:last-of-type {
-  border-bottom: 1px solid #fff;
+  border-bottom: 0px solid #fff;
 }
 .row .field {
   display: inline-block;
   position: relative;
-  border-right: 1px solid #d8d8d8;
+  border-right: 0px solid #d8d8d8;
   margin-left: 20px;
   padding-right: 20px;
   -webkit-transition: all 80ms ease-in-out;

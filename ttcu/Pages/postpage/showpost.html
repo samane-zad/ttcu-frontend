@@ -17,6 +17,7 @@
    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
    <link href="style10.css" rel="stylesheet" type="text/css">
    <script src="https://kit.fontawesome.com/fc383a6465.js" crossorigin="anonymous"></script>
+   <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
 
 </head>
 
@@ -82,57 +83,61 @@
     <li class="scroll-li text-center header"> فیلتر بر اساس</li>
 
     <li class="scroll-li"><div  class="items">
-
-      
-
-      <button class="dropdown-btn" style="text-align: right;">دانشگاه ها 
+            <select id="uni" required="required" name="University" dir="rtl" class="dropdown-btn" >
         <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-container" style="text-align: right; font-size: 16px;">
-        <a href="#" style="font-size: 16px; padding-top: 10px; padding-left: 10px;" >دانشکده فنی دکتر شریعتی</a>
-        <a href="#">دانشکده فنی  ولیعصر</a>
-        <a href="#">دانشکده فنی انقلاب اسلامی</a>
-        <a href="#" style="padding-bottom:10px ;">دانشکده فنی  شمسی پور</a>
+      <div class="dropdown-container">
+            <option value="" disabled="disabled" selected="selected">دانشگاه</option>
+            <option value="SHARIATY_TECHNICAL_COLLEGE">دانشکده فنی دکتر شریعتی</option>
+            <option value="VALIASR_TECHNICAL_COLLEGE"> دانشکده فنی ولیعصر</option>
+            <option value="ENGHELAB_TECHNICAL_COLLEGE">دانشکده فنی انقلاب اسلامی</option>
+            <option value="SHAMSIPOUR_TECHNICAL_COLLEGE">دانشکده فنی شمسی پور</option>
+       </select>
+      
         </div></li>
       
-    <li class="scroll-li"><div  class="items">
 
-      <button class="dropdown-btn" style="text-align: right;">رشته ها 
+
+    <li class="scroll-li"><div  class="items">
+      <select id="major" required="required" name="UniversityMajor" dir="rtl" class="dropdown-btn">
+
         <i class="fa fa-caret-down"></i>
-      </button>
     
       <div class="dropdown-container" style="text-align: right; font-size: 16px;">
-        <a href="#" >نرم افزار</a>
-        <a href="#">الکترونیک</a>
-        <a href="#">مکانیک</a>
-        <a href="#">ICT</a>
-        <a href="#">نقشه کشی معماری</a>
-        <a href="#">حسابداری</a>
-        <a href="#">طراحی دوخت</a>
-        <a href="#">تربیت بدنی</a>
-        <a href="#" >IT</a>
-        <a href="#" style="font-size: 16px; padding-top: 10px; padding-bottom:10px ; padding-right: 10px;" >گرافیک</a>
+            <option value="" disabled="disabled" selected="selected">رشته </option>
+            <option value="SOFTWARE">نرم افزار</option>
+            <option value="ELECTRONICS">الکترونیک</option>
+            <option value="MECHANICS">مکانیک</option>
+            <option value="ICT">ICT</option>
+           <option value="ARCHITECTURE">نقشه کشی معماری</option>   
+           <option value="GRAPHICS">گرافیک</option>
+           <option value="ACCOUNTING">حسابداری</option>
+           <option value="CLOTHING_DESIGN">طراحی دوخت</option>
+           <option value="PHYSICAL_EDUCATION">تربیت بدنی</option>
+           <option value="IT">IT</option>
+          </select>
+
 
       </div></li>
       
 
-  <li class="scroll-li"><div  class="items">
+ 
+      <li class="scroll-li"><div  class="items">
 
-    <button class="dropdown-btn" style="text-align: right;">نوع پست 
-      <i class="fa fa-caret-down"></i>
-    </button>
-      <div class="dropdown-container" style="text-align: right; font-size: 16px;">
-      <a href="#" style="font-size: 16px; padding-top: 10px;" id="INVITATION" >فراخوان</a>
-      <a href="#" id="BEST_PROJECTS">بهترین پایان نامه ها</a>
-      <a href="#" id="NEWS">اخبار دانشگاهی</a>
-      <a href="#"id="TOP_ENTRIES">رتبه های برتر کنکور</a>
-      <a href="#" id="MASTERS_NOTES">جزوات اساتید</a>
-      <a href="#" id="ENTRANCE_EXAM_GUIDANCE">راهنمای کنکور کاردانی به کارشناسی</a>
-      <a href="#" id="STUDENT_SERVICES" style="padding-bottom:10px ;" >خدمات دانشجویی</a>
-
+        <select id="major" required="required" name="UniversityMajor" dir="rtl" class="dropdown-btn">
+          <i class="fa fa-caret-down"></i>
+          <div class="dropdown-container" style="text-align: right;">
+          <option value="INVITATION" >فراخوان</option>
+          <option value="BEST_PROJECTS">بهترین پایان نامه ها</option>
+          <option value="NEWS">اخبار دانشگاهی</option>
+          <option value="TOP_ENTRIES">رتبه های برتر کنکور</option>
+          <option value="MASTERS_NOTES">جزوات اساتید</option>
+          <option value="ENTRANCE_EXAM_GUIDANCE">راهنمای کنکور کاردانی به کارشناسی</option>
+          <option value="STUDENT_SERVICES"  >خدمات دانشجویی</option>
+        </select>
+   
     </div></li>
-    
-    <li class="scroll-li"><a href="#" class="scrollItem" style="text-align: right;">نمایش همه</a></li>
+
+
     
     <li id="unexpander" style="text-align: right;"><a onclick="return false;"><span class="glyphicon glyphicon-minus" ></span> بستن -</a>
     </li>
@@ -172,69 +177,90 @@
 <div class="row">
   <div class="leftcolumn">
     <div class="card">
-    
-      <div class="btn-group" >
+      <div class="button" style="text-align:left; padding-top: 0px;">
+        <a class="edit" href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png"/>ویرایش</a>
+        <a class="save" href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/save--v1.png"/>ذخیره تغییرات</a>
+        
+      </div>
+
+
+
+      <!-- <div class="btn-group" >
         <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
           
         </button>
         <div class="dropdown-menu">
-     
-
-         <div class="button">
-      <a class="edit" href="#">ویرایش</a>
-      <a class="save" href="#">ذخیره تغییرات</a>
-    </div>
-
-            <a class="dropdown-item"   data-toggle="modal" data-target="#exampleModalCenter" style="text-align: right;">حذف</a>
         </div>
-      </div>
+      </div> -->
 <br/>
 <!---->
 
-<div class="content-area" style="padding-left: 5px; ">
-  <div class="row">
+
+<div 
+class="content-area" style="padding-right:1px;  text-align: right;direction: rtl;">
+
+<div class="row">
 
   <div class="field">
-          <label style="padding-bottom: 10px;" >نام کاربری</label>
-    <h6 id="username" >@hani</h17>
+    <label style="text-align: right; ">عنوان</label>
+    <input  id="title" type="text" class="text1"  style="font-size: 25px;" value="پست آزمایشی" autocomplete="off" />
+  </div>
+</div>
+
+  
+<div class="row">
+  <div class="field">
+    <label style="text-align: right;">نوع پست</label>
+    <input  id="postType" type="text" value="#جزوات اساتید" autocomplete="off" />
+  </div>
+  </div>
+
+  <div class="row"  >
+    <div class="field">
+      <label style="padding-bottom: 10px;">کد پست</label>
+    <p id="id">22</p>
     </div>
+    </div>
+
+
+
+
+
+  <div class="row"  >
+  <div class="field">
+          <label style="padding-bottom: 10px;" >نام کاربری</label>
+    <p id="username" >hani@</p>
+    </div>
+    </div>
+    <div class="row"  style="padding-bottom:10px";>
 
         <div class="field">
           <label style="padding-bottom: 10px;">نوع کاربر</label>
 
-  <h6 id="userType">TEACHER</h6>
+  <p id="userType">TEACHER</p>
         </div>
 
 </div>
 
 
-    <div class="row">
-        <div class="field">
-        <label style="text-align: right;">دانشگاه</label>
-        <input type="text"class="unimajor"  value="دانشگاه فنی دکتر شریعتی" />
-      </div>
-   
-      <div class="field">
-        <label style="text-align: right;">رشته</label>
-        <input id="major" class="unimajor" type="text" value="نرم افزار" />
-      </div>
-    </div>
-
-
-
-   
-
-     
-      <div class="row">
-      <div class="field">
-        <label style="text-align: right;">نوع پست</label>
-        <input  id="postType" type="text" value="#NEWS" />
-      </div>
-      <div class="field">
-        <label style="text-align: right;">عنوان</label>
-        <input  id="title" type="text" class="text1"   value="پست آزمایشی"  />
-      </div>
+<div class="row">
+  <div class="field">
+    <label style="text-align: right;">رشته</label>
+    <input id="major" class="unimajor" type="text" value="مهندسی نرم افزار "autocomplete="off"/>
+  </div>
 </div>
+
+<div class="row">
+  <div class="field">
+  <label style="text-align: right;">دانشگاه</label>
+  <input type="text"class="unimajor"  value="دانشگاه فنی دکتر شریعتی" autocomplete="off" />
+</div>
+</div>
+
+
+   
+
+   
 
 
     <div class="row">
@@ -246,17 +272,26 @@
          <label style="text-align: right;">توضیحات</label>
          <br>
 
-         <textarea  id="decsription" cols="90"  placeholder="توضیحات" style="  width: 100%;          padding: 12px;
+         <div class="form-box"  style="text-align: right; direction: rtl;">
+         <textarea  id="description" id="editor" cols="90"  placeholder="توضیحات" style="  width: 100%;  padding: 12px;
          border: 1px solid rgba(155, 155, 155, 0.645);
          border-radius:4 px;
          box-sizing: border-box;
-         resize: vertical;"> Sam sam kojaei???    </textarea>
-                        
+         resize: vertical;"> "پنجمین پست وبسایت ttcu",  </textarea>   
+                 
 
-       
+        
+      
+                        
+                      </div>
+                       
+            
+           
+                      
 
 
        </fieldset>
+       
        </div>
      </div>
 
@@ -322,7 +357,7 @@
     <div class="row">
 
       <div class="field" style="padding-left:70%;" >
-    <label style="text-align: right;" style="padding-right:50px;" >:راه ارتباطی</label>
+    <label style="text-align: right;" style="padding-right:50px;" >تلفن:</label>
     <input  id="contact" type="text" value="09397037100" />
   </div>
  </div>
@@ -369,8 +404,9 @@
 
     </div>
 
-
-
+<!---delclass class="dropdown-item" -->
+    <a   data-toggle="modal" data-target="#exampleModalCenter" style="text-align: l;"> 
+      <img src="https://img.icons8.com/ios/30/000000/delete-forever.png"/>حذف</a>
 
   </div>
 
@@ -389,7 +425,13 @@
     <div class="card">
 
 
-        <div class="btn-group" >
+            <div class="button" style="text-align:left; padding-top: 0px;">
+              <a class="edit" href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png"/>ویرایش</a>
+              <a class="save" href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/save--v1.png"/>ذخیره تغییرات</a>
+              
+            </div>
+      
+        <!-- <div class="btn-group" >
             <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
               
             </button>
@@ -404,7 +446,7 @@
                 <a class="dropdown-item"   data-toggle="modal" data-target="#exampleModalCenter" style="text-align: right;">حذف</a>
             </div>
           </div>
-    <br/>
+    <br/> -->
     
 
 
@@ -433,50 +475,71 @@
 
 
 
-<div class="content-area">
-  <div class="row">
+<div 
+class="content-area" style="padding-right:1px;  text-align: right;direction: rtl;">
+
+<div class="row">
 
   <div class="field">
-          <label style="padding-bottom: 8px;">نام کاربری</label>
-    <h6 id="username">@hani</h17>
+    <label style="text-align: right; ">عنوان</label>
+    <input  id="title" type="text" class="text1"  style="font-size: 25px;" value="پست آزمایشی" autocomplete="off" />
+  </div>
+</div>
+
+  
+<div class="row">
+  <div class="field">
+    <label style="text-align: right;">نوع پست</label>
+    <input  id="postType" type="text" value="#جزوات اساتید" autocomplete="off" />
+  </div>
+  </div>
+
+  <div class="row"  >
+    <div class="field">
+      <label style="padding-bottom: 10px;">کد پست</label>
+    <p id="id">22</p>
+    </div>
     </div>
 
-        <div class="field">
-          <label style="padding-bottom: 8px;">نوع کاربر</label>
 
-  <h6 id="userType">TEACHER</h6>
+
+
+
+  <div class="row"  >
+  <div class="field">
+          <label style="padding-bottom: 10px;" >نام کاربری</label>
+    <p id="username" >hani@</p>
+    </div>
+    </div>
+    <div class="row"  style="padding-bottom:10px";>
+
+        <div class="field">
+          <label style="padding-bottom: 10px;">نوع کاربر</label>
+
+  <p id="userType">TEACHER</p>
         </div>
 
 </div>
 
 
-    <div class="row">
-        <div class="field">
-        <label style="text-align: right;">دانشگاه</label>
-        <input type="text"class="unimajor"  value="دانشگاه فنی دکتر شریعتی" />
-      </div>
-   
-      <div class="field">
-        <label style="text-align: right;">رشته</label>
-        <input id="major" class="unimajor" type="text" value="نرم افزار" />
-      </div>
-    </div>
-
-
-
-   
-
-     
-      <div class="row">
-      <div class="field">
-        <label style="text-align: right;">نوع پست</label>
-        <input  id="postType" type="text" value="#NEWS" />
-      </div>
-      <div class="field">
-        <label style="text-align: right;">عنوان</label>
-        <input  id="title" type="text" class="text1"   value="پست آزمایشی"  />
-      </div>
+<div class="row">
+  <div class="field">
+    <label style="text-align: right;">رشته</label>
+    <input id="major" class="unimajor" type="text" value="مهندسی نرم افزار "autocomplete="off"/>
+  </div>
 </div>
+
+<div class="row">
+  <div class="field">
+  <label style="text-align: right;">دانشگاه</label>
+  <input type="text"class="unimajor"  value="دانشگاه فنی دکتر شریعتی" autocomplete="off" />
+</div>
+</div>
+
+
+   
+
+   
 
 
     <div class="row">
@@ -484,25 +547,41 @@
 
       <div class="field">
 
+        <fieldset>
          <label style="text-align: right;">توضیحات</label>
          <br>
 
-         <textarea  id="decsription" cols="90"  placeholder="توضیحات" style="  width: 100%;          padding: 12px;
-         border: 1px solid rgba(204, 204, 204, 0.645);
+         <div class="form-box"  style="text-align: right; direction: rtl;">
+         <textarea  id="description" id="editor" cols="90"  placeholder="توضیحات" style="  width: 100%;  padding: 12px;
+         border: 1px solid rgba(155, 155, 155, 0.645);
          border-radius:4 px;
          box-sizing: border-box;
-         resize: vertical;">         
-         </textarea>
+         resize: vertical;"> "پنجمین پست وبسایت ttcu",  </textarea>   
+                 
+
+        
+      
+                        
+                      </div>
+                       
+            
+           
+                      
 
 
+       </fieldset>
+       
        </div>
      </div>
+
+
+
 
 
     <div class="row">
 
       <div class="field" style="padding-left:70%;" >
-    <label style="text-align: right;" style="padding-right:50px;" >:راه ارتباطی</label>
+    <label style="text-align: right;" style="padding-right:50px;" >تلفن:</label>
     <input  id="contact" type="text" value="09397037100" />
   </div>
  </div>
@@ -549,29 +628,24 @@
 
     </div>
 
+<!---delclass class="dropdown-item" -->
+    <a   data-toggle="modal" data-target="#exampleModalCenter" style="text-align: l;"> 
+      <img src="https://img.icons8.com/ios/30/000000/delete-forever.png"/>حذف</a>
 
-
-
+  </div>
 
     </div>
+</div>
+
+
+
+
 
     
-  </div>
 
 
 
 
-  <div class="rightcolumn">
-
-    <div class="card">
-      <h3 style="font-size: 20px;">پست های محبوب</h3>
-      <div class="fakeimg">Image</div><br>
-      <div class="fakeimg">Image</div><br>
-      <div class="fakeimg">Image</div>
-    </div>
-
-  </div>
-</div>
 
 
 
