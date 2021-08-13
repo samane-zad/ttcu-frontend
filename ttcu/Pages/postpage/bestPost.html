@@ -13,14 +13,14 @@
    <link rel="stylesheet" href="/ttcu/src/footer.css">
    <link rel=icon href="../../src/Logo/ttcu-icon.ico">
    <link rel="stylesheet" href="../../src/css/showpost.css">
-  
+   
    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
    <link href="style10.css" rel="stylesheet" type="text/css">
    <script src="https://kit.fontawesome.com/fc383a6465.js" crossorigin="anonymous"></script>
    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
 
 </head>
-<a href="../login/login.html"></a>
+
 <body>
   <div class="grid-header">
     <div>
@@ -65,7 +65,7 @@
                         <span class="navbar-text">
                             <a href="../userinfo/userinfo.html" ><img src="../../src/img/per.PNG"></a>
 
-                            
+                        
                  
             </nav>
         </div>
@@ -76,75 +76,7 @@
 
 <!----->
 
-<button id="expander" class="btn"><b>فیلتر پست +</b> <span class="glyphicon glyphicon-plus"></span></button>
-<div id="cssmenu">
-  <ul id="top-menu">
-    <li class="scroll-li text-center header"> فیلتر بر اساس</li>
 
-    <li class="scroll-li"><div  class="items">
-            <select id="uni" required="required" name="University" dir="rtl" class="dropdown-btn" >
-        <i class="fa fa-caret-down"></i>
-      <div class="dropdown-container">
-            <option value="" disabled="disabled" selected="selected">دانشگاه</option>
-            <option value="SHARIATY_TECHNICAL_COLLEGE">دانشکده فنی دکتر شریعتی</option>
-            <option value="VALIASR_TECHNICAL_COLLEGE"> دانشکده فنی ولیعصر</option>
-            <option value="ENGHELAB_TECHNICAL_COLLEGE">دانشکده فنی انقلاب اسلامی</option>
-            <option value="SHAMSIPOUR_TECHNICAL_COLLEGE">دانشکده فنی شمسی پور</option>
-       </select>
-     
-        </div></li>
-      
-
-
-    <li class="scroll-li"><div  class="items">
-      <select id="major" required="required" name="UniversityMajor" dir="rtl" class="dropdown-btn">
-
-        <i class="fa fa-caret-down"></i>
-    
-      <div class="dropdown-container" style="text-align: right; font-size: 16px;">
-            <option value="" disabled="disabled" selected="selected">رشته </option>
-            <option value="SOFTWARE">نرم افزار</option>
-            <option value="ELECTRONICS">الکترونیک</option>
-            <option value="MECHANICS">مکانیک</option>
-            <option value="ICT">ICT</option>
-           <option value="ARCHITECTURE">نقشه کشی معماری</option>   
-           <option value="GRAPHICS">گرافیک</option>
-           <option value="ACCOUNTING">حسابداری</option>
-           <option value="CLOTHING_DESIGN">طراحی دوخت</option>
-           <option value="PHYSICAL_EDUCATION">تربیت بدنی</option>
-           <option value="IT">IT</option>
-          </select>
-
-
-      </div></li>
-      
-
- 
-      <li class="scroll-li"><div  class="items">
-
-        <select id="postType" required="required" name="UniversityMajor" dir="rtl" class="dropdown-btn">
-          <i class="fa fa-caret-down"></i>
-          <div class="dropdown-container" style="text-align: right;">
-          <option value="" disabled="disabled" selected="selected">نوع پست </option>
-          <option value="INVITATION" >فراخوان</option>
-          <option value="BEST_PROJECTS">بهترین پایان نامه ها</option>
-          <option value="NEWS">اخبار دانشگاهی</option>
-          <option value="TOP_ENTRIES">رتبه های برتر کنکور</option>
-          <option value="MASTERS_NOTES">جزوات اساتید</option>
-          <option value="ENTRANCE_EXAM_GUIDANCE">راهنمای کنکور کاردانی به کارشناسی</option>
-          <option value="STUDENT_SERVICES"  >خدمات دانشجویی</option>
-        </select>
-   
-    </div></li>
-
-
-    
-    <li id="unexpander" style="text-align: right;"><a onclick="return false;">
-      <span class="glyphicon glyphicon-minus" >  <button onclick="loadPosts()">ثبت -     </button>   </span> بستن </a>
-    </li>
-  </ul>
-
-</div>
 
 
 
@@ -247,22 +179,14 @@
 
 
 <script>
- loadPosts();
+ 
   function loadPosts(){
   var detailArr={};
   var uniMajor={};
-
-  
-  uniMajor["uni"]=document.getElementById("uni").value|| undefined;
- 
-  uniMajor["major"]=document.getElementById("major").value|| undefined;
-  
+  uniMajor["uni"]=window.localStorage.getItem('uni');
+  uniMajor["major"]=window.localStorage.getItem('major');
   detailArr["uniMajor"]=uniMajor;
   
-  detailArr["postType"]=document.getElementById("postType").value|| undefined;
- 
-  var detailArrstr=JSON.stringify(detailArr);
-  console.log(detailArrstr)
   var xmlhttp;
   if(window.XMLHttpRequest){
    xmlhttp=new XMLHttpRequest;
@@ -290,19 +214,19 @@
                text +=
                "<div id='post"+i+"' class='card'>"+
               
-              "<br/>"+
-                             "<h10>#" +convertPostType(response.object[i].postType) + "</h10>"+
-                             "<h6 id=\"postId"+i+"\"> کد پست: "  + response.object[i].id +"</h6>"+
-                             "<h6>"  + convertMajor(response.object[i].uniMajor.major) +"</h6>"+
-                             "<h6>"  + convertUni(response.object[i].uniMajor.uni) +"</h6>" +
-                             "<h2 id=\"textId"+i+"\"class=\"text\">"  + response.object[i].title +"</h2>" + 
-                             "<h17>@" + response.object[i].username +"</h17>" +
-                             "<h20>"  + convertUserType(response.object[i].userType) +"</h20>" +
-                             "<div> <img  class=\"fakeimg\"   height='400' id='postImage' src='"+randomPic+"'> </div>" +
-                             "<P class=\"text\">توضیحات:</P>" +
-                             "<p class=\"text\">"  + response.object[i].description +"</p>" +
-                             "<label class=\"text\"><p id=\"contact\">"+response.object[i].contact +"</p></label> "+
-                             "<h6>تاریخ :"+response.object[i].pDate+"  "+response.object[i].pTime+"</h6></div>";
+      "<br/>"+
+                     "<h10>#" +convertPostType(response.object[i].postType) + "</h10>"+
+                     "<h6 id=\"postId"+i+"\"> کد پست: "  + response.object[i].id +"</h6>"+
+                     "<h6>"  + convertMajor(response.object[i].uniMajor.major) +"</h6>"+
+                     "<h6>"  + convertUni(response.object[i].uniMajor.uni) +"</h6>" +
+                     "<h2 id=\"textId"+i+"\"class=\"text\">"  + response.object[i].title +"</h2>" + 
+                     "<h17>@" + response.object[i].username +"</h17>" +
+                     "<h20>"  + convertUserType(response.object[i].userType) +"</h20>" +
+                     "<div> <img  class=\"fakeimg\"   height='400' id='postImage' src='"+randomPic+"'> </div>" +
+                     "<P class=\"text\">توضیحات:</P>" +
+                     "<p class=\"text\">"  + response.object[i].description +"</p>" +
+                     "<label class=\"text\"><p id=\"contact\">"+response.object[i].contact +"</p></label> "+
+                     "<h6>تاریخ :"+response.object[i].pDate+"  "+response.object[i].pTime+"</h6></div>";
   
                 images+="<a href=\"#post"+i+"\">"+response.object[i].title+"</a><br>";
               
@@ -320,7 +244,7 @@
   
   }
   else if( xmlhttp.status == 403){
-      window.location = '../login/login.html';
+      window.location = '../../../login/login.html';
     
     } 
   else{
@@ -335,28 +259,81 @@
   xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
   xmlhttp.setRequestHeader('Authorization',window.localStorage.getItem("Token"));
   
-  xmlhttp.send(detailArrstr);
+  xmlhttp.send(JSON.stringify(detailArr));
   }
   
   </script>
+
+<script>
+  loadUserInfo();
+      function loadUserInfo(){
+      var detailArr={};
+      var xmlhttp;
+      if(window.XMLHttpRequest){
+       xmlhttp=new XMLHttpRequest;
+      }
+      else{
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=respond;
+      function respond (){
+      console.log(xmlhttp.readyState);
+      console.log(xmlhttp.status);
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+        
+        var response = JSON.parse(this.responseText);
+          if(response.code == 200){
+              console.log(response);
+              var info = response.object;
+              let uni =info.uniMajor.uni;
+              let major=info.uniMajor.major;
+             window.localStorage.setItem('uni',uni);
+             window.localStorage.setItem('major',major);
+              loadPosts();
+              
+          
+           
+          }else {
+            window.location = 'welcome.html';
+      
+          }
+          }
+      
+      else if( xmlhttp.status == 403){
+      window.location = '../../../login/login.html';
+    
+    } else{
+        console.log("Hello");
+      
+      }
+      
+      }
+      
+      
+      xmlhttp.open('GET','http://127.0.0.1:8082/api/getUserInfo',true);
+      xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+      xmlhttp.setRequestHeader('Authorization',window.localStorage.getItem("Token"));
+      
+      xmlhttp.send(JSON.stringify(detailArr));
+      }
+      
+      </script>
+
+
+
 <script>
  
 
-  var myPix = new Array("1.jpg","2.jpg","3.jpg","4.jpg");
+    var myPix = new Array("1.jpg","2.jpg","3.jpg","4.jpg");
 
-  function choosePic(postType) {
-   var randomNum = Math.floor(Math.random() * myPix.length);
-   return "../../../../src/img/post/"+postType+"/"+ myPix[randomNum];
-  }
-</script>
-
-
-<script src="fiter-and-sidbar.js"></script>
-
-
+    function choosePic(postType) {
+     var randomNum = Math.floor(Math.random() * myPix.length);
+     return "../../../../src/img/post/"+postType+"/"+ myPix[randomNum];
+    }
+  </script>
+<script src="../../src/app/enumConverter.js"></script>
 <script src="../../public/darkmode/darkmod.js"></script>
 <script src="../../src/app/showpost.js"></script>
-<script src="../../src/app/enumConverter.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 

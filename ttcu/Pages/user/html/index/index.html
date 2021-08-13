@@ -9,11 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="cssnew.css"> 
+    <link rel="stylesheet" href="/ttcu/src/footer.css">
     <link rel="stylesheet" href="darkmode/moon.css">
+    <link rel="stylesheet" href="../../../postpage/updatepost.css">
     <link rel="stylesheet" href="../../../../src/css/showpost.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel=icon href="aa0r2-xtkx1.ico">
+    <script src="https://kit.fontawesome.com/fc383a6465.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+ 
 
 
 </head>
@@ -48,7 +53,7 @@
                             <li class="nav-item" role="presentation"><a class="nav-link" href="../../../contact-us/contact.html">ارتباط با ما</a></li>
 
                             <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">مشاهده پست ها </a>
-                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="../../../postpage/showpost.html">منتخب برای شما</a><a class="dropdown-item" role="presentation" href="../../../postpage/showpost.html">جستجوی پست</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="../../../postpage/bestPost.html">منتخب برای شما</a><a class="dropdown-item" role="presentation" href="../../../postpage/showpost.html">جستجوی پست</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
                          
 
                             </li>
@@ -106,13 +111,14 @@
       
    
     <!---->
-</form>
+
 </div>
 </div>
 
 <script>
-loadPosts();
+
 function loadPosts(){
+
 var detailArr={};
 var xmlhttp;
 if(window.XMLHttpRequest){
@@ -138,30 +144,153 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
         {
         for (let i = 0; i < len; i++) {
           var randomPic=choosePic(response.object[i].postType);
-             text += "<div id=\"post"+i+"\" class=\"card\">"+
-              "<div class=\"btn-group\" >"+
-        "<button type=\"button\" class=\"btn btn-danger dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
-          
-        "</button>"+
-        "<div class=\"dropdown-menu\">"+
-     
-          "<a class=\"dropdown-item\" href=\"#\">ویرایش</a>"+
-          "<a  class=\"dropdown-item\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\" >پاک کردن</a>"+
-        "</div>"+
+             text +=
+  "  <div id='post"+i+"' class='card'>"+
+   "   <div class='button' style='text-align:left; padding-top: 0px;'>"+
+    "    <a class='edit' href='#'><img src='https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png'/>ویرایش</a>"+
+     "   <a id='edit"+i+"' class='save' onclick='updatePost(this)'><img src='https://img.icons8.com/ios-glyphs/30/000000/save--v1.png'/>ذخیره تغییرات</a>"+
+        
       "</div>"+
-      "<br/>"+
-                     "<h10>#" +convertPostType(response.object[i].postType) + "</h10>"+
-                     "<h6 id=\"postId"+i+"\"> کد پست: "  + response.object[i].id +"</h6>"+
-                     "<h6>"  + convertMajor(response.object[i].uniMajor.major) +"</h6>"+
-                     "<h6>"  + convertUni(response.object[i].uniMajor.uni) +"</h6>" +
-                     "<h2 id=\"textId"+i+"\"class=\"text\">"  + response.object[i].title +"</h2>" + 
-                     "<h17>@" + response.object[i].username +"</h17>" +
-                     "<h20>"  + convertUserType(response.object[i].userType) +"</h20>" +
-                     "<div> <img  class=\"fakeimg\"   height='400' id='postImage' src='"+randomPic+"'> </div>" +
-                     "<P class=\"text\">توضیحات:</P>" +
-                     "<p class=\"text\">"  + response.object[i].description +"</p>" +
-                     "<label class=\"text\"><p id=\"contact\">"+response.object[i].contact +"</p></label> "+
-                     "<h6>تاریخ :"+response.object[i].pDate+"  "+response.object[i].pTime+"</h6></div>"+
+
+
+"<div class='content-area' style='padding-right:1px;  text-align: right;direction: rtl;'>"+
+
+"<div class='row'>"+
+
+ " <div class='field'>"+
+  "  <label style='text-align: right; '>عنوان</label>"+
+   " <input id='textId"+i+"'  type='text' class='text1'  style='font-size: 25px;' value='"  + response.object[i].title +"' autocomplete='off' />"+
+  "</div>"+
+"</div>"+
+
+  
+"<div class='row'>"+
+ " <div class='field'>"+
+  "  <label style='text-align: right;'>نوع پست </label>";
+  if(window.localStorage.getItem('userType')=='STUDENT')
+  {
+    text+="<select id='postType"+i+"'  name='postTypes' dir='rtl' >"+
+                "<option value='" +response.object[i].postType + "' disabled='disabled' selected='selected'>" +convertPostType(response.object[i].postType) + "</option>"+
+                "<option value='MASTERS_NOTES'>جزوات اساتید</option>"+   
+                "<option value='ENTRANCE_EXAM_GUIDANCE'>راهنمای کنکور کاردانی به کارشناسی</option>"+
+                "<option value='STUDENT_SERVICES'>خدمات دانشجویی</option>"+
+                "</select>"
+  }else
+  {
+    text+="<select id='postType"+i+"'  name='postTypes' dir='rtl' >"+
+                "<option value='" +response.object[i].postType+ "' disabled='disabled' selected='selected'>" +convertPostType(response.object[i].postType) + "</option>"+
+                "<option value='INVITATION'>فراخوان</option>"+
+                "<option value='BEST_PROJECTS'>بهترین پایان نامه ها</option>"+
+                "<option value='NEWS'>اخبار دانشگاهی</option>"+
+			        	"<option value='TOP_ENTRIES'>رتبه های برتر کنکور</option>"+
+                "<option value='MASTERS_NOTES'>جزوات اساتید</option>"+   
+                "<option value='ENTRANCE_EXAM_GUIDANCE'>راهنمای کنکور کاردانی به کارشناسی</option>"+
+                "<option value='STUDENT_SERVICES'>خدمات دانشجویی</option>"+
+                "</select>"
+  }
+   text+=
+  "</div>"+
+  "</div>"+
+
+  "<div class='row'  >"+
+   " <div class='field'>"+
+    "  <label style='padding-bottom: 10px;'>کد پست</label>"+
+    "<p id='postId"+i+"'>"  + response.object[i].id +"</p>"+
+    "</div>"+
+    "</div>"+
+
+  "<div class='row'  >"+
+  "<div class='field'>"+
+   "       <label style='padding-bottom: 10px;' >نام کاربری</label>"+
+    "<p id='username"+i+"' >@" + response.object[i].username +"</p>"+
+    "</div>"+
+    "</div>"+
+    "<div class='row'  style='padding-bottom:10px';>"+
+
+     "   <div class='field'>"+
+      "    <label style='padding-bottom: 10px;'>نوع کاربر</label>"+
+
+  "<p id='userType"+i+"'>"  + convertUserType(response.object[i].userType) +"</p>"+
+   "     </div>"+
+
+"</div>"+
+
+
+"<div class='row'>"+
+  "<div class='field'>"+
+    "<label style='text-align: right;'>رشته</label>"+
+    "<select id='major"+i+"' required='required' name='UniversityMajor' dir='rtl' >"+
+	  "<option value='"  + response.object[i].uniMajor.major +"' disabled='disabled' selected='selected'>"  + convertMajor(response.object[i].uniMajor.major) +" </option>"+
+      "<option value='SOFTWARE'>نرم افزار</option>"+
+      "<option value='ELECTRONICS'>الکترونیک</option>"+
+      "<option value='MECHANICS'>مکانیک</option>"+
+      "<option value='ICT'>ICT</option>"+
+      "<option value='ARCHITECTURE'>نقشه کشی معماری</option>   "+
+      "<option value='GRAPHICS'>گرافیک</option>"+
+      "<option value='ACCOUNTING'>حسابداری</option>"+
+      "<option value='CLOTHING_DESIGN'>طراحی دوخت</option>"+
+      "<option value='PHYSICAL_EDUCATION'>تربیت بدنی</option>"+
+      "<option value='IT'>IT</option>"+
+    "</select>"+
+  
+  "</div>"+
+"</div>"+
+
+"<div class='row'>"+
+  "<div class='field'>"+
+  "<label style='text-align: right;'>دانشگاه</label>"+
+  "<select id='uni"+i+"' required='required' name='University' dir='rtl'  >"+
+  	"<option value='"  + response.object[i].uniMajor.uni +"' disabled='disabled' selected='selected'>"  + convertUni(response.object[i].uniMajor.uni) +" </option>"+
+    "<option value='SHARIATY_TECHNICAL_COLLEGE'>دانشکده فنی دکتر شریعتی</option>"+
+    "<option value='VALIASR_TECHNICAL_COLLEGE'> دانشکده فنی ولیعصر</option>"+
+    "<option value='ENGHELAB_TECHNICAL_COLLEGE'>دانشکده فنی انقلاب اسلامی</option>"+
+    "<option value='SHAMSIPOUR_TECHNICAL_COLLEGE'>دانشکده فنی شمسی پور</option>"+
+  "</select>"+
+"</div>"+
+"</div>"+
+
+
+ "   <div class='row'>"+
+  "    <div  id='image'><img  class='fakeimg'   height='400' id='postImage' src='"+randomPic+"'></div>"+
+
+   "   <div class='field'>"+
+
+    "    <fieldset>"+
+     "    <label style='text-align: right;'>توضیحات</label>"+
+      "   <br>"+
+
+       "  <div class='form-box'  style='text-align: right; direction: rtl;'>"+
+        " <textarea  id='description"+i+"' id='editor' cols='90'  placeholder='توضیحات' style='  width: 100%;  padding: 12px;"+
+         "border: 1px solid rgba(155, 155, 155, 0.645);"+
+         "border-radius:4 px;"+
+         "box-sizing: border-box;"+
+         "resize: vertical;'> '"  + response.object[i].description +"',  </textarea>"+                
+         "</div>"+
+
+       "</fieldset>"+
+       
+       "</div>"+
+     "</div>"+
+
+
+    "<div class='row'>"+
+
+     " <div class='field' style='padding-left:70%;' >"+
+    "<label style='text-align: right;' style='padding-right:50px;' >تلفن:</label>"+
+    "<input  id='contact"+i+"' type='text' value='"+response.object[i].contact +"' />"+
+  "</div>"+
+  "<h6>تاریخ :"+response.object[i].pDate+"  "+response.object[i].pTime+"</h6></div>"+
+ "</div>"+
+ " <a   data-toggle='modal' data-target='#exampleModalCenter' style='text-align: l;'>"+ 
+    "  <img src='https://img.icons8.com/ios/30/000000/delete-forever.png'/>حذف</a>"+
+
+  "  </div>"+
+
+   
+
+  "</div>"+
+
+  "</div>"+
 
 
                      "<!-- Modal -->"+
@@ -255,12 +384,12 @@ xmlhttp.send(JSON.stringify(detailArr));
   
   }
   else if( xmlhttp.status == 403){
-    window.location = 'login.html';
+    window.location = '../../../login/login.html';
   
   }
   
   else{
-    console.log("Hello");
+    console.log("Wait");
   
   }
   
@@ -279,6 +408,130 @@ xmlhttp.send(JSON.stringify(detailArr));
   </script>
 
 
+<script>
+
+  function updatePost(element){
+  var cardId=element.getAttribute('id').replace('edit','');
+  
+  var id = document.getElementById("postId"+cardId).innerHTML;
+  var postType=document.getElementById("postType"+cardId).value;
+  var uni=document.getElementById("uni"+cardId).value;
+  var major=document.getElementById("major"+cardId).value;
+  var title=document.getElementById("textId"+cardId).value;
+  var description=document.getElementById("description"+cardId).value;
+  var contact=document.getElementById("contact"+cardId).value;
+
+
+  var detailArr={};
+  var uniMajor={};
+  uniMajor["uni"]=uni;
+  uniMajor["major"]=major;
+
+  detailArr["id"]=id;
+  detailArr["postType"]=postType;
+  detailArr["title"]=title;
+  detailArr["description"]=description;
+  detailArr["contact"]=contact;
+  detailArr["uniMajor"]=uniMajor;
+  console.log(JSON.stringify(detailArr));
+  var xmlhttp;
+  if(window.XMLHttpRequest){
+   xmlhttp=new XMLHttpRequest;
+  }
+  else{
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=respond;
+  function respond (){
+  if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+    
+    var response = JSON.parse(this.responseText);
+      if(response.code == 200){
+         
+        loadPosts();
+       
+      }else {
+        window.location = 'welcome.html';
+  
+      }
+  
+  }
+  else if( xmlhttp.status == 403){
+    window.location = 'login.html';
+  
+  }
+  
+  else{
+    console.log("Hello");
+  
+  }
+  
+  }
+  
+  
+  xmlhttp.open('POST','http://127.0.0.1:8082/api/postUpdate',true);
+  xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+  xmlhttp.setRequestHeader('Authorization',window.localStorage.getItem("Token"));
+  
+  xmlhttp.send(JSON.stringify(detailArr));
+  }
+
+
+  
+  </script>
+
+
+<script>
+  loadUserInfo();
+      function loadUserInfo(){
+      var detailArr={};
+      var xmlhttp;
+      if(window.XMLHttpRequest){
+       xmlhttp=new XMLHttpRequest;
+      }
+      else{
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=respond;
+      function respond (){
+      
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+        
+        var response = JSON.parse(this.responseText);
+          if(response.code == 200){
+            
+              var info = response.object;
+              let userType=info.userType;
+             window.localStorage.setItem('userType',userType);
+              loadPosts();
+              
+          
+           
+          }else {
+            window.location = 'welcome.html';
+      
+          }
+          }
+      
+      else if( xmlhttp.status == 403){
+      window.location = '../../../login/login.html';
+    
+    } else{
+        console.log("Wait");
+      
+      }
+      
+      }
+      
+      
+      xmlhttp.open('GET','http://127.0.0.1:8082/api/getUserInfo',true);
+      xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+      xmlhttp.setRequestHeader('Authorization',window.localStorage.getItem("Token"));
+      
+      xmlhttp.send(JSON.stringify(detailArr));
+      }
+      
+      </script>
   <script>
  
 
@@ -289,10 +542,11 @@ xmlhttp.send(JSON.stringify(detailArr));
      return "../../../../src/img/post/"+postType+"/"+ myPix[randomNum];
     }
   </script>
-
-    <script src="makepost.js"></script>
+    <script src="../../../postpage/updatepost.js"></script>
+    
     <script src="../../../../src/app/enumConverter.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../src/app/showpost.js"></script>
+    
     <script src="darkmode/darkmod.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
