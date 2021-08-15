@@ -141,7 +141,7 @@ color:rgb(235, 170, 170);
 }
 
 .header-dark .navbar .navbar-toggler {
-border-color:#727777;
+border-color:#1e2121;
 }
 
 .header-dark .navbar .navbar-toggler:hover, .header-dark .navbar-toggler:focus {
@@ -149,7 +149,7 @@ background:none;
 }
 
 .header-dark .navbar .navbar-toggler {
-color:rgb(196, 116, 116);
+color:rgb(28, 25, 25);
 }
 
 .header-dark .navbar .navbar-collapse, .header-dark .navbar .form-inline {
