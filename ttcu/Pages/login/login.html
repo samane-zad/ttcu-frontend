@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Stylelogin.css">
+    <link rel="stylesheet" href="../../src/css/modal.css">
     <link rel=icon  href="16X16.ico" >
     <link rel=icon href="../../src/Logo/ttcu-icon.ico">
 
@@ -38,7 +39,27 @@
     
     </div>
   </div>
-
+  <div class="join">
+    <button id="modalbtn" class="btn btn-join" style="visibility: hidden;">
+      ورود
+      </button>
+</div>
+  <div class="overlay">
+          <div class="modal__locked">
+            <div class="modal-body">
+              <center>
+                <strong>ورود ناموفق</strong>
+                
+                <h5>
+           ! نام کاربری یا رمزعبور را اشتباه زدید
+                </h5>
+              </center>
+            </div>
+            <div class="modal-buttons">
+              <button class="btn btn-footer btn-purple">بستن</button>
+            </div>
+          </div>
+  </div> 
   <script>
     
     function login(){
@@ -68,10 +89,15 @@ function respond (){
 
         }
 
+    }else if(xmlhttp.status==401 || xmlhttp.status==403)
+    {
+   
+       document.getElementById("modalbtn").click();
+        
     }
 
     else{
-      console.log("Hello");
+      console.log("Wait");
 
     }
   
@@ -86,5 +112,6 @@ xmlhttp.send(detailArrstr);
 
   </script>
   <script src="hide-password.js"></script>
+  <script src="../../src/app/modal.js"></script>
 </body>
 </html>

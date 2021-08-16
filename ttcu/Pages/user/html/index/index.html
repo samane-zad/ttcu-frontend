@@ -53,7 +53,7 @@
                             <li class="nav-item" role="presentation"><a class="nav-link" href="../../../contact-us/contact.html">ارتباط با ما</a></li>
 
                             <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">مشاهده پست ها </a>
-                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="../../../postpage/bestPost.html">منتخب برای شما</a><a class="dropdown-item" role="presentation" href="../../../postpage/showpost.html">جستجوی پست</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="../../../postpage/bestPost.html">منتخب برای شما</a><a class="dropdown-item" role="presentation" href="../../../postpage/showpost.html">جستجوی پست</a></div>
                          
 
                             </li>
@@ -72,6 +72,7 @@
                         </form>
                         <span class="navbar-text">
                             <a href="../../../userinfo/userinfo.html" ><img src="img/per.PNG"></a>
+                            <a id="signupLink" class="btn btn-light action-button" role="button" href="../../../signup/Signup.html" style="visibility: hidden;">ثبت نام اعضاء</a>
 
                    </span>
                  
@@ -502,6 +503,10 @@ xmlhttp.send(JSON.stringify(detailArr));
             
               var info = response.object;
               let userType=info.userType;
+              if(userType=='ADMIN'||userType=='MASTER')
+              {
+                document.getElementById("signupLink").style.visibility = 'visible';
+              }
              window.localStorage.setItem('userType',userType);
               loadPosts();
               
@@ -545,7 +550,7 @@ xmlhttp.send(JSON.stringify(detailArr));
     <script src="../../../postpage/updatepost.js"></script>
     
     <script src="../../../../src/app/enumConverter.js"></script>
-    <script src="../../src/app/showpost.js"></script>
+    
     
     <script src="darkmode/darkmod.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

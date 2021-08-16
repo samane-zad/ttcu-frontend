@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet"   href="signup.css">
+  <link rel="stylesheet"   href="../../src/css/modal.css">
   <link rel="stylesheet"   href="select-option.css">
   <link rel=icon  href="16X16.ico" >
   <link rel=icon href="../../src/Logo/ttcu-icon.ico">
@@ -115,12 +116,36 @@
 </svg>
 
   </div>
-<!--<button  class="client-info"  id="get-btn">Get data</button>
-<button  class="client-info"   id="post-btn">Post data</button>-->
+
 
 </form>
     </div>
   </div>
+  <div class="join">
+    <button id="modalbtn" class="btn btn-join" style="visibility: hidden;">
+      ورود
+      </button>
+</div>
+  <div class="overlay">
+    <div class="modal__locked">
+      <div class="modal-body">
+        <center>
+          <strong>ثبت نام با موفقیت انجام شد</strong>
+          
+          <h4>
+              لطفا اطلاعات زیر را برای ورود به سیستم حفظ کنید
+          </h4>
+          <h5 id="signedUpUser"> <script>document.getElementById("username").value</script></h5>
+          <h5 id="signedUpPass">رمز عبور : <script>document.getElementById("password").value</script></h5>
+          <h5 id="signedUpType">نوع کاربر: <script>document.getElementById("userType").value</script></h5>
+
+        </center>
+      </div>
+      <div class="modal-buttons">
+        <button class="btn btn-footer btn-purple">بستن</button>
+      </div>
+    </div>
+</div> 
   <script>
     
     function signUp(){
@@ -154,9 +179,11 @@ function respond (){
       
       var resonse = JSON.parse(this.responseText);
         if(resonse.code == 200){
-          
-         
-          window.location='../Login/login.html';
+          document.getElementById("signedUpUser").innerText=detailArr["username"]+" :نام کاربری";
+          document.getElementById("signedUpPass").innerText=detailArr["password"]+" :رمز عبور ";
+          document.getElementById("signedUpType").innerText="نوع کاربری: "+convertUserType(document.getElementById("userType").value);
+
+          document.getElementById("modalbtn").click();
         }else {
           window.location = 'welcome.html';
 
@@ -180,7 +207,65 @@ xmlhttp.send(detailArrstr);
 }
 
   </script>
+
+
+<script>
+  loadUserInfo();
+      function loadUserInfo(){
+      var detailArr={};
+      var xmlhttp;
+      if(window.XMLHttpRequest){
+       xmlhttp=new XMLHttpRequest;
+      }
+      else{
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=respond;
+      function respond (){
+      
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+        
+        var response = JSON.parse(this.responseText);
+          if(response.code == 200){
+            
+              var info = response.object;
+              let userType=info.userType;
+              if(userType!='ADMIN'&&userType!='MASTER')
+              {
+                window.location = '../Login/login.html';
+              }
+             
+              
+          
+           
+          }else {
+            window.location = 'welcome.html';
+      
+          }
+          }
+      
+      else if( xmlhttp.status == 403){
+      window.location = '../Login/login.html';
+    
+    } else{
+        console.log("Wait");
+      
+      }
+      
+      }
+      
+      
+      xmlhttp.open('GET','http://127.0.0.1:8082/api/getUserInfo',true);
+      xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+      xmlhttp.setRequestHeader('Authorization',window.localStorage.getItem("Token"));
+      
+      xmlhttp.send(JSON.stringify(detailArr));
+      }
+      
+      </script>
   <script src="signup.js"></script>
+  <script src="../../src/app/enumConverter.js"></script>
+  <script src="../../src/app/modal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="app-signup.js"></script>
 </body>
