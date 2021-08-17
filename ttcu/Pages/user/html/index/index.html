@@ -538,13 +538,9 @@ xmlhttp.send(JSON.stringify(detailArr));
       
       </script>
   <script>
- 
-
-    var myPix = new Array("1.jpg","2.jpg","3.jpg","4.jpg");
-
     function choosePic(postType) {
-     var randomNum = Math.floor(Math.random() * myPix.length);
-     return "../../../../src/img/post/"+postType+"/"+ myPix[randomNum];
+     
+     return "../../../../src/img/post/"+postType+"/1.jpg";
     }
   </script>
     <script src="../../../postpage/updatepost.js"></script>
