@@ -210,7 +210,7 @@
           }else
           {
           for (let i = 0; i < len; i++) {
-            var randomPic=choosePic(response.object[i].postType);
+            
                text +=
                "<div id='post"+i+"' class='card'>"+
               
@@ -222,7 +222,7 @@
                      "<h2 id=\"textId"+i+"\"class=\"text\">"  + response.object[i].title +"</h2>" + 
                      "<h17>@" + response.object[i].username +"</h17>" +
                      "<h20>"  + convertUserType(response.object[i].userType) +"</h20>" +
-                     "<div> <img  class=\"fakeimg\"   height='400' id='postImage' src='"+randomPic+"'> </div>" +
+                     "<div> <img  class=\"fakeimg\"   height='400' id='postImage' src='"+choosePic(response.object[i].postType)+"'> </div>" +
                      "<P class=\"text\">توضیحات:</P>" +
                      "<p class=\"text\">"  + response.object[i].description +"</p>" +
                      "<label class=\"text\"><p id=\"contact\">"+response.object[i].contact +"</p></label> "+
@@ -322,15 +322,11 @@
 
 
 <script>
- 
-
-    var myPix = new Array("1.jpg","2.jpg","3.jpg","4.jpg");
-
-    function choosePic(postType) {
-     var randomNum = Math.floor(Math.random() * myPix.length);
-     return "../../../../src/img/post/"+postType+"/"+ myPix[randomNum];
-    }
-  </script>
+  function choosePic(postType) {
+   
+   return "../../src/img/post/"+postType+"/1.jpg";
+  }
+</script>
 <script src="../../src/app/enumConverter.js"></script>
 <script src="../../public/darkmode/darkmod.js"></script>
 <script src="../../src/app/showpost.js"></script>
