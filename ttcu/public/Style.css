@@ -1,14 +1,6 @@
 
-body {
+* {
  font-family:'IranianSans';
-}
-
-
-.mySlides {display: none}
-
-.dark-mode {
-  background-color: rgba(1, 1, 2, 0.911);
-  color: white;
 }
 
 @font-face {
@@ -22,6 +14,16 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+
+.mySlides {display: none}
+
+
+.dark-mode {
+  background-color: rgba(1, 1, 2, 0.911);
+  color: white;
+}
+
 
 
 .label{
@@ -71,4 +73,55 @@ translateX(54px);
 .nextround{
   padding-top:100px ;
   
+}
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #a09d9d;
+  border-radius: 50%;
+  border-top: 16px solid #6C63FF;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes animatebottom {
+  from { top:-100px; opacity:0 } 
+  to { top:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ top:-100px; opacity:0 } 
+  to{ top:0; opacity:1 }
+}
+
+.newtext{
+  direction: rtl;
+  text-align: right;
 }
