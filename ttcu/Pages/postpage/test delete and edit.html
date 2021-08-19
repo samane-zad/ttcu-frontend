@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../src/css/dropdown.css"/>
+  <script src="../../src/app/filterpost.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+ <!-- <div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('uni')"> uni</button>
+  <button class="btn" onclick="filterSelection('majer')"> majer</button>
+  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+  <button class="btn" onclick="filterSelection('animals')"> Animals</button>
+  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+</div>
+
+<div class="container">
+  <div class="filterDiv uni">BMW2</div>
+
+  <div class="filterDiv majer">majer</div>
+  <div class="filterDiv colors fruits">Orange</div>
+  <div class="filterDiv cars">Volvo</div>
+  <div class="filterDiv colors">Red</div>
+  <div class="filterDiv cars animals">Mustang</div>
+  <div class="filterDiv colors">Blue</div>
+  <div class="filterDiv animals">Cat</div>
+  <div class="filterDiv animals">Dog</div>
+  <div class="filterDiv fruits">Melon</div>
+  <div class="filterDiv fruits animals">Kiwi</div>
+  <div class="filterDiv fruits">Banana</div>
+  <div class="filterDiv fruits">Lemon</div>
+  <div class="filterDiv animals">Cow</div>
+</div>  -->
+
+
+
+
+
+
+
+///////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+<form class="controls" id="Filters">
+  
+  <fieldset>
+    <h4>Shapes</h4>
+    <div class="checkbox">
+      <input type="checkbox" value=".square"/>
+      <label>Square</label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" value=".circle"/>
+      <label>Circle</label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" value=".triangle"/>
+      <label>Triangle</label>
+    </div>
+  </fieldset>
+  
+  <fieldset>
+    <h4>Colours</h4>
+    <div class="checkbox">
+      <input type="checkbox" value=".white"/>
+      <label>White</label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" value=".green"/>
+      <label>Green</label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" value=".blue"/>
+      <label>Blue</label>
+    </div>
+  </fieldset>
+  
+  <fieldset>
+    <h4>Sizes</h4>
+    <div class="checkbox">
+      <input type="checkbox" value=".sm"/>
+      <label>Small</label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" value=".lrg"/>
+      <label>Large</label>
+    </div>
+  </fieldset>
+  
+  <button id="Reset">Clear Filters</button>
+</form>
+
+<div id="Container" class="container">
+  <div class="fail-message"><span>No items were found matching the selected filters</span></div>
+  
+  <div class="mix triangle white lrg"></div>
+  <div class="mix square white sm"></div>
+  <div class="mix circle green lrg"></div>
+  <div class="mix triangle blue lrg"></div>
+  <div class="mix square white lrg"></div>
+  <div class="mix circle blue sm"></div>
+  <div class="mix triangle green lrg"></div>
+  <div class="mix square blue lrg"></div>
+  <div class="mix circle white lrg"></div>
+  
+  <div class="gap"></div>
+  <div class="gap"></div>
+  <div class="gap"></div>
+  <div class="gap"></div>
+</div> 
+    
+
+
+<div class="left">
+  <h1> Filter by Color </h1>
+  <div>
+    <input type="checkbox" id="red" onclick="check()">
+    <label for="red">Red</label>
+  </div>
+  <div>
+    <input type="checkbox" id="blue" onclick="check()">
+    <label for="blue">Blue</label>
+  </div> 
+  <div>
+    <input type="checkbox" id="green" onclick="check()">
+    <label for="green">Green</label>
+  </div> 
+  <div>
+    <input type="checkbox" id="purple" onclick="check()">
+    <label for="purple">Purple</label>
+  </div> 
+  
+  
+  <h1> Filter by Shape</h1>
+  <div>
+    <input type="checkbox" id="circle" onclick="check()">
+    <label for="circle">Circle</label>
+  </div>
+  <div>
+    <input type="checkbox" id="square" onclick="check()">
+    <label for="square">Square</label>
+  </div> 
+</div>
+
+  <div class="right">
+    <div id="shapes" class="wrap">
+      <div id="no-results">No filter results.</div>
+      <div class="object circle red"></div>
+      <div class="object square blue"></div>
+      <div class="object circle blue"></div>
+      <div class="object square green"></div>
+      <div class="object circle green"></div>
+      <div class="object square blue"></div>
+      <div class="object square purple"></div>
+      <div class="object square red"></div>
+    </div>
+  </div>
+</body>
+</html>

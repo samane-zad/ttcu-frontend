@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  outline: none;
-}
+
 
 @font-face {
   font-family: 'IranianSans';
@@ -18,6 +14,16 @@
 
 
 
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family:'IranianSans';
+
+}
+
+
 :root {
   --main-color: #fff;
   --second-color: #347deb;
@@ -27,10 +33,11 @@
 
 html {
   height: 100%;
+  direction: rtl;
+
 }
 body {
   background-image: linear-gradient(310deg, #df98fa, #9055ff);
-  font-family:'IranianSans';
 }
 
 #container {
@@ -56,8 +63,9 @@ body {
 }
 
 #left {
+  /**/
   background-image: url("https://s19.picofile.com/file/8438044992/d.png");
-  background-size: cover;
+    background-size: cover;
   background-position: center;
   box-shadow: var(--box-shadow);
 }
@@ -74,12 +82,12 @@ body {
   max-width: 250px;
 }
 
-#userlogin {
+.userlogin {
   padding-top: 10%;
   padding-bottom: 10%;
-  text-align: center;
+  padding-right:20px;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: 888888px;
   text-shadow: var(--box-shadow);
   font-family:'IranianSans';
 
@@ -124,7 +132,7 @@ label {
   
 }
 #submit:hover {
-  background-color: #df98fa;
+  background-color: #c04bee;
 }
 
 
@@ -139,7 +147,7 @@ label {
   }
   #right {
     margin-top: 16px;
-    background-image: url("https://s19.picofile.com/file/8438044992/d.png");
+
     background-size: cover;
     background-position: center;
     box-shadow: var(--box-shadow);
@@ -155,15 +163,15 @@ label {
   #login {
     padding-top: 10%;
     font-size: 30px;
-    padding-right :240px;
+    padding-right :0px;
     padding-bottom:80px;
     
   }
 
 #link{
-  font-size: 15px;
-padding-left :288px;
-padding-bottom: 30px;
+  font-size: 13px;
+padding-right :60%;
+padding-bottom: 20px;
 }
 
 #link2{
@@ -210,8 +218,18 @@ input[type=text], input[type=password] {
   padding-bottom:50px;
 
 }
-
-
-
-
+a:link {
+  text-decoration: none 
 }
+a:hover {
+  text-decoration: none;
+color: rgb(194, 107, 209);
+}
+}
+
+.linkhome{
+  font-size: 12px;
+  padding-right:73%;
+}
+
+

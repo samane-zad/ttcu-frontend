@@ -1,12 +1,16 @@
-
 * {
   box-sizing: border-box;
-  color:black;
+  color: #000A12;
+}
+
+body {
+  font-family: IranianSans;
 }
 
 /* Add a gray background color with some padding */
 
 
+ 
 @font-face {
     font-family: 'IranianSans';
     src: url('../../src/font/IranianSans.eot');
@@ -24,6 +28,15 @@
 .leftcolumn {   
   float: left;
   width: 75%;
+<<<<<<< HEAD
+  }
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+=======
   padding-left: 100px;
   padding-right: 40px;
   padding-bottom: 30px;
@@ -36,7 +49,9 @@
   width: 10%;
   padding-left: 100px;
   padding-right: 60px;
+>>>>>>> 2a1e506244a495ef69ecf6260b3645dcd481d83f
 }
+
 
 /* Fake image */
 .fakeimg {
@@ -49,8 +64,9 @@
 /* Add a card effect for articles */
 .card {
    background-color: white;
-   padding: 40px;
+   padding: 50px;
    margin-top: 20px;
+   margin-left: 5%;
 }
 
 
@@ -78,19 +94,17 @@ align-content: initial;
 
 
 .buttondow{
-  background:
-  linear-gradient(to right,#732FDF,#b545da);
+  background:linear-gradient(to right,#732FDF,#b545da);
   color:#fff;
- float:right;
+  float:right;
   border-radius:20px;
   font-size:inherit;
   box-shadow:none;
-  border:none;
-  text-shadow:none;
+  border:red;
   padding:.5rem .8rem;
   transition:background-color 0.25s;
-  
 }
+  
 
 .text2{
 font-size: 20px;
@@ -159,7 +173,7 @@ font-size: 20px;
 
 
 
-button {
+.button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -292,18 +306,6 @@ svg path {
   margin-right: 0.5rem;
   font-size: 0.875rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

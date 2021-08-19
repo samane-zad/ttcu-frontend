@@ -3,6 +3,10 @@
   padding: 0;
   outline: none;
    height: fit-content;
+   font-family:'IranianSans' ;
+   box-sizing: border-box;
+
+
 }
 
 :root {
@@ -20,20 +24,17 @@
        url('../../src/font/IranianSans.ttf') format('truetype'),
        url('../../src/font/IranianSans.woff') format('woff'),
        url('../../src/font/IranianSans.woff2') format('woff2');
-  font-weight: normal;
   font-style: normal;
 }
 
 
 
 html {
-  height: 100%;
-  font-family:IranianSans ;
-
+  height:120%;
+  
 }
 body {
   background-image: linear-gradient(310deg, #df98fa, #9055ff);
-  font-family:IranianSans ;
 }
 
 #container {
@@ -42,8 +43,7 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
  background-color: var(--main-color);
-  width: 1200px;
-  height: 800px;
+
   border-radius: 10px;
   display:grid;
   grid-template-columns: repeat(2, 50%);
@@ -68,12 +68,18 @@ body {
 
 
 
-#signup {
-  padding-bottom:5%;
-  text-align: right;
+.signup {
+  padding-bottom:2%;
+  padding-left:40%;
+  font-size:10px;
+    padding-top:5%;
   text-transform: uppercase;
-  font-weight:10%;
+  font-weight:30%;
   text-shadow: var(--box-shadow);
+/***/
+font-weight: 700;
+text-align: center;
+margin: 0px;
 
 }
 
@@ -113,7 +119,7 @@ label {
   color: white;
   width: 60%;
   align-items: center;
-  font-family:IranianSans ;
+  font-family:'IranianSans' ;
 
   
   
@@ -135,7 +141,6 @@ label {
   }
   #right {
     margin-top:0 px;
-    background-image: url("https://s19.picofile.com/file/8438124692/signup2.png");
     background-size: cover;
     background-position: center;
     box-shadow: var(--box-shadow);
@@ -216,11 +221,115 @@ color: rgb(194, 107, 209);
 }
 
 .linkhome{
-  font-size: 1%;
+  font-size: 12px;
 }
+
+
+
 /*.containerco i {
   margin-left: -30px;
   cursor: pointer;
 }*/
 
 }
+
+
+
+/***/
+
+
+
+
+
+  
+
+     
+.form-control {
+  padding:1px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control.error input {
+  border-color: red;
+}
+
+.form-control.success input {
+  border-color: rgb(40, 238, 22);
+}
+
+.form-control.error small {
+  color: red;
+  visibility: visible;
+  font-size: 13px;
+}
+
+.form-control input {
+  margin: 10px;
+  padding:1px;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  justify-content: center;
+  width: 100%;
+  background: lightcoral;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+small {
+  visibility: hidden;
+  direction:rtl ;
+  text-align: right;
+}
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+/************/
+
+
+form {
+
+  padding:0px;
+  margin-left:auto;
+  margin-right:auto;
+ 
+  overflow: hidden; 
+}
+
+
+
+
+
+input:focus,select { 
+    -moz-box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.85);
+    -webkit-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+    box-shadow: 0 0 5px 1px rgb(206, 195, 195);
+	  overflow: hidden; 
+}
+
+

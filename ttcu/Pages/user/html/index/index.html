@@ -94,7 +94,11 @@
       
         <div class="rightcolumn">
       
+<<<<<<< HEAD
+          <div class="card" style="height:200px;width:500px;text-align: center;">
+=======
           <div class="card" style="width:400px;text-align: center;">
+>>>>>>> 2a1e506244a495ef69ecf6260b3645dcd481d83f
             <h4>پیش نمایش پست ها</h4>
             <div class="fakeimg" id="top"></div>
           </div>
@@ -138,12 +142,33 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
         let len = response.object.length;
         let text ="";
         let images="";
-        if(len==0)
-        {
-          text="<div class=\"card\"><h6>پستی برای نمایش وجود ندارد</h6></div>"
-        }else
-        {
         for (let i = 0; i < len; i++) {
+<<<<<<< HEAD
+             text += "<div id=\"post"+i+"\" class=\"card\">"+
+              "<div class=\"btn-group\" >"+
+        "<button type=\"button\" class=\"btn btn-danger dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
+          
+        "</button>"+
+        "<div class=\"dropdown-menu\">"+
+     
+          "<a class=\"dropdown-item\" href=\"#\">ویرایش</a>"+
+          "<a id=\"card"+i+"\" class=\"dropdown-item\" onclick=\"deletePost(this)\">پاک کردن</a>"+
+        "</div>"+
+      "</div>"+
+      "<br/>"+
+                     "<h10>#" +convertPostType(response.object[i].postType) + "</h10>"+
+                     "<h6 id=\"postId"+i+"\"> کد پست: "  + response.object[i].id +"</h6>"+
+                     "<h6>"  + convertMajor(response.object[i].uniMajor.major) +"</h6>"+
+                     "<h6>"  + convertUni(response.object[i].uniMajor.uni) +"</h6>" +
+                     "<h2 id=\"textId"+i+"\"class=\"text\">"  + response.object[i].title +"</h2>" + 
+                     "<h17>@" + response.object[i].username +"</h17>" +
+                     "<h20>"  + convertUserType(response.object[i].userType) +"</h20>" +
+                     "<div class=\"fakeimg\" style=\"height:200px;\">"  + response.object[i].image +"</div>" +
+                     "<P class=\"text\">توضیحات:</P>" +
+                     "<p class=\"text\">"  + response.object[i].description +"</p>" +
+                     "<label class=\"text\"><p id=\"contact\">"+response.object[i].contact +"</p></label> "+
+                     "<h6>تاریخ :"+response.object[i].pDate+"  "+response.object[i].pTime+"</h6></div>";
+=======
           var randomPic=choosePic(response.object[i].postType);
              text +=
   "  <div id='post"+i+"' class='card'>"+
@@ -315,14 +340,14 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
   "</div>"+
 "</div>"+
                     "<!--modal--->";
+>>>>>>> 2a1e506244a495ef69ecf6260b3645dcd481d83f
 
               images+="<a href=\"#post"+i+"\">"+response.object[i].title+"</a><br>";
             
-            }}
-          
+            }
+            console.log(text);
             document.getElementById("posts").innerHTML = text;
             document.getElementById("top").innerHTML = images;
-            
 
      
     }else {
@@ -332,7 +357,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 
 }
 else if( xmlhttp.status == 403){
-    window.location = '../../../login/login.html';
+    window.location = 'login.html';
   
   } 
 else{
@@ -476,11 +501,12 @@ xmlhttp.send(JSON.stringify(detailArr));
   
   xmlhttp.send(JSON.stringify(detailArr));
   }
-
-
   
   </script>
 
+<<<<<<< HEAD
+    <script src="makepost.js"></script>
+=======
 
 <script>
   loadUserInfo();
@@ -545,13 +571,13 @@ xmlhttp.send(JSON.stringify(detailArr));
   </script>
     <script src="../../../postpage/updatepost.js"></script>
     
+>>>>>>> 2a1e506244a495ef69ecf6260b3645dcd481d83f
     <script src="../../../../src/app/enumConverter.js"></script>
     
     
     <script src="darkmode/darkmod.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-    <script src="../../../postpage/deletePost.js"></script>
     <!----->
 </body>
 

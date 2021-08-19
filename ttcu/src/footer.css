@@ -1,8 +1,23 @@
+
+@font-face {
+  font-family:'IranianSans';
+  src: url('../src/font/IranianSans.eot');
+  src: url('../src/font/IranianSans.eot?#iefix') format('embedded-opentype'),
+       url('../src/font/IranianSans.svg#IranianSans') format('svg'),
+       url('../src/font/IranianSans.ttf') format('truetype'),
+       url('../src/font/IranianSans.woff') format('woff'),
+       url('../src/font/IranianSans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 .footer {
   background-color: #414141;
   width: 100%;
   text-align: left;
-  font-family: sans-serif;
+  font-family:'IranianSans';
   font-weight: bold;
   font-size: 16px;
   padding: 50px;
@@ -30,6 +45,8 @@
   font-size: 13px;
   font-weight: normal;
   margin: 0;
+  text-align: justify;
+  direction: rtl;
 }
 
 .footer .about span {
@@ -37,7 +54,7 @@
   color: #ffffff;
   font-size: 14px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom:30px;
 }
 
 .footer .icons {
