@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="cssnew.css"> 
     <link rel="stylesheet" href="/ttcu/src/footer.css">
     <link rel="stylesheet" href="darkmode/moon.css">
-    <link rel="stylesheet" href="../../../postpage/updatepost.css">
+    <link rel="stylesheet" href="../../../../src/css/updatepost.css">
     <link rel="stylesheet" href="../../../../src/css/showpost.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel=icon href="aa0r2-xtkx1.ico">
@@ -94,11 +94,7 @@
       
         <div class="rightcolumn">
       
-<<<<<<< HEAD
-          <div class="card" style="height:200px;width:500px;text-align: center;">
-=======
           <div class="card" style="width:400px;text-align: center;">
->>>>>>> 2a1e506244a495ef69ecf6260b3645dcd481d83f
             <h4>پیش نمایش پست ها</h4>
             <div class="fakeimg" id="top"></div>
           </div>
@@ -143,32 +139,6 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
         let text ="";
         let images="";
         for (let i = 0; i < len; i++) {
-<<<<<<< HEAD
-             text += "<div id=\"post"+i+"\" class=\"card\">"+
-              "<div class=\"btn-group\" >"+
-        "<button type=\"button\" class=\"btn btn-danger dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
-          
-        "</button>"+
-        "<div class=\"dropdown-menu\">"+
-     
-          "<a class=\"dropdown-item\" href=\"#\">ویرایش</a>"+
-          "<a id=\"card"+i+"\" class=\"dropdown-item\" onclick=\"deletePost(this)\">پاک کردن</a>"+
-        "</div>"+
-      "</div>"+
-      "<br/>"+
-                     "<h10>#" +convertPostType(response.object[i].postType) + "</h10>"+
-                     "<h6 id=\"postId"+i+"\"> کد پست: "  + response.object[i].id +"</h6>"+
-                     "<h6>"  + convertMajor(response.object[i].uniMajor.major) +"</h6>"+
-                     "<h6>"  + convertUni(response.object[i].uniMajor.uni) +"</h6>" +
-                     "<h2 id=\"textId"+i+"\"class=\"text\">"  + response.object[i].title +"</h2>" + 
-                     "<h17>@" + response.object[i].username +"</h17>" +
-                     "<h20>"  + convertUserType(response.object[i].userType) +"</h20>" +
-                     "<div class=\"fakeimg\" style=\"height:200px;\">"  + response.object[i].image +"</div>" +
-                     "<P class=\"text\">توضیحات:</P>" +
-                     "<p class=\"text\">"  + response.object[i].description +"</p>" +
-                     "<label class=\"text\"><p id=\"contact\">"+response.object[i].contact +"</p></label> "+
-                     "<h6>تاریخ :"+response.object[i].pDate+"  "+response.object[i].pTime+"</h6></div>";
-=======
           var randomPic=choosePic(response.object[i].postType);
              text +=
   "  <div id='post"+i+"' class='card'>"+
@@ -340,7 +310,6 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
   "</div>"+
 "</div>"+
                     "<!--modal--->";
->>>>>>> 2a1e506244a495ef69ecf6260b3645dcd481d83f
 
               images+="<a href=\"#post"+i+"\">"+response.object[i].title+"</a><br>";
             
@@ -504,9 +473,6 @@ xmlhttp.send(JSON.stringify(detailArr));
   
   </script>
 
-<<<<<<< HEAD
-    <script src="makepost.js"></script>
-=======
 
 <script>
   loadUserInfo();
@@ -569,9 +535,8 @@ xmlhttp.send(JSON.stringify(detailArr));
      return "../../../../src/img/post/"+postType+"/1.jpg";
     }
   </script>
-    <script src="../../../postpage/updatepost.js"></script>
+    <script src="../../../../src/app/updatepost.js"></script>
     
->>>>>>> 2a1e506244a495ef69ecf6260b3645dcd481d83f
     <script src="../../../../src/app/enumConverter.js"></script>
     
     
