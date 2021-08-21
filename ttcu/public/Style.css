@@ -32,9 +32,9 @@ width:90px;
 height:36px;
 }
 
-input{
+/* input{
     transform: scale(0);
-}
+} */
 .background{
   position: absolute;
   left: 0;
@@ -59,7 +59,7 @@ input{
     transition: transform 0.4s;
     
 }
-input:checked
+/* input:checked
 + .background{
     background:#32323d;
 }
@@ -67,7 +67,7 @@ input:checked
 + .background.knob{
     transform:
 translateX(54px);
-}
+} */
 
 
 .nextround{
@@ -124,4 +124,56 @@ translateX(54px);
 .newtext{
   direction: rtl;
   text-align: right;
+}
+
+
+/***/
+
+section {
+  padding: 40px;
+  
+}
+
+:root {
+  font-size: 18px;
+}
+
+@media (min-width: 500px) and (max-width: 800px) {
+  :root {
+    font-size: calc( 18px + (26 - 18) * ((100vw - 500px) / (800 - 500)) );
+  }
+}
+@media (min-width: 800px) {
+  :root {
+    font-size:16px;
+  }
+}
+
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.clearfix {
+  display: block;
+}
+
+.iconbb {
+  float: right;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-right: 3%;
+  width: 30%;
+}
+
+.textbb {
+  margin: 5px;
+  padding-left: 34%;
+  width: auto;
 }

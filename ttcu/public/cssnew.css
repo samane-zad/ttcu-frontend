@@ -388,10 +388,9 @@ section.coverwhite {
   border-bottom-right-radius: 0px;
 }
 section.coverblue {
-  width: 400px;
-  background-color: #080da0d7;
-  padding:8% 0%;
-  border-bottom: 200px solid transparent;
+  background-color: #080da0b6;
+  padding:20px 0%;
+  border-bottom: 15px solid rgb(57, 42, 153);
 border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
 }
@@ -455,3 +454,34 @@ border-top-right-radius: 100px;
 .to-top:hover:before{
   transform: rotate(360deg);
 }
+/****/
+
+  .starry-sky {
+    display: block;
+    width: 100vw;
+    height:108vh;
+    object-fit: cover;
+  }
+  .search-icon {
+    display: inline-block;
+  }
+
+
+  /* change to alternating star opacities */
+  .all-stars {
+    animation: blinkblink 2s linear infinite;
+  }
+  
+  @keyframes blinkblink {  
+    50% { opacity: 0.1; }
+  }
+  /* .moon {
+      
+  } */
+
+
+  @media (max-width: 647px) { 
+    .moon {
+      padding-top: 50px;
+    }
+  }
