@@ -1,4 +1,4 @@
- /*#header {
+ /* /* /*#header {
   /*background-color: #b8b8b8; /* Grey background */
  /* padding: 10px 10px; /* Some padding */
   /*text-align: center; /* Centered text */
@@ -103,7 +103,7 @@ body {
    
         text-align: left;}
 
-input:checked
+/* input:checked
 + .background{
     background:#32323d;
 }
@@ -112,7 +112,7 @@ input:checked
 + .background.knob{
     transform:
 translateX(54px);
-}
+} */
 
 @media (min-width:768px) {
 .header-dark {
@@ -389,11 +389,11 @@ section.coverwhite {
 }
 section.coverblue {
   background-color: #080da0b6;
-  padding:20px 0%;
-  border-bottom: 15px solid rgb(57, 42, 153);
+  padding:10px 0%;
+  border-bottom: 10px solid rgb(57, 42, 153);
 border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
-}
+} 
 
 /*scroll**/
 
@@ -456,15 +456,15 @@ border-top-right-radius: 100px;
 }
 /****/
 
-  .starry-sky {
+   .starry-sky {
     display: block;
-    width: 100vw;
-    height:108vh;
+    width:90vw;
+    height:100vh;
     object-fit: cover;
   }
   .search-icon {
     display: inline-block;
-  }
+  } 
 
 
   /* change to alternating star opacities */
@@ -479,9 +479,9 @@ border-top-right-radius: 100px;
       
   } */
 
-
+/*  */
   @media (max-width: 647px) { 
     .moon {
       padding-top: 50px;
     }
-  }
+  }  

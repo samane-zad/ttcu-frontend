@@ -1,179 +1,180 @@
 
 * {
- font-family:'IranianSans';
-}
-
-@font-face {
   font-family:'IranianSans';
-  src: url('../src/font/IranianSans.eot');
-  src: url('../src/font/IranianSans.eot?#iefix') format('embedded-opentype'),
-       url('../src/font/IranianSans.svg#IranianSans') format('svg'),
-       url('../src/font/IranianSans.ttf') format('truetype'),
-       url('../src/font/IranianSans.woff') format('woff'),
-       url('../src/font/IranianSans.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-.mySlides {display: none}
-
-
-.dark-mode {
-  background-color: rgba(1, 1, 2, 0.911);
-  color: white;
-}
-
-
-
-.label{
-position: relative;
-width:90px;
-height:36px;
-}
-
-/* input{
-    transform: scale(0);
-} */
-.background{
-  position: absolute;
-  left: 0;
-  height:0.9cm;
-  width: 2cm;
-  border-radius: 20px;
-  background: #c6c8d6;
-  transition: b 0.4s;
-
-
-}
-
-
-.knob{
-    position: absolute;
-    top: 2x;
-    left: 2px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: #f7f7f7;
-    transition: transform 0.4s;
-    
-}
-/* input:checked
-+ .background{
-    background:#32323d;
-}
-input:checked
-+ .background.knob{
-    transform:
-translateX(54px);
-} */
-
-
-.nextround{
-  padding-top:100px ;
-  
-}
-
-/* Center the loader */
-#loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 120px;
-  height: 120px;
-  margin: -76px 0 0 -76px;
-  border: 16px solid #a09d9d;
-  border-radius: 50%;
-  border-top: 16px solid #6C63FF;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-
-}
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Add animation to "page content" */
-.animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s;
-}
-
-@-webkit-keyframes animatebottom {
-  from { top:-100px; opacity:0 } 
-  to { top:0px; opacity:1 }
-}
-
-@keyframes animatebottom { 
-  from{ top:-100px; opacity:0 } 
-  to{ top:0; opacity:1 }
-}
-
-.newtext{
-  direction: rtl;
-  text-align: right;
-}
-
-
-/***/
-
-section {
-  padding: 40px;
-  
-}
-
-:root {
-  font-size: 18px;
-}
-
-@media (min-width: 500px) and (max-width: 800px) {
-  :root {
-    font-size: calc( 18px + (26 - 18) * ((100vw - 500px) / (800 - 500)) );
-  }
-}
-@media (min-width: 800px) {
-  :root {
-    font-size:16px;
-  }
-}
-
-.clearfix:after {
-  content: "\0020";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-  overflow: hidden;
-}
-
-.clearfix {
-  display: block;
-}
-
-.iconbb {
-  float: right;
-  margin-left: 2px;
-  margin-right: 2px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  padding-right: 3%;
-  width: 30%;
-}
-
-.textbb {
-  margin: 5px;
-  padding-left: 34%;
-  width: auto;
-}
+ }
+ 
+ @font-face {
+   font-family:'IranianSans';
+   src: url('../src/font/IranianSans.eot');
+   src: url('../src/font/IranianSans.eot?#iefix') format('embedded-opentype'),
+        url('../src/font/IranianSans.svg#IranianSans') format('svg'),
+        url('../src/font/IranianSans.ttf') format('truetype'),
+        url('../src/font/IranianSans.woff') format('woff'),
+        url('../src/font/IranianSans.woff2') format('woff2');
+   font-weight: normal;
+   font-style: normal;
+ }
+ 
+ 
+ .mySlides {display: none}
+ 
+ 
+ .dark-mode {
+   background-color: rgba(1, 1, 2, 0.911);
+   color: white;
+ }
+ 
+ 
+ 
+ .label{
+ position: relative;
+ width:90px;
+ height:36px;
+ }
+ 
+ /* input{
+     transform: scale(0);
+ } */
+ .background{
+   position: absolute;
+   left: 0;
+   height:0.9cm;
+   width: 2cm;
+   border-radius: 20px;
+   background: #c6c8d6;
+   transition: b 0.4s;
+ 
+ 
+ }
+ 
+ 
+ .knob{
+     position: absolute;
+     top: 2x;
+     left: 2px;
+     width: 32px;
+     height: 32px;
+     border-radius: 50%;
+     background: #f7f7f7;
+     transition: transform 0.4s;
+     
+ }
+ /* input:checked
+ + .background{
+     background:#32323d;
+ }
+ input:checked
+ + .background.knob{
+     transform:
+ translateX(54px);
+ } */
+ 
+ 
+ .nextround{
+   padding-top:100px ;
+   
+ }
+ 
+ /* Center the loader */
+ #loader {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   z-index: 1;
+   width: 120px;
+   height: 120px;
+   margin: -76px 0 0 -76px;
+   border: 16px solid #a09d9d;
+   border-radius: 50%;
+   border-top: 16px solid #6C63FF;
+   -webkit-animation: spin 2s linear infinite;
+   animation: spin 2s linear infinite;
+ 
+ }
+ 
+ @-webkit-keyframes spin {
+   0% { -webkit-transform: rotate(0deg); }
+   100% { -webkit-transform: rotate(360deg); }
+ }
+ 
+ @keyframes spin {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+ }
+ 
+ /* Add animation to "page content" */
+ .animate-bottom {
+   position: relative;
+   -webkit-animation-name: animatebottom;
+   -webkit-animation-duration: 1s;
+   animation-name: animatebottom;
+   animation-duration: 1s;
+ }
+ 
+ @-webkit-keyframes animatebottom {
+   from { top:-100px; opacity:0 } 
+   to { top:0px; opacity:1 }
+ }
+ 
+ @keyframes animatebottom { 
+   from{ top:-100px; opacity:0 } 
+   to{ top:0; opacity:1 }
+ }
+ 
+ .newtext{
+   direction: rtl;
+   text-align: right;
+ }
+ 
+ 
+ /***/
+ 
+ section {
+   padding: 40px;
+   
+ }
+ 
+ :root {
+   font-size: 18px;
+ }
+ 
+ @media (min-width: 500px) and (max-width: 800px) {
+   :root {
+     font-size: calc( 18px + (26 - 18) * ((100vw - 500px) / (800 - 500)) );
+   }
+ }
+ @media (min-width: 800px) {
+   :root {
+     font-size:16px;
+   }
+ }
+ 
+ .clearfix:after {
+   content: "\0020";
+   display: block;
+   height: 0;
+   clear: both;
+   visibility: hidden;
+   overflow: hidden;
+ }
+ 
+ .clearfix {
+   display: block;
+ }
+ 
+ .iconbb {
+   float: right;
+   margin-left: 2px;
+   margin-right: 2px;
+   margin-top: 10px;
+   margin-bottom: 20px;
+   padding-right: 3%;
+   width: 30%;
+ }
+ 
+ .textbb {
+   margin: 5px;
+   padding-left: 34%;
+   width: auto;
+ }
+ 
