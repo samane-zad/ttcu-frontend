@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
     <!-- <link rel="stylesheet" href="/ttcu/public/Style.css"> -->
-    <link rel="stylesheet" href="/ttcu/src/css/main.css">
+    <link rel="stylesheet" href="/ttcu/public/cssnew.css">
    <link rel="stylesheet" href="dropdown.css">   
    <link rel="stylesheet" href="/ttcu/public/darkmode/moon.css">
    <link rel="stylesheet" href="/ttcu/src/footer.css">
@@ -41,24 +41,21 @@
                             
         
     
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/user/html/index/index.html">خانه</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/about/about.html">درباره ما</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">خانه</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="../Pages/about/about.html">درباره ما</a></li>
     
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/blog/blogpage.html">بلاگ</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/contact-us/contact.html">تماس باما</a></li>
-                                <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >مشاهده پست ها </a>
-                                  <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="/ttcu/Pages/postpage/bestPost.html">منتخب برای شما</a>
-                                    </div>
-                                </li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="#">بلاگ</a></li>
+    
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="../Pages/contact-us/contact.html">تماس باما</a></li>
+    
                               
                         </ul>
 
                         <form class="form-inline mr-auto" target="_self">  </form>
-
+                          
                         <span class="navbar-text">
                             <a href="../userinfo/userinfo.html" ><img src="../../src/img/per.PNG"></a>
 
-  </span>
                         
                  
             </nav>
@@ -145,15 +142,10 @@
    
     </div></li>
 
-    <li id="" style="text-align: right;"><a onclick="loadPosts()"><span class="glyphicon glyphicon-minus" >نمایش همه</span> </a>
-    </li>
 
-    <li id="" style="text-align: right;"><a onclick="loadPosts()"><span class="glyphicon glyphicon-minus" >ثبت</span> </a>
-    </li>
-
-
+    
     <li id="unexpander" style="text-align: right;"><a onclick="return false;">
-      <span class="glyphicon glyphicon-minus" >  </span> بستن </a>
+      <span class="glyphicon glyphicon-minus" >  <button onclick="loadPosts()">ثبت -     </button>   </span> بستن </a>
     </li>
   </ul>
 

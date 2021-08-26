@@ -20,8 +20,8 @@ const major = {
     ARCHITECTURE:"معماری و نقشه کشی",
     GRAPHICS:"هنر و گرافیک",
     ACCOUNTING:"حسابداری",
-    CLOTHING_DESIGN:"طراحی دوخت",
-    PHYSICAL_EDUCATION:"تربیت بدنی",
+    CLOTHING_DESIGN:"تربیت بدنی",
+    PHYSICAL_EDUCATION:"طراحی دوخت",
     IT:"فناوری اطلاعات"
 }
 

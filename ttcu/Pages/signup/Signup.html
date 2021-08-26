@@ -25,106 +25,90 @@
 
       <p class="signup">ثبت نام</p>
 
-   
-   
-      <p id="link"> ثبت نام کرده اید؟ <a href="../Login/login.html">ورود</a></p>
- 
+          <p id="link"> ثبت نام کرده اید؟ <a href="../Login/login.html">ورود</a></p>
 
-      <form action="" method="POST" class="form" autocomplete="off">
-
-          <div>
-            <label for="username">نام کاربری</label>
-            <input type="text" id="username" type=text name="username"  id="username" placeholder="نام کاربری خود را وارد کنید"  id="username" class="client-info"    dir="rtl"  >
-            <small>Error</small>
-      </div>
-
-
-      <div>
-        <label for="fName">نام</label>
-        <input  type="text" id="fName" placeholder="نام خود را وارد کنید" name="fname" id="fName" class="client-info" dir="rtl">
-        <small>Error</small>
-  </div>
-
-
-
-  <div>
-    <label for="lName">نام خانوادگی</label>
-    <input type="text" placeholder="نام خانوادگی خود را وارد کنید " name="lName" id="lName" class="client-info"  dir="rtl"   >
-    <small>Error</small>
-
-</div>
 
       
+<form action="" method="POST"  autocomplete="off" class="form">
 
 
+  <input type="text"  placeholder="نام خود را وارد کنید" name="fname" id="fName" class="client-info"  autocomplete="off" required="required" dir="rtl">
+
+
+  <input type="text"  placeholder="نام خانوادگی خود را وارد کنید " name="lname" id="lName" class="client-info"   autocomplete="off" required="required" dir="rtl" >
   
-    <div >
-<label>گذرواژه</label>
-    <input type="password" name="password" id="password" placeholder="گذرواژه" class="client-info"   dir="rtl" />
-
-
-      <small>Error</small>
-        
+  <input type=text name="username"  id="username" placeholder="نام کاربری خود را وارد کنید"  id="username" class="client-info"  autocomplete="off" required="required" dir="rtl">
+  
+  
+  
+  <div class="container">
+      <input type="password" name="password" id="password" placeholder="گذرواژه" class="client-info"  autocomplete="off"  dir="rtl" />
+      <i class="bi bi-eye-slash" id="togglePassword"></i>
+  </div>
+  
+  
+  
+  
+  <div style="padding-right:20%;">
+  
+  <!--<p><input type="checkbox" onclick="myFunction()" class="checkbox" >Show Password</p> <br>-->
+  
+  <label class="select" for="slct">
+    <select id="userType" required="required" name="Usertypes" dir="rtl">
+      <option value="" disabled="disabled" selected="selected">نوع کاربر را انتخاب کنید</option>
+      <option value="ADMIN">مدیر گروه</option>
+      <option value="MASTER">مدیر </option>
+      <option value="TEACHER">استاد</option>
+      <option value="STUDENT">دانشجو</option>
+    </select>
+    <svg>
+      <use xlink:href="#select-arrow-down"></use>
+    </svg>
+  </label>
+  
+  
+  
+  
+  
+  <label class="select" for="uni">
+    <select id="uni" required="required" name="University" dir="rtl">
+      <option value="" disabled="disabled" selected="selected">دانشگاه خود را انتخاب کنید</option>
+      <option value="SHARIATY_TECHNICAL_COLLEGE">دانشکده فنی دکتر شریعتی</option>
+      <option value="VALIASR_TECHNICAL_COLLEGE"> دانشکده فنی ولیعصر</option>
+      <option value="ENGHELAB_TECHNICAL_COLLEGE">دانشکده فنی انقلاب اسلامی</option>
+      <option value="SHAMSIPOUR_TECHNICAL_COLLEGE">دانشکده فنی شمسی پور</option>
+  
+    </select>
+    <svg>
+      <use xlink:href="#select-arrow-down"></use>
+    </svg>
+  </label>
+  
+  
+  
+  
+  <label class="select" for="major" >
+    <select id="major" required="required" name="UniversityMajor" dir="rtl" >
+      <option value="" disabled="disabled" selected="selected">رشته خود را انتخاب کنید</option>
+      <option value="SOFTWARE">نرم افزار</option>
+      <option value="ELECTRONICS">الکترونیک</option>
+      <option value="MECHANICS">مکانیک</option>
+      <option value="ICT">ICT</option>
+     <option value="ARCHITECTURE">نقشه کشی معماری</option>   
+     <option value="GRAPHICS">گرافیک</option>
+     <option value="ACCOUNTING">حسابداری</option>
+     <option value="CLOTHING_DESIGN">طراحی دوخت</option>
+     <option value="PHYSICAL_EDUCATION">تربیت بدنی</option>
+     <option value="IT">IT</option>
+    </select>
+    <svg>
+      <use xlink:href="#select-arrow-down"></use>
+    </svg>
+  </label>
 </div>
-      
-
-
-          <div class="form-control">
-            <select id=uni dir="rtl" class="client-info">
-                <option value="" disabled="disabled" selected="selected">دانشگاه خود را انتخاب کنید</option>
-                <option value="SHARIATY_TECHNICAL_COLLEGE">دانشکده فنی دکتر شریعتی</option>
-                <option value="VALIASR_TECHNICAL_COLLEGE"> دانشکده فنی ولیعصر</option>
-                <option value="ENGHELAB_TECHNICAL_COLLEGE">دانشکده فنی انقلاب اسلامی</option>
-                <option value="SHAMSIPOUR_TECHNICAL_COLLEGE">دانشکده فنی شمسی پور</option>
-            </select>
-         
-            <small>Error</small>
-          </div>
-
-
-
-          <div class="form-control">
-            <select id="major"  dir="rtl" class="client-info" >
-                <option value="" disabled="disabled" selected="selected">رشته خود را انتخاب کنید</option>
-                <option value="SOFTWARE">نرم افزار</option>
-                <option value="ELECTRONICS">الکترونیک</option>
-                <option value="MECHANICS">مکانیک</option>
-                <option value="ICT">ICT</option>
-               <option value="ARCHITECTURE">نقشه کشی معماری</option>   
-               <option value="GRAPHICS">گرافیک</option>
-               <option value="ACCOUNTING">حسابداری</option>
-               <option value="CLOTHING_DESIGN">طراحی دوخت</option>
-               <option value="PHYSICAL_EDUCATION">تربیت بدنی</option>
-               <option value="IT">IT</option>
-              </select>
-            <small>Error</small>
-          </div>
-
-
-
-
-          <div class="form-control">
-<select id="userType"  name="Usertypes" dir="rtl" class="client-info">
-<option value="" disabled="disabled" selected="selected">نوع کاربر را انتخاب کنید</option>
-<option value="ADMIN">مدیر گروه</option>
-<option value="MASTER">مدیر </option>
-<option value="TEACHER">استاد</option>
-<option value="STUDENT">دانشجو</option>
-</select>
-
-            <small>Error</small>
-          </div>
-
-
-
-
-          <a href="../../public/index.html" ><p class="linkhome" >بازگشت به خانه</p> </a>   
-
-          <button type="submit" id="submit"   class="sbmt" onclick="signUp()"  >ثبت</button>
-         
-
-
-   
+  <input type="button" id="submit" class="client-info" onclick="signUp()" value="ثبت" class="submit" >
+  <a href="../../public/index.html" ><p class="linkhome" >بازگشت به خانه</p> </a>   
+  
   <!-- SVG Sprites-->
   <svg class="sprites">
     <symbol id="select-arrow-down" viewbox="0 0 10 6">
@@ -283,7 +267,7 @@ xmlhttp.send(detailArrstr);
       </script>
 
       
-   <script src="validaition.js"></script> 
+  <!-- <script src="validaition.js"></script> -->
   <script src="signup.js"></script>
   <script src="../../src/app/enumConverter.js"></script>
   <script src="../../src/app/modal.js"></script>

@@ -18,9 +18,9 @@ color:black;
 
 .form-container .form-wrap {
   width: 70%;
-  background: rgb(255, 255, 255);
+  background: #fff;
   border-radius: 2px;
-  padding: 5% 14px;
+  padding: 10% 14px;
 }
 
 .form-container .form-wrap h2 {
