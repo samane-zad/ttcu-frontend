@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   outline: none;
-   height: fit-content;
    font-family:'IranianSans' ;
    box-sizing: border-box;
 
@@ -30,11 +29,12 @@
 
 
 html {
-  height:120%;
+  height:100%;
   
 }
 body {
   background-image: linear-gradient(310deg, #df98fa, #9055ff);
+
 }
 
 #container {
@@ -55,7 +55,7 @@ body {
   margin: auto;
   width: 95%;
   height: 96%;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 #left {
@@ -70,16 +70,12 @@ body {
 
 .signup {
   padding-bottom:2%;
-  padding-left:40%;
-  font-size:10px;
+  padding-left:80%;
+  font-size:15px;
     padding-top:5%;
   text-transform: uppercase;
   font-weight:30%;
   text-shadow: var(--box-shadow);
-/***/
-font-weight: 700;
-text-align: center;
-margin: 0px;
 
 }
 
@@ -137,21 +133,27 @@ label {
   }
   #left {
     display: none;
-    
+    width: 5%;
+    float: left;
   }
   #right {
     margin-top:0 px;
     background-size: cover;
     background-position: center;
     box-shadow: var(--box-shadow);
+    width:95%;
+    float: left;
+    padding-left:5%;
+
   }
-  
+ 
 }
-@media (max-height: 850px) {
+
+@media (max-height: 768px) {
  
   #container {
-    width: 1000px;
-    height: 600px;
+    width: 90vw;
+    height: 95vh;
   }
   #signup {
     padding-top: 0%;
@@ -235,15 +237,7 @@ color: rgb(194, 107, 209);
 
 
 
-/***/
-
-
-
-
-
-  
-
-     
+/***/     
 .form-control {
   padding:1px;
   width: 100%;
@@ -290,36 +284,12 @@ button {
 small {
   visibility: hidden;
   direction:rtl ;
-  text-align: right;
+  text-align: center;
 }
 
-@media only screen and (max-width:800px) {
-  /* For tablets: */
-  .main {
-    width: 80%;
-    padding: 0;
-  }
-  .right {
-    width: 100%;
-  }
-}
-@media only screen and (max-width:500px) {
-  /* For mobile phones: */
-  .menu, .main, .right {
-    width: 100%;
-  }
-}
+
 /************/
 
-
-form {
-
-  padding:0px;
-  margin-left:auto;
-  margin-right:auto;
- 
-  overflow: hidden; 
-}
 
 
 
@@ -333,3 +303,17 @@ input:focus,select {
 }
 
 
+
+
+
+/* Media Queries: Tablet Landscape */
+@media screen and (max-width: 1060px) {
+  #primary { width:67%; }
+  #secondary { width:30%; margin-left:3%;}  
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+  #primary { width:100%; }
+  #secondary { width:100%; margin:0; border:none; }
+}

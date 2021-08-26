@@ -41,16 +41,19 @@
 
 //   /**sroll to top***/
 //Get the button
-var mybutton = document.getElementById("myBtn");
+
+
+
+var myscbutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
+    myscbutton.style.display = "block";
   } else {
-    mybutton.style.display = "none";
+    myscbutton.style.display = "none";
   }
 }
 
@@ -60,14 +63,17 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-/*****/
+/**preloder***/
+
+
 var myVar;
 
-function myFunction() {
-  myVar = setTimeout(showPage, 3000);
+function loadingpage() {
+  myVar = setTimeout(showPage, 1000);
 }
 
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
+
 }

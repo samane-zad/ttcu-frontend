@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ورود</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,firefox=1">
+    <meta name="HandheldFriendly" content="true">    
     <link rel="stylesheet" href="Stylelogin.css">
     <link rel="stylesheet" href="../../src/css/modal.css">
     <link rel=icon  href="16X16.ico" >
@@ -12,7 +13,7 @@
     <link  rel="stylesheet" href="../../src/css/validaition.css">
     <script src="hide-password.js"></script>
     <script src="../../src/app/validaition.js"></script>
-
+    <title>ورود</title>
 </head>
 <body>
   <div id="container">
@@ -25,11 +26,11 @@
       <a href="#"><p id="link">یا ساخت حساب کاربری</p></a>
 
       
-<form >
+<form autocomplete="off">
   <ul class="errorMessages"></ul>
 
-<input type=text id="username" placeholder="نام کابری خود را وارد کنید" class="client-info" id="email" autocomplete="off">
-<input type="password" id="password" class="client-info" placeholder="رمزعبور خود را وارد کنید " autocomplete="off"><br>
+<input type=text id="username" placeholder="نام کابری خود را وارد کنید" class="client-info" >
+<input type="password" id="password" class="client-info" placeholder="رمزعبور خود را وارد کنید " ><br>
 <input type="checkbox" onclick="myFunction()" class="checkbox"> نمایش رمزعبور
 
 
@@ -40,7 +41,7 @@
     </div>
   </div>
 
-
+<!---->
 
 
   <div class="join">

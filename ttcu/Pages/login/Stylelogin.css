@@ -20,8 +20,8 @@
   padding: 0;
   outline: none;
   font-family:'IranianSans';
-
-}
+  box-sizing: border-box;
+  }
 
 
 :root {
@@ -38,6 +38,7 @@ html {
 }
 body {
   background-image: linear-gradient(310deg, #df98fa, #9055ff);
+
 }
 
 #container {
@@ -60,6 +61,7 @@ body {
   width: 95%;
   height: 96%;
   border-radius: 10px;
+
 }
 
 #left {
@@ -144,21 +146,26 @@ label {
   }
   #left {
     display: none;
+    width: 10%;
+    float: left;
+
   }
   #right {
-    margin-top: 16px;
-
+    margin-top:16px;
     background-size: cover;
     background-position: center;
     box-shadow: var(--box-shadow);
+    width:90%;
+    float: left;
   }
+
   
 }
-@media (max-height: 850px) {
+@media (max-height: 768px) {
  
   #container {
-    width: 1000px;
-    height: 600px;
+    width: 85vw;
+    height: 85vh;
   }
   #login {
     padding-top: 10%;
@@ -169,7 +176,7 @@ label {
   }
 
 #link{
-  font-size: 13px;
+font-size: 13px;
 padding-right :60%;
 padding-bottom: 20px;
 }
@@ -233,3 +240,14 @@ color: rgb(194, 107, 209);
 }
 
 
+/* Media Queries: Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
