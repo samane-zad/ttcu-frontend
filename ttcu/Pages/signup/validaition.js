@@ -89,45 +89,16 @@
         return input.id.charAt(0).toUpperCase() + input.id.slice(1);
     
     
-    
-    
-    
     }
-    
-    // function doPasswordsMatch(input, input2) {
-    //     if(input.value === input2.value) {
-    //         showSuccess(input2);
-    //     }
-    //     else {
-    //         showError(input, "Both passwords must match!");
-    //         showError(input2, "Both passwords must match!");
-    //     }
-    // }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     // Event Listeners
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        
-        checkRequired([username,fName,lName,uni,major,userType,password]);
+                checkRequired([username,fName,lName,uni,major,userType,password]);
         checkLength(username, 8, 15);
-    
-        checkLength(password, 6, 30);
-        
-        checkLength(passwordConfirm, 6, 30);
-        checkEmail(email);
-        doPasswordsMatch(password, passwordConfirm);
-    })
+            checkLength(password, 6, 30);
+        });
     
     
     
