@@ -1,0 +1,44 @@
+#myBtn {
+    height: 50px;
+    width: 50px;
+    display:block;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background: #5c68e9;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    outline-style:initial;
+    border-radius: 100%;
+  /**/
+  
+  
+  }
+  
+  #myBtn:hover {
+      background: #2f3cca;
+  }
+  
+  
+  .newpost:before{
+    font-size:.9em;
+    position:absolute;
+    top:0;
+    left:50%;
+    margin-left:-25px;
+    border:solid .13em white;
+    border-radius:10em;
+    height:50px;
+    width: 50px;
+    line-height:20px;
+    border-color:inherit;
+    transition:transform .5s ease-in;
+    text-align: center;
+  
+  }
+  

@@ -201,9 +201,15 @@
           let text ="";
           let images="";
           if(len==0)
-          {
-            text="<div class=\"card\"><h6>پستی برای نمایش وجود ندارد</h6></div>"
-          }else
+        {
+          text="<div class='card w-75' style='text-align: center;'>"+
+                   "<div class='card-body'>"+
+                     "<h5 class='card-title'><img src='../../src/img/notFound.png' height='300' width='300'>هیچ پستی برای نمایش یافت نشد</h5>"+
+                     "<p class='card-text'>!پست منتخبی برای نمایش یافت نشد</p>"+
+                     "<a href='#' class='btn btn-primary'>ثبت پست جدید</a>"+
+                   "</div>"+
+                "</div>"
+        }else
           {
           for (let i = 0; i < len; i++) {
             

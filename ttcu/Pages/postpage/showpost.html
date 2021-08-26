@@ -289,9 +289,15 @@
           let text ="";
           let images="";
           if(len==0)
-          {
-            text="<div class=\"card\"><h6>پستی برای نمایش وجود ندارد</h6></div>"
-          }else
+        {
+          text="<div class='card w-75' style='text-align: center;'>"+
+                   "<div class='card-body'>"+
+                     "<h5 class='card-title'><img src='../../src/img/notFound.png' height='300' width='300'>هیچ پستی برای نمایش یافت نشد</h5>"+
+                     "<p class='card-text'>!جستجوی شما نتیجه ای نداشت</p>"+
+                     
+                   "</div>"+
+                "</div>"
+        }else
           {
           for (let i = 0; i < len; i++) {
             var randomPic=choosePic(response.object[i].postType);
