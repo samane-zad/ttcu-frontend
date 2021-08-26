@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: 'IranianSans';
+  font-family: IranianSans;
 }
 
 /* Add a gray background color with some padding */
@@ -27,41 +27,46 @@ body {
 /* Left column */
 .leftcolumn {   
   float: left;
-  width: 60%;
-  margin-left:10%;
-
+  width: 75%;
+<<<<<<< HEAD
   }
 
 /* Right column */
 .rightcolumn {
   float: left;
-  width: 20%;
-
+  width: 25%;
+  padding-left: 20px;
+=======
+  padding-left: 100px;
+  padding-right: 40px;
+  padding-bottom: 30px;
   
+}
+
+/* Right column */
+.rightcolumn {
+  float: right;
+  width: 10%;
+  padding-left: 100px;
+  padding-right: 60px;
+>>>>>>> 2a1e506244a495ef69ecf6260b3645dcd481d83f
 }
 
 
 /* Fake image */
 .fakeimg {
     
-background-color: #aaa;
-width: 100%;
-height: 100%;
+  background-color: #aaa;
+  width: 100%;
+ height: 60%;
 }
 
 /* Add a card effect for articles */
 .card {
-  background-color: white;
-  padding: 50px;
-  margin-top: 20px;
-  margin-left: 8%;
-  
-}
-.cardpreviw {
-  background-color: white;
-  padding: 50px;
-  margin-top: 20px;
-  margin-left:15%;
+   background-color: white;
+   padding: 50px;
+   margin-top: 20px;
+   margin-left: 5%;
 }
 
 
