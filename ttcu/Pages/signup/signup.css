@@ -82,9 +82,9 @@ body {
 
 .client-info {
   display: block;
-  margin: 20px auto;
+  margin: 5px auto;
   width: 60%;
-  height: 50px;
+  height: 25px;
   border: solid #999 1px;
   border-radius: 5px;
   text-indent: 15px;
@@ -106,7 +106,20 @@ label {
   text-shadow: var(--box-shadow);
 }
 
+.sbmt{
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    height: 50px;
+    border: solid #999 1px;
+    border-radius: 5px;
+    text-indent: 15px;
+    transition: all 200ms;
+    box-shadow: var(--box-shadow);
+    padding-bottom: -10px;
+    align-items: center;
 
+}
 
 #submit {
   text-align: center;
@@ -153,7 +166,7 @@ label {
  
   #container {
     width: 90vw;
-    height: 95vh;
+    height: 98vh;
   }
   #signup {
     padding-top: 0%;
@@ -197,12 +210,19 @@ input[type=text], input[type=password]{
   flex-direction: column;
   margin-bottom: 20px;
 }
-.select{
+
+select{
   width: 100%;
   display: inline-block;
   padding: 0px;
   font-size: 16px;
   box-shadow: var(--box-shadow);
+  position: relative;
+  min-width: 200px;
+  box-sizing: border-box;
+  margin: 5px auto;
+  width:80%px;
+
 }
 
 
@@ -285,6 +305,8 @@ small {
   visibility: hidden;
   direction:rtl ;
   text-align: center;
+  background-color: transparent;
+  background: transparent;
 }
 
 
