@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>TTCU</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+  <meta http-equiv="Expires" content="0" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
-    <link rel="stylesheet" href="/ttcu/src/css/main.css">
-    <link rel="stylesheet" href="indexuser.css">
+    <link rel="stylesheet" href="cssnew.css"> 
     <link rel="stylesheet" href="/ttcu/src/footer.css">
     <link rel="stylesheet" href="darkmode/moon.css">
     <link rel="stylesheet" href="../../../../src/css/updatepost.css">
@@ -25,6 +27,7 @@
 </head>
 
 <body>
+
 
   <div class="grid-header">
     <div>
@@ -46,13 +49,13 @@
                             
         
     
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/public/index.html">خانه</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/about/about.html">درباره ما</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="../../../../public/index.html">خانه</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="../Pages/about/about.html">درباره ما</a></li>
     
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/blog/blogpage.html">بلاگ</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="#">بلاگ</a></li>
     
                                 <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/contact-us/contact.html">تماس باما</a></li>
-                                <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >مشاهده پست ها </a>
+                                <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">مشاهده پست ها </a>
                                   <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="../../../postpage/bestPost.html">منتخب برای شما</a><a class="dropdown-item" role="presentation" href="../../../postpage/showpost.html">جستجوی پست</a></div>
                                 </li>
                               
@@ -61,9 +64,10 @@
                         <form class="form-inline mr-auto" target="_self">  </form>
                           
                         <span class="navbar-text">
-                            <a href="../../../userinfo/userinfo.html" ><img src="../../../../src/img/per.PNG"></a>
+                            <a href="../../../userinfo/userinfo.html"  ><img src="../../../../src/img/per.PNG"></a>
                             <a id="signupLink" class="btn btn-light action-button" role="button" href="../../../signup/Signup.html" style="visibility: hidden;">ثبت نام اعضاء</a>
-</span>
+                            </span>
+
                         
                  
             </nav>
@@ -73,20 +77,6 @@
 </div>
 
 <div class="grid-container">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="grid-img">
 
     <div class="row" style="align-content: center;">
@@ -98,24 +88,22 @@
       
         <div class="rightcolumn">
       
-          <div class="cardpreviw" style="width:400px;text-align: center;">
+          <div class="card" style="width:400px;text-align: center;">
             <h4>پیش نمایش پست ها</h4>
             <div class="fakeimg" id="top"></div>
           </div>
       
         </div>
-        <!-- <div >
+       <!-- <div >
       
-        <div class="card" style="width:500px;text-align: center;">
+          <div class="card" style="width:500px;text-align: center;">
             <a href="../../../postpage/makepost.html">ارسال پست جدید</a>
-          </div> 
+          </div>
       
-        </div> -->
-        <a href="../../../postpage/makepost.html"><button  id="myBtn" title="ایجاد پست جدید"  class="newpost" >+</button></a>
+        </div>
 
     </div>
-
-
+      
    
     <!---->
 
@@ -140,31 +128,30 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
   
   var response = JSON.parse(this.responseText);
     if(response.code == 200){
-        console.log(response);
+        
         let len = response.object.length;
         let text ="";
         let images="";
+        if(len==0)
+        {
+          text="<div class='card w-75' style='text-align: center;'>"+
+                   "<div class='card-body'>"+
+                     "<h5 class='card-title'><img src='../../../../src/img/notFound.png' height='250' width='250'>هیچ پستی برای نمایش یافت نشد</h5>"+
+                     "<h7 class='card-text'>شما هنوز پستی در صفحه خود ایجاد نکرده اید، برای ایجاد پست لینک زیر را دنبال کنید</h7>"+
+                     "<p></p>"+
+                     "<a href='../../../postpage/makepost.html' class='btn btn-primary'>ثبت پست جدید</a>"+
+                   "</div>"+
+                "</div>"
+        }
         for (let i = 0; i < len; i++) {
           var randomPic=choosePic(response.object[i].postType);
              text +=
-
-
-
-
-
-
-      "  <div id='post"+i+"' class='card'>"+
+  "  <div id='post"+i+"' class='card'>"+
    "   <div class='button' style='text-align:left; padding-top: 0px;'>"+
-    "    <a class='edit' href='#'><img src='https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png'/>ویرایش</a>"+
-     "   <a id='edit"+i+"' class='save' onclick='updatePost(this)'><img src='https://img.icons8.com/ios-glyphs/30/000000/save--v1.png'/>ذخیره تغییرات</a>"+
+    "    <a class='edit' onclick='enableUpdate()'><img src='https://img.icons8.com/ios-glyphs/30/000000/edit--v4.png'/>ویرایش</a>"+
+     "   <a id='edit"+i+"' class='save' onclick='update(this)'><img src='https://img.icons8.com/ios-glyphs/30/000000/save--v1.png'/>ذخیره تغییرات</a>"+
         
       "</div>"+
-
-
-
-
-
-
 
 
 "<div class='content-area' style='padding-right:1px;  text-align: right;direction: rtl;'>"+
@@ -173,7 +160,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 
  " <div class='field'>"+
   "  <label style='text-align: right; '>عنوان</label>"+
-   " <input id='textId"+i+"'  type='text' class='text1'  style='font-size: 25px;' value='"  + response.object[i].title +"' autocomplete='off' />"+
+   " <input id='textId"+i+"'  type='text' class='text1'  style='font-size: 25px;' value='"  + response.object[i].title +"' autocomplete='off' disabled='true' />"+
   "</div>"+
 "</div>"+
 
@@ -183,7 +170,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
   "  <label style='text-align: right;'>نوع پست </label>";
   if(window.localStorage.getItem('userType')=='STUDENT')
   {
-    text+="<select id='postType"+i+"'  name='postTypes' dir='rtl' >"+
+    text+="<select id='postType"+i+"'  name='postTypes' dir='rtl' disabled='true' >"+
                 "<option value='" +response.object[i].postType + "' disabled='disabled' selected='selected'>" +convertPostType(response.object[i].postType) + "</option>"+
                 "<option value='MASTERS_NOTES'>جزوات اساتید</option>"+   
                 "<option value='ENTRANCE_EXAM_GUIDANCE'>راهنمای کنکور کاردانی به کارشناسی</option>"+
@@ -191,7 +178,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
                 "</select>"
   }else
   {
-    text+="<select id='postType"+i+"'  name='postTypes' dir='rtl' >"+
+    text+="<select id='postType"+i+"'  name='postTypes' dir='rtl' disabled='true'>"+
                 "<option value='" +response.object[i].postType+ "' disabled='disabled' selected='selected'>" +convertPostType(response.object[i].postType) + "</option>"+
                 "<option value='INVITATION'>فراخوان</option>"+
                 "<option value='BEST_PROJECTS'>بهترین پایان نامه ها</option>"+
@@ -233,7 +220,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 "<div class='row'>"+
   "<div class='field'>"+
     "<label style='text-align: right;'>رشته</label>"+
-    "<select id='major"+i+"' required='required' name='UniversityMajor' dir='rtl' >"+
+    "<select id='major"+i+"' required='required' name='UniversityMajor' dir='rtl' disabled='true' >"+
 	  "<option value='"  + response.object[i].uniMajor.major +"' disabled='disabled' selected='selected'>"  + convertMajor(response.object[i].uniMajor.major) +" </option>"+
       "<option value='SOFTWARE'>نرم افزار</option>"+
       "<option value='ELECTRONICS'>الکترونیک</option>"+
@@ -253,7 +240,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 "<div class='row'>"+
   "<div class='field'>"+
   "<label style='text-align: right;'>دانشگاه</label>"+
-  "<select id='uni"+i+"' required='required' name='University' dir='rtl'  >"+
+  "<select id='uni"+i+"' required='required' name='University' dir='rtl' disabled='true' >"+
   	"<option value='"  + response.object[i].uniMajor.uni +"' disabled='disabled' selected='selected'>"  + convertUni(response.object[i].uniMajor.uni) +" </option>"+
     "<option value='SHARIATY_TECHNICAL_COLLEGE'>دانشکده فنی دکتر شریعتی</option>"+
     "<option value='VALIASR_TECHNICAL_COLLEGE'> دانشکده فنی ولیعصر</option>"+
@@ -278,7 +265,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
          "border: 1px solid rgba(155, 155, 155, 0.645);"+
          "border-radius:4 px;"+
          "box-sizing: border-box;"+
-         "resize: vertical;'> '"  + response.object[i].description +"',  </textarea>"+                
+         "resize: vertical;' disabled='true'> "  + response.object[i].description +"  </textarea>"+                
          "</div>"+
 
        "</fieldset>"+
@@ -290,7 +277,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
     "<div class='row'>"+
 
      " <div class='field' style='padding-left:70%;' >"+
-    "<label style='text-align: right;' style='padding-right:50px;' >تلفن:</label>"+
+    "<label style='text-align: right;' style='padding-right:50px;' disabled='true'>تلفن:</label>"+
     "<input  id='contact"+i+"' type='text' value='"+response.object[i].contact +"' />"+
   "</div>"+
   "<h6>تاریخ :"+response.object[i].pDate+"  "+response.object[i].pTime+"</h6></div>"+
@@ -332,10 +319,10 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
               images+="<a href=\"#post"+i+"\">"+response.object[i].title+"</a><br>";
             
             }
-            console.log(text);
+            
             document.getElementById("posts").innerHTML = text;
             document.getElementById("top").innerHTML = images;
-
+            
      
     }else {
       window.location = 'welcome.html';
@@ -388,7 +375,7 @@ xmlhttp.send(JSON.stringify(detailArr));
     var response = JSON.parse(this.responseText);
       if(response.code == 200){
          
-        loadPosts();
+        location.reload();
        
       }else {
         window.location = 'welcome.html';
@@ -423,7 +410,7 @@ xmlhttp.send(JSON.stringify(detailArr));
 
 <script>
 
-  function updatePost(element){
+  function update(element){
   var cardId=element.getAttribute('id').replace('edit','');
   
   var id = document.getElementById("postId"+cardId).innerHTML;
@@ -553,47 +540,12 @@ xmlhttp.send(JSON.stringify(detailArr));
      return "../../../../src/img/post/"+postType+"/1.jpg";
     }
   </script>
-      <footer class="footer">
-        <div class="footer-left col-md-4 col-sm-6">
-          <p class="about">
-            <span> درباره ما</span> 
-            تعامل در عصر تکنولوژی، یکی از دلایل اصلی پیدایش سیستم های نوین است. ما با ارائه این طرح، با هدف ایجاد بستری یکپارچه برای تعامل و اشتراک گذاری اطلاعات بین دانشجوها، اساتید و مدیران گروه دانشکده های فنی، سیستمی را که نظیر آن برای این قشر تنها به صورت محدود و پراکنده یافت می شد، ایجاد کرده ایم. طبق یافته ها و تجربیات به دست آمده از تحصیل در دانشکده فنی به عنوان یک دانشجو، تعاملات دانشجویان با یکدیگر و اساتید در مواردی نظیر اخبار دانشگاه، موارد درسی و آموزشی، اطلاعیه فراخوان ها و همچنین ارائه اطلاعات درمورد خدمات دانشجویی، خلاصه می شود. بستر TTCU برای پاسخگویی به احتیاجات دانشجویان در موارد مذکور طراحی توسعه داده شده است.
-          </p>
-          <div class="icons">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-google-plus"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-          </div>
-        </div>
-        <div class="footer-center col-md-4 col-sm-6">
-            <div>
-                <i class="fa fa-map-marker"></i>
-                <p><span>اقدسیه- گلزار شرقی</span> تهران , ایران</p>
-              </div>
-          <div>
-            <i class="fa fa-phone"></i>
-            <p> (+98) 21 22 44 70 53</p>
-          </div>
-          <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="NezhadLotfi@protonmail.com"> office@ttcu.com</a></p>
-          </div>
-        </div>
-        <div class="footer-right col-md-4 col-sm-6">
-          <h2> TTCU<span> <img style="width: 50px; height: 60px;" src="/ttcu/src/img/Logo/Icon.png"></span></h2>
-          <p class="menu">
-            <a href="index.html"> خانه</a> |
-            <a href="/ttcu/Pages/about/about.html"> درباره ما</a> |
-            <a href="/ttcu/Pages/blog/blogpage.html"> بلاگ</a> |
-            <a href="/ttcu/Pages/contact-us/contact.html"> تماس با ما</a>
-          </p>
-          <p class="name"> SamFa &copy; 2021</p>
-        </div>
-      </footer>
+  
     <script src="../../../../src/app/updatepost.js"></script>
+    
     <script src="../../../../src/app/enumConverter.js"></script>
+    
+    
     <script src="darkmode/darkmod.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>

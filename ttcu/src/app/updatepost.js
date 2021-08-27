@@ -1,7 +1,5 @@
-$(function () {
-  $("input").prop("disabled", true);
-  $("textarea").prop("disabled", true);
-  $("select").prop("disabled", true);
+function enableUpdate() {
+
   
       $(".edit").click(function () {
         $("html").addClass("active");
@@ -29,6 +27,6 @@ $(function () {
       
       $("textarea").keyup(resizeTextArea).each(resizeTextArea);
   
-    });
+    }
     
     
