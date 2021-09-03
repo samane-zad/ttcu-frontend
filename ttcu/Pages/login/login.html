@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="../../src/css/modal.css">
     <link rel=icon  href="16X16.ico" >
     <link rel=icon href="../../src/Logo/ttcu-icon.ico">
-    <link  rel="stylesheet" href="../../src/css/validaition.css">
     <script src="hide-password.js"></script>
-    <script src="../../src/app/validaition.js"></script>
     <title>ورود</title>
 </head>
 <body>
@@ -26,17 +24,16 @@
       <a href="#"><p id="link">یا ساخت حساب کاربری</p></a>
 
       
-<form autocomplete="off">
+<form autocomplete="off" method="POST">
   <ul class="errorMessages"></ul>
-
 <input type=text id="username" placeholder="نام کابری خود را وارد کنید" class="client-info" >
 <input type="password" id="password" class="client-info" placeholder="رمزعبور خود را وارد کنید " ><br>
 <input type="checkbox" onclick="myFunction()" class="checkbox"> نمایش رمزعبور
 
+<a href="../../public/index.html" ><p class="linkhome" >بازگشت به خانه</p> </a>   
 
 <input type="button" id="submit" class="client-info" value="ثبت" onclick="login()">
 </form>
-<a href="../../public/index.html" ><p class="linkhome" >بازگشت به خانه</p> </a>   
 
     </div>
   </div>
@@ -56,7 +53,7 @@
                 <strong>ورود ناموفق</strong>
                 
                 <h5>
-           ! نام کاربری یا رمزعبور را اشتباه زدید
+            نام کاربری یا رمزعبور را اشتباه زدید!
                 </h5>
               </center>
             </div>

@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
     <!-- <link rel="stylesheet" href="../../public/Style.css"> -->
     <link rel="stylesheet" href="/ttcu/src/css/main.css">
+    <link rel="stylesheet" href="/ttcu/src/select-option.css">
+    <link rel="stylesheet" href="/ttcu/src/css/mainstyle.css">
+    <link rel="stylesheet" href="/ttcu/src/app/makepost-validation.js">
    <link rel="stylesheet" href="/ttcu/public/darkmode/moon.css">
    <link rel="stylesheet" href="/ttcu/src/footer.css">
    <link rel="stylesheet" href="/ttcu/src/font/font.css">
@@ -70,90 +73,115 @@
         </div>
     </div>
     </div>
+  <!---------------------------------->
 
-  
   <div class="form-container" >
-    <form action="#" class="form-wrap" method="POST">
-        <h2>پست جدید</h2>
-        <div class="form-box" style="text-align: right; direction: rtl;">
      
+    <form action="#" class="form" method="POST" autocomplete="off" >
+      <h2>پست جدید</h2>
+      <hr>
+      <div class="notistxt">
+      <p>برای ایجاد پست جدید پُر کردن همه فیلدها الزامی است <em style="color: rgb(233, 17, 17); ">*</em></p> </div>
+
+
+      <div class="form-box">
+        <div class="form-control">
+          <input id="title" type="text" placeholder="عنوان" />
+          <small>Error</small>
+        </div></div>
+
+
+        <div class="form-box">
+          <div class="form-control">
+          <input type="text" id="contact"  placeholder="لطفاایمیل معتبر وارد کنید">
+          <small>Error</small>
+        </div></div>
+
        
-
-
-      
                 
 
-
-            <label class="select" for="uni">
-              <select id="uni" required="required" name="University" dir="rtl">
-                <option value="" disabled="disabled" selected="selected">دانشگاه خود را انتخاب کنید</option>
-                <option value="SHARIATY_TECHNICAL_COLLEGE">دانشکده فنی دکتر شریعتی</option>
-                <option value="VALIASR_TECHNICAL_COLLEGE"> دانشکده فنی ولیعصر</option>
-                <option value="ENGHELAB_TECHNICAL_COLLEGE">دانشکده فنی انقلاب اسلامی</option>
-                <option value="SHAMSIPOUR_TECHNICAL_COLLEGE">دانشکده فنی شمسی پور</option>
-            
-              </select>
-            
-            </label>
- 
-            <label class="select" for="major" >
-              <select id="major" required="required" name="UniversityMajor" dir="rtl" >
-                <option value="" disabled="disabled" selected="selected">رشته خود را انتخاب کنید</option>
-                <option value="SOFTWARE">نرم افزار</option>
-                <option value="ELECTRONICS">الکترونیک</option>
-                <option value="MECHANICS">مکانیک</option>
-                <option value="ICT">ICT</option>
-               <option value="ARCHITECTURE">نقشه کشی معماری</option>   
-               <option value="GRAPHICS">گرافیک</option>
-               <option value="ACCOUNTING">حسابداری</option>
-               <option value="CLOTHING_DESIGN">طراحی دوخت</option>
-               <option value="PHYSICAL_EDUCATION">تربیت بدنی</option>
-               <option value="IT">IT</option>
-              </select>
+        <div class="form-box">
+          <div class="form-control">
+          <select id=uni dir="rtl" class="client-info">
+              <option value="" disabled="disabled" selected="selected">دانشگاه خود را انتخاب کنید</option>
+              <option value="SHARIATY_TECHNICAL_COLLEGE">دانشکده فنی دکتر شریعتی</option>
+              <option value="VALIASR_TECHNICAL_COLLEGE"> دانشکده فنی ولیعصر</option>
+              <option value="ENGHELAB_TECHNICAL_COLLEGE">دانشکده فنی انقلاب اسلامی</option>
+              <option value="SHAMSIPOUR_TECHNICAL_COLLEGE">دانشکده فنی شمسی پور</option>
+          </select>
        
-            </label>
+          <small>Error</small>
+        </div>
+</div>
+
+
+        <div class="form-box">
+          <div class="form-control">
+          <select id="major"  dir="rtl" class="client-info" >
+              <option value="" disabled="disabled" selected="selected">رشته خود را انتخاب کنید</option>
+              <option value="SOFTWARE">نرم افزار</option>
+              <option value="ELECTRONICS">الکترونیک</option>
+              <option value="MECHANICS">مکانیک</option>
+              <option value="ICT">ICT</option>
+             <option value="ARCHITECTURE">نقشه کشی معماری</option>   
+             <option value="GRAPHICS">گرافیک</option>
+             <option value="ACCOUNTING">حسابداری</option>
+             <option value="CLOTHING_DESIGN">طراحی دوخت</option>
+             <option value="PHYSICAL_EDUCATION">تربیت بدنی</option>
+             <option value="IT">IT</option>
+            </select>
+          <small>Error</small>
+        </div></div>
+
 
 
          
+        <div class="form-box">
+          <div class="form-control">
+          <select id="postType"  name='postTypes' dir='rtl' >
+         <option value='' disabled='disabled' selected='selected'>پست را انتخاب کنید</option>
+         <option value='INVITATION'>فراخوان</option>
+          <option value='BEST_PROJECTS'>بهترین پایان نامه ها</option>
+         <option value='NEWS'>اخبار دانشگاهی</option>
+         <option value='TOP_ENTRIES'>رتبه های برتر کنکور</option>
+          <option value='MASTERS_NOTES'>جزوات اساتید</option> 
+          <option value='ENTRANCE_EXAM_GUIDANCE'>راهنمای کنکور کاردانی به کارشناسی</option>
+          <option value='STUDENT_SERVICES'>خدمات دانشجویی</option>
+          </select>
+           <small>Error</small>
+        </div></div><br>
+           
+
+           
+             
 
 
-            <label class="select" for="postType" id="typeLabel" >
-              <!-- <select id="postType" required="required" name="postTypes" dir="rtl" >
-                <option value="" disabled="disabled" selected="selected">پست را انتخاب کنید</option>
-                <option value="INVITATION">فراخوان</option>
-                <option value="BEST_PROJECTS">بهترین پایان نامه ها</option>
-                <option value="NEWS">اخبار دانشگاهی</option>
-                <option value="TOP_ENTRIES">رتبه های برتر کنکور</option>
-               <option value="MASTERS_NOTES">جزوات اساتید</option>   
-               <option value="ENTRANCE_EXAM_GUIDANCE">راهنمای کنکور کاردانی به کارشناسی</option>
-               <option value="STUDENT_SERVICES">خدمات دانشجویی</option>
-               </select> -->
-       
-            </label>
-<hr>
-
-<input id="title" type="text" placeholder="عنوان" />
-<input id="contact" type="text"  title="لطفا یک شماره تماس یا ایمیل معتبر وارد کنید" placeholder="راه ارتباطی">
 
 
+        <div class="form-box"  style="text-align: right; direction: rtl;"> 
 
-
+          <textarea name="content"  rows="25" cols="10" placeholder="توضیحات" id="description" ></textarea>
+          <small>Error</small>
         </div>
-        <div class="form-box"  style="text-align: right; direction: rtl;">
-            
-            <textarea name="content"  rows="25" cols="10" placeholder="توضیحات" id="description" ></textarea>
 
 
+<div class="form-button">
+        <button type="submit" id="submit" class="submit" onclick="uploadPost()" >ارسال</button>
 
-
-
-        </div>
-        <div class="form-submit">
-            <input type="button" id="submit" value="ارسال پست" onclick="uploadPost()" />
-        </div>
-    </form>
 </div>
 
+
+
+
+
+
+
+
+        
+        
+
+      </form>
+    </div>
 
 <footer class="footer">
   <div class="footer-left col-md-4 col-sm-6">
@@ -286,15 +314,21 @@ xmlhttp.send(detailArrstr);
               let text="";
               if(userType=='STUDENT')
               {
-                  text="<select id='postType' required='required' name='postTypes' dir='rtl' >"+
+                  text="<div class='form-box'>"+
+                  "<div class='form-control'>"+
+                  "<select id='postType'  name='postTypes' dir='rtl' >"+
                 "<option value='' disabled='disabled' selected='selected'>پست را انتخاب کنید</option>"+
                 "<option value='MASTERS_NOTES'>جزوات اساتید</option>"+   
                 "<option value='ENTRANCE_EXAM_GUIDANCE'>راهنمای کنکور کاردانی به کارشناسی</option>"+
                 "<option value='STUDENT_SERVICES'>خدمات دانشجویی</option>"+
-                "</select>"
+                "</select>"+
+                "<small>Error</small>"+
+                 "</div>"+"</div>"
               }else
               {
-                text="<select id='postType' required='required' name='postTypes' dir='rtl' >"+
+                text="<div class='form-box'>"+
+                "<div class='form-control'>"+
+                "<select id='postType'  name='postTypes' dir='rtl' >"+
                 "<option value='' disabled='disabled' selected='selected'>پست را انتخاب کنید</option>"+
                 "<option value='INVITATION'>فراخوان</option>"+
                 "<option value='BEST_PROJECTS'>بهترین پایان نامه ها</option>"+
@@ -303,7 +337,10 @@ xmlhttp.send(detailArrstr);
                 "<option value='MASTERS_NOTES'>جزوات اساتید</option>"+   
                 "<option value='ENTRANCE_EXAM_GUIDANCE'>راهنمای کنکور کاردانی به کارشناسی</option>"+
                 "<option value='STUDENT_SERVICES'>خدمات دانشجویی</option>"+
-                "</select>"
+                "</select>"+
+                "<small>Error</small>"+
+                "</div>"+"</div>"
+
               }
               document.getElementById("typeLabel").innerHTML = text;
    
@@ -353,8 +390,8 @@ xmlhttp.send(detailArrstr);
 
 
 
-
-
-        <script src="../../src/app/makepost.js"></script>
+<script src="./app.js"></script>
+<script src="/ttcu/src/app/makepost-validation.js"></script> 
+<script src="/ttcu/src/app/makepost.js"></script>
 </body>
 </html>

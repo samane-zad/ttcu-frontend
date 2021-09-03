@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>TTCU</title>
+    <title>خانه</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
-    <link rel="stylesheet" href="cssnew.css"> 
+    <link rel="stylesheet" href="/ttcu/src/css/main.css">
+    <link rel="stylesheet" href="indexuser.css">
+
     <link rel="stylesheet" href="/ttcu/src/footer.css">
     <link rel="stylesheet" href="darkmode/moon.css">
     <link rel="stylesheet" href="../../../../src/css/updatepost.css">
@@ -34,33 +36,32 @@
         <div class="header-dark">
             <div class="header" id="myHeader">  
                           <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
-                <div class="container"><img src="Icon.png"><a class="navbar-brand" href="#">TTCU </a>
+                <div class="container"><img src="Icon.png"><a class="navbar-brand" href="/ttcu/public/index.html">TTCU </a>
                     
                 
                     <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
                         <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navcol-1">
 
+                      <ul class="nav navbar-nav">
+                        <li class="nav-item" role="presentation">  
+                            <div class="moon" onclick="myFunction()" class= dark-mode ></div></li>
 
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item" role="presentation">  
-                                <div class="moon" onclick="myFunction()" class= dark-mode ></div></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/user/html/index/index.html">خانه</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/about/about.html">درباره ما</a></li>
 
-                            
-        
-    
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="../../../../public/index.html">خانه</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="../Pages/about/about.html">درباره ما</a></li>
-    
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="#">بلاگ</a></li>
-    
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/contact-us/contact.html">تماس باما</a></li>
-                                <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">مشاهده پست ها </a>
-                                  <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="../../../postpage/bestPost.html">منتخب برای شما</a><a class="dropdown-item" role="presentation" href="../../../postpage/showpost.html">جستجوی پست</a></div>
-                                </li>
-                              
-                        </ul>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/blog/blogpage.html">بلاگ</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/contact-us/contact.html">تماس باما</a></li>
+                            <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >مشاهده پست ها </a>
+                              <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item" role="presentation" href="/ttcu/Pages/postpage/bestPost.html">منتخب برای شما</a>
+                                <a class="dropdown-item" role="presentation" href="/ttcu/Pages/postpage/showpost.html">جستجوی پست</a>
 
+                              </div>
+                            </li>
+                          
+                          
+                    </ul>
                         <form class="form-inline mr-auto" target="_self">  </form>
                           
                         <span class="navbar-text">
@@ -94,6 +95,11 @@
           </div>
       
         </div>
+        <a href="/ttcu/Pages/postpage/makepost.html">
+        <button  id="myBtn" title="ساخت پست جدید" class="newpost">+</button></a>
+
+
+
        <!-- <div >
       
           <div class="card" style="width:500px;text-align: center;">
@@ -105,10 +111,20 @@
     </div>
       
    
-    <!---->
+    -->
 
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
 
 <script>
 
@@ -136,7 +152,8 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
         {
           text="<div class='card w-75' style='text-align: center;'>"+
                    "<div class='card-body'>"+
-                     "<h5 class='card-title'><img src='../../../../src/img/notFound.png' height='250' width='250'>هیچ پستی برای نمایش یافت نشد</h5>"+
+                    "<img src='../../../../src/img/notFound.png' height='100px' width='100px'>"+
+                     "<h5 class='card-title'>هیچ پستی برای نمایش یافت نشد</h5>"+
                      "<h7 class='card-text'>شما هنوز پستی در صفحه خود ایجاد نکرده اید، برای ایجاد پست لینک زیر را دنبال کنید</h7>"+
                      "<p></p>"+
                      "<a href='../../../postpage/makepost.html' class='btn btn-primary'>ثبت پست جدید</a>"+
@@ -541,15 +558,33 @@ xmlhttp.send(JSON.stringify(detailArr));
     }
   </script>
   
+
+
+
+
+
+
+
     <script src="../../../../src/app/updatepost.js"></script>
-    
     <script src="../../../../src/app/enumConverter.js"></script>
-    
-    
     <script src="darkmode/darkmod.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     <!----->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>

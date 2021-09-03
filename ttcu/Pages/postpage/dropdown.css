@@ -19,7 +19,7 @@
 }
 
 .items{
-    margin: 0;
+  margin: 0;
   padding: 0;
   border: 0;
   list-style: none;
@@ -183,7 +183,7 @@ a.breakpoint {
 .sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 15px;
   color: rgb(0, 0, 0);
   display: block;
   border: none;
@@ -224,3 +224,4 @@ a.breakpoint {
   float: right;
   padding-right: 8px;
 }
+/****/

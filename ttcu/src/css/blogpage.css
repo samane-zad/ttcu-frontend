@@ -50,6 +50,8 @@ nav.menu ul a:hover {
   text-decoration: underline;
 }
 
+
+
 /* .sidebar {
   width:275px;
   float:right;
@@ -104,6 +106,11 @@ nav.menu ul a:hover {
   margin:0 0 25px -25px;
   max-width: 650px;
   min-width: 650px;
+}
+
+.conteudo video {
+  max-width: 100%;
+  min-width:100%;
 }
 
 .conteudo h1 {
@@ -220,6 +227,7 @@ nav.menu ul a {
   .conteudo img {
   margin:-5% 0 25px -5%;
 }
-
-  
+.conteudo video {
+  margin:-5% 0 25px -5%;
+}
 }

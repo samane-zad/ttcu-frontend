@@ -9,9 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet"   href="signup.css">
   <link rel="stylesheet"   href="../../src/css/modal.css">
-  <link rel="stylesheet"   href="select-option.css">
+  <link rel="stylesheet"   href="/ttcu/src/select-option.css">
   <link rel=icon  href="16X16.ico" >
   <link rel=icon href="../../src/Logo/ttcu-icon.ico">
+  <script src="/ttcu/Pages/login/hide-password.js"></script>
 
 
   <title>ثبت نام </title>
@@ -27,51 +28,66 @@
 
    
    
-      <p id="link"> ثبت نام کرده اید؟ <a href="../Login/login.html">ورود</a></p>
+      <p id="link"> ثبت نام کرده اید؟ <a href="/ttcu/Pages/login/login.html">ورود</a></p>
  
 
       <form action="" method="POST" class="form" autocomplete="off">
 
-          <div>
-            <label for="username">نام کاربری</label>
+        <div class="form-control">
+            <label for="username"><em style="color: red;">*</em>نام کاربری</label>
             <input type="text" id="username" type=text name="username"  id="username" placeholder="نام کاربری خود را وارد کنید"  id="username" class="client-info"    dir="rtl"  >
             <small>Error</small>
       </div>
 
 
-      <div>
-        <label for="fName">نام</label>
+      <div class="form-control">
+        <label for="fName"><em style="color: red;">*</em>نام</label>
         <input  type="text" id="fName" placeholder="نام خود را وارد کنید" name="fname" id="fName" class="client-info" dir="rtl">
         <small>Error</small>
   </div>
 
 
 
-  <div>
-    <label for="lName">نام خانوادگی</label>
+  <div class="form-control">
+        <label for="lName"><em style="color: red;">*</em>نام خانوادگی</label>
     <input type="text" placeholder="نام خانوادگی خود را وارد کنید " name="lName" id="lName" class="client-info"  dir="rtl"   >
     <small>Error</small>
 
 </div>
 
-      
+<div class="form-control">
+    <label for="password"><em style="color: red;">*</em>گذرواژه</label>
+    <input type="password" name="password" id="password" placeholder="گذرواژه" class="client-info"   dir="rtl"/>
+   <small>Error</small>
+</div>
+
+<div class="checkbox" >
+<input type="checkbox" onclick="myFunction()"   > 
+نمایش گذرواژه
+</div>
 
 
   
-    <div >
-<label>گذرواژه</label>
-    <input type="password" name="password" id="password" placeholder="گذرواژه" class="client-info"   dir="rtl" />
+  
+<div class="form-control">
+      <label for="confirm-password"><em style="color: red;">*</em>تایید گذرواژه</label>
+    <input type="password" id=confirm-password placeholder="تاییدگذرواژه" class="client-info"   dir="rtl" >
+
+    <small>Error</small>
+
+  </div>
 
 
-      <small>Error</small>
-        
-</div>
-      
 
 
-          <div class="form-control">
-            <select id=uni dir="rtl" class="client-info">
-                <option value="" disabled="disabled" selected="selected">دانشگاه خود را انتخاب کنید</option>
+
+
+
+
+
+  <div class="form-control">
+                <select id=uni dir="rtl" class="client-info">
+                <option value="" disabled="disabled" selected="selected">دانشگاه خود را انتخاب کنید<em style="color: red;">*</em></option>
                 <option value="SHARIATY_TECHNICAL_COLLEGE">دانشکده فنی دکتر شریعتی</option>
                 <option value="VALIASR_TECHNICAL_COLLEGE"> دانشکده فنی ولیعصر</option>
                 <option value="ENGHELAB_TECHNICAL_COLLEGE">دانشکده فنی انقلاب اسلامی</option>
@@ -85,7 +101,7 @@
 
           <div class="form-control">
             <select id="major"  dir="rtl" class="client-info" >
-                <option value="" disabled="disabled" selected="selected">رشته خود را انتخاب کنید</option>
+                <option value="" disabled="disabled" selected="selected">رشته خود را انتخاب کنید <em style="color: red;">*</em></option>
                 <option value="SOFTWARE">نرم افزار</option>
                 <option value="ELECTRONICS">الکترونیک</option>
                 <option value="MECHANICS">مکانیک</option>
@@ -105,7 +121,7 @@
 
           <div class="form-control">
 <select id="userType"  name="Usertypes" dir="rtl" class="client-info">
-<option value="" disabled="disabled" selected="selected">نوع کاربر را انتخاب کنید</option>
+<option value="" disabled="disabled" selected="selected">نوع کاربر را انتخاب کنید<em style="color: red;">*</em></option>
 <option value="ADMIN">مدیر گروه</option>
 <option value="MASTER">مدیر </option>
 <option value="TEACHER">استاد</option>
@@ -118,7 +134,7 @@
 
 
 
-          <a href="../../public/index.html" ><p class="linkhome" >بازگشت به خانه</p> </a>   
+          <a href="/ttcu/Pages/user/html/index/index.html" ><p class="linkhome" >بازگشت به خانه</p> </a>   
 
           <button type="submit" id="submit"   class="sbmt" onclick="signUp()"  >ثبت</button>
          
@@ -283,7 +299,6 @@ xmlhttp.send(detailArrstr);
       </script>
 
       
-   <script src="validaition.js"></script> 
   <script src="signup.js"></script>
   <script src="../../src/app/enumConverter.js"></script>
   <script src="../../src/app/modal.js"></script>
