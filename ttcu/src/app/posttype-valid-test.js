@@ -1,5 +1,5 @@
 // Query Selectors
-const form = document.querySelector(".form");
+const form = document.querySelector("#form");
 const postTypes = document.querySelector("#postType");
 
 

@@ -4,7 +4,7 @@
   margin-top: 3%;
   margin-bottom: 3%;
   border-radius: 0.5rem;
-  background: rgba(150, 122, 173, 0.207);
+  background: #6e88faa8;
 }
 .profile-img{
   text-align: center;
@@ -20,9 +20,7 @@
   right: 0;
   top: 0;
 }
-.profile-head h5{
-  color: #333;
-}
+
 .profile-head h6{
   color: #0062cc;
 }
@@ -55,7 +53,7 @@
 .profile-head .nav-tabs .nav-link.active{
   border: none;
   border-bottom:2px solid #0062cc;
-  background: rgba(255, 255, 255, 0.398);
+  background: rgba(55, 53, 53, 0.261);
 
 }
 .profile-work{
@@ -83,8 +81,4 @@
   
 
 }
-.profile-tab p{
-  font-weight: 600;
-  color: #0062cc;
 
-}

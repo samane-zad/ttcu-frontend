@@ -7,16 +7,16 @@
     flex-direction: column;
   }
   
-  #form-control.error input {
+  #form-control#error input {
     border-color: red;
   }
   
-  #form-control.success input{
+  #form-control#success input{
     border-color: rgb(40, 238, 22);
   }
   
   
-  #form-control.error textarea {
+  #form-control#error textarea {
     border-color: red;
   }
   
@@ -25,16 +25,16 @@
   }
   
   
-  #form-control.error select {
+  #form-control#error select {
     border-color: red;
   }
   
-  #form-control.success  select {
+  #form-control#success  select {
     border-color: rgb(40, 238, 22);
   }
   
   
-  #form-control.error small {
+  #form-control#error small {
     color: red;
     visibility: visible;
     font-size: 0.7rem;

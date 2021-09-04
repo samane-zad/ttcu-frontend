@@ -10,8 +10,9 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
      <link rel="stylesheet" href="/ttcu/src/css/main.css">
-      <link rel="stylesheet" href="/ttcu/src/css/mainstyle.css">  
-    <link rel="stylesheet" href="/ttcu/public/darkmode/moon.css">
+     <link rel="stylesheet" href="/ttcu/src/css/mainstyle.css">  
+     <link rel="stylesheet" href="/ttcu/src/css/scrollToTop.css">  
+     <link rel="stylesheet" href="/ttcu/public/darkmode/moon.css">
     <link rel="stylesheet" href="/ttcu/src/footer.css">
     <link rel=icon href="../../src/Logo/ttcu-icon.ico"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -72,8 +73,10 @@
 
   <!-- Move to up button -->
   <div class="scroll-button">
-    <a href="#home"><i class="fas fa-arrow-up"></i></a>
-  </div>
+</div>
+  <button onclick="topFunction()" id="myBtn" title="برو بالا" class="to-top"></button>
+
+
   <!-- navgaition menu -->
 
 
@@ -240,7 +243,7 @@
           </div>
       <div>
         <i class="fa fa-phone"></i>
-        <p> (+98) 21 22 44 70 53</p>
+        <a href="tel:+9822447053"> +98 22 44 70 53</a>
       </div>
       <div>
         <i class="fa fa-envelope"></i>
@@ -250,7 +253,7 @@
     <div class="footer-right col-md-4 col-sm-6">
       <h2> TTCU<span> <img style="width: 50px; height: 60px;" src="/ttcu/src/img/Logo/Icon.png"></span></h2>
       <p class="menu">
-        <a href="index.html"> خانه</a> |
+        <a href="/ttcu/public/index.html"> خانه</a> |
         <a href="/ttcu/Pages/about/about.html"> درباره ما</a> |
         <a href="/ttcu/Pages/blog/blogpage.html"> بلاگ</a> |
         <a href="/ttcu/Pages/contact-us/contact.html"> تماس با ما</a>
@@ -258,10 +261,12 @@
       <p class="name"> SamFa &copy; 2021</p>
     </div>
   </footer> 
+</div>  
 
 
 <script src="about.js"></script>
 <script src="/ttcu/public/darkmode/darkmod.js"></script>
+<script src="/ttcu/src/app/scrollToTop.js"></script>
 
 
   
