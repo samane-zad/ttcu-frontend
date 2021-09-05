@@ -1,0 +1,63 @@
+
+/*scroll**/
+
+#myBtn {
+    height: 50px;
+    width: 50px;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color:#fa2d2d;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    outline-style:initial;
+    border-radius: 100%;
+  /**/
+  
+  
+  }
+  
+  #myBtn:hover {
+    background-color:#8b1616;
+  }
+  
+  .to-top{
+    color:rgb(0, 0, 0);
+    padding-top:1.8em;
+    display:inline-block;/* or block */
+    position:relative;
+    border-color:rgb(0, 0, 0);
+    text-decoration:none;
+    transition:all .3s ease-out;
+  }
+  .to-top:before{
+    content:'▲';
+    font-size:.9em;
+    position:absolute;
+    top:0;
+    left:50%;
+    margin-left:-25px;
+    border:solid .13em white;
+    border-radius:10em;
+    height:50px;
+    width: 50px;
+    line-height:20px;
+    border-color:inherit;
+    transition:transform .5s ease-in;
+  }
+  .to-top:hover{
+    color:pink;
+    border-color:pink;
+  }
+  .to-top:hover:before{
+    transform: rotate(360deg);
+  }
+
+
+  

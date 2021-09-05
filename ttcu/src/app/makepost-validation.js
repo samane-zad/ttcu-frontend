@@ -1,10 +1,9 @@
 // Query Selectors
-const form = document.querySelector(".form");
+const form = document.querySelector("#form");
 const title = document.querySelector("#title");
 const email = document.querySelector("#contact");
 const uni = document.querySelector("#uni");
 const major = document.querySelector("#major");
-const postTypes = document.querySelector("#postType");
 const description = document.querySelector("#description");
 
 
@@ -76,15 +75,13 @@ function getFieldName(input) {
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    checkRequired([title,email,uni,major,postTypes,description]);
+    checkRequired([title,email,uni,major,description]);
 
 
 
-})
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    checkLength(title, 3, 20);
+
+    checkLength(title,3,20);
     checkEmail(email);
-    checkdescriptipon(description);
+    checkLength(description,10,400);
 
 })

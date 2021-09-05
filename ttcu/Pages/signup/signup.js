@@ -15,32 +15,40 @@ const togglePassword = document.querySelector('#togglePassword');
 
 
     function checkusername(input) {
-        var re = /^(([a-zA-Z)]+[a-zA-Z]{8,15}))$/;
+        var re =/^(([a-zA-Z\+\.\+_)]{8,15}))$/;
         if(re.test(input.value.trim())) {
             showSuccess(input);
         } else {
-            showError(input, `تعداد کاراکتر ها حداقل و حداکثر 15 باشد!عدد،علائم،فضای خالی،زبان فارسی دراین فیلد نامعتبراست `) 
+            showError(input, `تعداد کاراکتر ها حداقل 8و حداکثر 15 باشد!عدد،علائم،فضای خالی،زبان انگلیسی دراین فیلد نامعتبراست `) 
                
    
             }      
            }          
-            
           
             
         
-        //    function checkNameAndLastName(input) {
-        //     var re = /^(([a-zA-Z\+\.)+[a-zA-Z]{8,15}))$/;
-        //     if(re.test(input.value.trim())) {
-        //         showSuccess(input);
-        //     } else {
-        //         showError(input,
-        //              `تعداد کاراکتر ها حداقل باید وحداکثر 15 باشد|عدد،علائم،فضای خالی،زبان فارسی در این فیلد نامعتبراست `) 
+           function checkName(input) {
+            var re = /^(([ل+\ت+\ن+\م+\ک+\ظ+\ئ+\و+\د+\ذ+\ر+\ط+\گ+\ز+\ی+\س+\ش+\پ+\چ+\ج+\ح+\خ+\ه+\ع+\غ+\ف+\ق+\ث+\ص+\ض+\ب+\پ+\ا]{2,15}))$/;
+            if(re.test(input.value.trim())) {
+                showSuccess(input);
+            } else {
+                showError(input,
+                     `تعداد کاراکتر ها حداقل 2باید وحداکثر 15 باشد|عدد،علائم،فضای خالی،زبان فارسی در این فیلد نامعتبراست `) 
     
-        //         }      
-        //        }          
+                }      
+               }          
                 
     
-
+               function checkLastName(input) {
+                var re = /^(([ل+\ت+\ن+\م+\ک+\ظ+\ئ+\و+\د+\ذ+\ر+\ط+\گ+\ز+\ی+\س+\ش+\پ+\چ+\ج+\ح+\خ+\ه+\ع+\غ+\ف+\ق+\ث+\ص+\ض+\ب+\پ+\ا]{3,15}))$/;
+                if(re.test(input.value.trim())) {
+                    showSuccess(input);
+                } else {
+                    showError(input,
+                         `تعداد کاراکتر ها حداقل 3باید وحداکثر 15 باشد|عدد،علائم،فضای خالی،زبان فارسی در این فیلد نامعتبراست `) 
+        
+                    }      
+                   } 
 
 
 
@@ -147,7 +155,8 @@ const togglePassword = document.querySelector('#togglePassword');
         
  
          checkusername(username,8,15);
-         
+         checkName(fName);
+         checkLastName(lName);
         checkLength(password, 6, 30);
         checkLength(passwordConfirm, 6, 30);
         doPasswordsMatch(password, passwordConfirm);
