@@ -179,7 +179,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 
  " <div class='field'>"+
   "  <label style='text-align: right; '>عنوان</label>"+
-   " <input id='textId"+i+"'  type='text' class='text1'  style='font-size: 25px;' value='"  + response.object[i].title +"' autocomplete='off' disabled='true' />"+
+   " <input id='textId"+i+"'  type='text' class='text1' required oninvalid='this.setCustomValidity('حداقل 3 وحداکثر 15 کاراکتر باید وارد فیلد شود')' minlength='3'  maxlength='15' style='font-size: 25px;' value='"  + response.object[i].title +"' autocomplete='off' disabled='true' />"+
   "</div>"+
 "</div>"+
 
@@ -189,7 +189,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
   "  <label style='text-align: right;'>نوع پست </label>";
   if(window.localStorage.getItem('userType')=='STUDENT')
   {
-    text+="<select id='postType"+i+"'  name='postTypes' dir='rtl' disabled='true' >"+
+    text+="<select id='postType"+i+"'  name='postTypes' dir='rtl' disabled='true' required  >"+
                 "<option value='" +response.object[i].postType + "' disabled='disabled' selected='selected'>" +convertPostType(response.object[i].postType) + "</option>"+
                 "<option value='MASTERS_NOTES'>جزوات اساتید</option>"+   
                 "<option value='ENTRANCE_EXAM_GUIDANCE'>راهنمای کنکور کاردانی به کارشناسی</option>"+
@@ -197,7 +197,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
                 "</select>"
   }else
   {
-    text+="<select id='postType"+i+"'  name='postTypes' dir='rtl' disabled='true'>"+
+    text+="<select id='postType"+i+"'  name='postTypes' dir='rtl' disabled='true' required  >"+
                 "<option value='" +response.object[i].postType+ "' disabled='disabled' selected='selected'>" +convertPostType(response.object[i].postType) + "</option>"+
                 "<option value='INVITATION'>فراخوان</option>"+
                 "<option value='BEST_PROJECTS'>بهترین پایان نامه ها</option>"+
@@ -239,7 +239,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 "<div class='row'>"+
   "<div class='field'>"+
     "<label style='text-align: right;'>رشته</label>"+
-    "<select id='major"+i+"' required='required' name='UniversityMajor' dir='rtl' disabled='true' >"+
+    "<select id='major"+i+"' required  name='UniversityMajor' dir='rtl' disabled='true' >"+
 	  "<option value='"  + response.object[i].uniMajor.major +"' disabled='disabled' selected='selected'>"  + convertMajor(response.object[i].uniMajor.major) +" </option>"+
       "<option value='SOFTWARE'>نرم افزار</option>"+
       "<option value='ELECTRONICS'>الکترونیک</option>"+
@@ -259,7 +259,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 "<div class='row'>"+
   "<div class='field'>"+
   "<label style='text-align: right;'>دانشگاه</label>"+
-  "<select id='uni"+i+"' required='required' name='University' dir='rtl' disabled='true' >"+
+  "<select id='uni"+i+"' name='University' dir='rtl' disabled='true' required >"+
   	"<option value='"  + response.object[i].uniMajor.uni +"' disabled='disabled' selected='selected'>"  + convertUni(response.object[i].uniMajor.uni) +" </option>"+
     "<option value='SHARIATY_TECHNICAL_COLLEGE'>دانشکده فنی دکتر شریعتی</option>"+
     "<option value='VALIASR_TECHNICAL_COLLEGE'> دانشکده فنی ولیعصر</option>"+
@@ -280,7 +280,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
       "   <br>"+
 
        "  <div class='form-box'  style='text-align: right; direction: rtl;'>"+
-        " <textarea  id='description"+i+"' id='editor' cols='90'  placeholder='توضیحات' style='  width: 100%;  padding: 12px;"+
+        " <textarea  id='description"+i+"' id='editor' cols='90' required pattern='.*\S.*' oninvalid='this.setCustomValidity('حداقل 3 کاراکتر باید وارد فیلد شود')' minlength='3'   placeholder='توضیحات' style='  width: 100%;  padding: 12px;"+
          "border: 1px solid rgba(155, 155, 155, 0.645);"+
          "border-radius:4 px;"+
          "box-sizing: border-box;"+
@@ -296,8 +296,8 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
     "<div class='row'>"+
 
      " <div class='field' style='padding-left:70%;' >"+
-    "<label style='text-align: right;' style='padding-right:50px;' disabled='true'>تلفن:</label>"+
-    "<input  id='contact"+i+"' type='text' value='"+response.object[i].contact +"' />"+
+    "<label style='text-align: right;' style='padding-right:50px;' disabled='true' >ایمیل:</label>"+
+    "<input  id='contact"+i+"' type='text'  name='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' required pattern='.*\S.*' value='"+response.object[i].contact +"' placeholder='example@example.com' />"+
   "</div>"+
   "<h6>تاریخ :"+response.object[i].pDate+"  "+response.object[i].pTime+"</h6></div>"+
  "</div>"+

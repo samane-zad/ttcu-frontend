@@ -81,12 +81,14 @@ function showPage() {
 
 function typingEffect() {
   const contactTexts = shuffleArray([
-    "اینجا راه تازه ای برای یادگیری است",
-    "Want to tell me something?😊",
-    "Ask me anything!😄",
-    "Want to talk about an idea?",
-    "Lets do something together!🤗",
-    "Do you need help in something?👍"
+    "اینجا راه تازه ای برای یادگیری است🚀",
+    "آیا دوست داری که از خدمات دانشجویی و فراخوان ها مطلع بشید؟📢",
+    "آیادوست داری بهترین پایان نامه را بخونید؟💯",
+    "آیا دوست دارید که از اخبار دانشگاه ها مطلع بشید؟🤓",
+    "آیا دوست دارید با رتبه های برتر  کنکور آشنا بشید ؟📚"
+
+
+
   ]);
   const typedtext = document.getElementsByClassName("typedtext")[0];
   let removing = false;

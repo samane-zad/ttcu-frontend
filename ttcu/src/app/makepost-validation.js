@@ -79,11 +79,9 @@ form.addEventListener("submit", (event) => {
 
 
 
-})
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    checkLength(title, 3, 20);
+
+    checkLength(title,3,20);
     checkEmail(email);
-    checkdescriptipon(description);
+    checkLength(description,10,400);
 
 })
