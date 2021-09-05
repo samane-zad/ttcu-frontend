@@ -1,5 +1,5 @@
 // Query Selectors
-const form = document.querySelector("#form");
+const form = document.querySelector(".form");
 const title = document.querySelector("#title");
 const email = document.querySelector("#contact");
 const uni = document.querySelector("#uni");
