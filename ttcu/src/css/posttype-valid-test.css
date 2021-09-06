@@ -1,0 +1,65 @@
+
+#form-control {
+    background-color: transparent;
+    border-color: transparent;
+    padding: 2.5rem ;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #form-control#error input {
+    border-color: red;
+  }
+  
+  #form-control#success input{
+    border-color: rgb(40, 238, 22);
+  }
+  
+  
+  #form-control#error textarea {
+    border-color: red;
+  }
+  
+  #form-control.success textarea{
+    border-color: rgb(40, 238, 22);
+  }
+  
+  
+  #form-control#error select {
+    border-color: red;
+  }
+  
+  #form-control#success  select {
+    border-color: rgb(40, 238, 22);
+  }
+  
+  
+  #form-control#error small {
+    color: red;
+    visibility: visible;
+    font-size: 0.7rem;
+  }
+  
+  #form-control input,select {
+    margin: 0.3rem 0;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  #form-control select {
+    margin: 0.5rem 0;
+    padding: 0.7rem;
+    font-size: 0.8rem;
+  }
+  
+  #form-control textarea {
+    margin: 0.2rem 0;
+    padding: 1rem ;
+    font-size: 0.8rem;
+  }
+  
+  small {
+    direction:rtl;
+    text-align: right;
+    visibility: hidden;
+  }
+  

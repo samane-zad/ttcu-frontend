@@ -1,0 +1,43 @@
+#form-control {
+    padding:1px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #form-control.error input {
+    border-color: red;
+  }
+  #form-control.success input {
+    border-color: rgb(40, 238, 22);
+  }
+  
+  
+  
+  #form-control.error select {
+    border-color: red;
+  }
+  
+  #form-control.success select {
+    border-color: rgb(40, 238, 22);
+  }
+  
+  
+  
+  
+  
+  #form-control.error small {
+    color: red;
+    visibility: visible;
+    font-size: 12px;
+  }
+  
+  #form-control input {
+    margin: 10px;
+    padding:1px;
+  }
+  
+  /* .submit {
+    display: flex;
+    justify-content: center;
+  } */
