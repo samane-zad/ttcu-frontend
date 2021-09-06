@@ -1,57 +1,4 @@
-/* .wrap {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .object {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    display: none;
-  }
-  
-  .circle {
-    border-radius: 50px;
-  }
 
-  .show {
-    display: block;
-  }
-  
-  .red {
-    background-color: red;
-  }
-  
-  .blue {
-    background-color: blue;
-  }
-  
-  .green {
-    background-color: green;
-  }
-  
-  .purple {
-    background-color: purple;
-  }
-  
-
-  
-  .left {
-    float: left;
-    width: 40%;
-  }
-  .right {
-    float: right;
-    width: 60%;
-  }
-  h1 {
-    font-size: 125%;
-  }
-  
-  #no-results {
-    display: none;
-  } */
-  
   /*filter post*/
   
   #cssmenu,
@@ -72,7 +19,7 @@
 }
 
 .items{
-    margin: 0;
+  margin: 0;
   padding: 0;
   border: 0;
   list-style: none;
@@ -92,7 +39,7 @@
 
 
 #cssmenu ul li.header {
-  background:#2D8474;
+  background:#4178ee;
   color: white;
   font-size: 120%;
   padding: 5px
@@ -143,7 +90,7 @@
   left: -250px;
   top: 120px;
   z-index: 10000;
-  background:#2D8474;
+  background:#4178ee;
 }
 
 @media screen and (max-width: 600px) {
@@ -175,8 +122,9 @@
   color: #ffffff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
   text-overflow: ellipsis;
-  background:#354B46;
+  background:#80a6ed;
   transition: .1s all;
+  font-size: 12px;
 }
 .items{
   padding:0px 0px 0px 0px;
@@ -190,17 +138,17 @@
   color: #ffffff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
   text-overflow: ellipsis;
-  background:#354B46;
+  background:#cef3eb;
   transition: .1s all;
 }
 #cssmenu > ul > li > a:hover {
   color: #eeeeee;
-  background: #D3D3D3;
+  background: #5181dc;
 }
 
 #cssmenu > ul > li > .items:hover {
   color: #eeeeee;
-  background: dimgrey;
+  background:#4178ee;
 } 
 
 
@@ -235,8 +183,8 @@ a.breakpoint {
 .sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 20px;
-  color: #ffff;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
   display: block;
   border: none;
   background: none;
@@ -260,14 +208,14 @@ a.breakpoint {
 
 /* Add an active class to the active dropdown button */
 .active {
-  background-color:#00C5A5;
+  background-color:#8eebdb;
   color: white;
 }
 
 /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
 .dropdown-container {
   display: none;
-  background-color:#1E3137;
+  background-color:#658a96;
   padding-left: 8px;
 }
 
@@ -276,3 +224,4 @@ a.breakpoint {
   float: right;
   padding-right: 8px;
 }
+/****/

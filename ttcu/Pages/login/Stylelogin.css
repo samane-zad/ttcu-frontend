@@ -119,7 +119,7 @@ label {
   transition: all 200ms;
   text-shadow: var(--box-shadow);
 }
-#email:focus ~ label[for="email"] {
+#email:focus ~ label[for="username"] {
   margin: -76px 70px;
 }
 #password:focus ~ label[for="password"] {
@@ -251,3 +251,4 @@ color: rgb(194, 107, 209);
     #primary { width:100%; }
     #secondary { width:100%; margin:0; border:none; }
 }
+/*******/

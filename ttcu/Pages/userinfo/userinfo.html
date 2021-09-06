@@ -6,46 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/ttcu/public/Style.css">
-    <link rel="stylesheet" href="/ttcu/public/cssnew.css">
+    <link rel="stylesheet" href="/ttcu/src/css/main.css">
+    <link rel="stylesheet" href="/ttcu/src/css/mainstyle.css">
    <link rel="stylesheet" href="/ttcu/public/darkmode/moon.css">
    <link rel="stylesheet" href="/ttcu/src/footer.css">
    <link rel="stylesheet" href="../../src/css/userinfo.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
    <link rel=icon href="../../src/Logo/ttcu-icon.ico">
-   
+   <link rel="stylesheet" href="/ttcu/src/css/scroll.css">
+
    <title>اطلاعات کاربر</title>
   </head>
 <body>
-  <div class="grid-header">
-    <div>
-        <div class="header-dark">
-            <div class="header" id="myHeader">  
-                          <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
-                <div class="container"><img src="../../public/Icon.png"><a class="navbar-brand" href="#">TTCU </a>
+    <div class="scroll-button">  </div>
+
+    <div class="grid-header">
+        <div>
+            <div class="header-dark">
+                <div class="header" id="myHeader">  
+                              <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+                    <div class="container"><img src="/ttcu/public/Icon.png"><a class="navbar-brand" href="/ttcu/public/index.html">TTCU </a>
+                        
                     
-                
-                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
-                        <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navcol-1">
-
-
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item" role="presentation">  
-                                <div class="moon" onclick="myFunction()" class= dark-mode ></div></li>
-
-                            
-        
+                        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                            <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navcol-1">
     
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">خانه</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="../Pages/about/about.html">درباره ما</a></li>
     
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="#">بلاگ</a></li>
-    
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="../Pages/contact-us/contact.html">تماس باما</a></li>
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item" role="presentation">  
+                                    <div class="moon" onclick="myFunction()" class= dark-mode ></div></li>
     
                                 
-                        </ul>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/user/html/index/index.html">خانه</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/about/about.html">درباره ما</a></li>
+        
+                                    <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/blog/blogpage.html">بلاگ</a></li>
+        
+                                    <li class="nav-item" role="presentation"><a class="nav-link" href="/ttcu/Pages/contact-us/contact.html">تماس باما</a></li>
+        
+                             
+    
+    
+                             
+                            </ul>
 
 
 
@@ -53,10 +57,11 @@
 
                         <form class="form-inline mr-auto" target="_self">  </form>
                           
-                        
-                           
+                        <span class="navbar-text">
+                            <a href="../userinfo/userinfo.html" ><img src="../../src/img/per.PNG"></a>
 
-                            
+                            <!-- <a class="btn btn-light action-button" role="button" href="../signup/Signup.html">ثبت نام</a> -->
+                            <!-- <a a class="btn btn-light action-button" role="button" href="../login/login.html" class="login">ورود</a></span> -->
                  
             </nav>
         </div>
@@ -100,8 +105,8 @@
         <div class="col-md-4">
             <div class="profile-work">
                 <p>منو</p>
-                <a href="">بلاگ</a><br/>
-                <a href="">ساخت بلاگ</a><br/>
+                <a href="/ttcu/Pages/user/html/index/index.html">نمایش پست</a><br/>
+                <a href="/ttcu/Pages/postpage/makepost.html">ساخت پست</a><br/>
          
             </div>
         </div>
@@ -122,7 +127,7 @@
                                     <label>نام</label>
                                 </div>
                                 <div class="col-md-6" >
-                                    <p id="fName"></p>
+                                    <p id="fName" ></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -171,63 +176,54 @@
 </div>
 
     <!---->
-<footer class="flex-rw">
-  
-  <ul class="footer-list-top">
-    <li>
-      <h4 class="footer-list-header">About Pavilion</h4></li>
-    <li><a href='/shop/about-mission' class="generic-anchor footer-list-anchor" itemprop="significantLink">GET TO KNOW US</a></li>
-    <li><a href='/promos.html' class="generic-anchor footer-list-anchor" itemprop="significantLink">PROMOS</a></li>
-    <li><a href='/retailers/new-retailers.html' class="generic-anchor footer-list-anchor" itemprop="significantLink">BECOME A RETAILER</a></li>
+    <footer class="footer">
+        <div class="footer-left col-md-4 col-sm-6">
+          <p class="about">
+            <span> درباره ما</span> 
+            تعامل در عصر تکنولوژی، یکی از دلایل اصلی پیدایش سیستم های نوین است. ما با ارائه این طرح، با هدف ایجاد بستری یکپارچه برای تعامل و اشتراک گذاری اطلاعات بین دانشجوها، اساتید و مدیران گروه دانشکده های فنی، سیستمی را که نظیر آن برای این قشر تنها به صورت محدود و پراکنده یافت می شد، ایجاد کرده ایم. طبق یافته ها و تجربیات به دست آمده از تحصیل در دانشکده فنی به عنوان یک دانشجو، تعاملات دانشجویان با یکدیگر و اساتید در مواردی نظیر اخبار دانشگاه، موارد درسی و آموزشی، اطلاعیه فراخوان ها و همچنین ارائه اطلاعات درمورد خدمات دانشجویی، خلاصه می شود. بستر TTCU برای پاسخگویی به احتیاجات دانشجویان در موارد مذکور طراحی توسعه داده شده است.
 
-    <li><a href='/job-openings.html' itemprop="significantLink" class="generic-anchor footer-list-anchor">JOB OPENINGS</a></li>
+      
+          </p>
+          <div class="icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-center col-md-4 col-sm-6">
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>اقدسیه- گلزار شرقی</span> تهران , ایران</p>
+          </div>
+          <div>
+            <i class="fa fa-phone"></i>
+            <a href="tel:+9822447053"> +98 22 44 70 53</a>
 
-    <li><a href='/shop/about-show-schedule' class="generic-anchor footer-list-anchor" itemprop="significantLink">EVENTS</a></li>
-  </ul>
-  <ul class="footer-list-top">
-    <li>
-      <h4 class="footer-list-header">The Gift Selection</h4></li>
 
 
-    <li><a href='/Angels/cat/id/70' class="generic-anchor footer-list-anchor">ANGEL FIGURINES</a></li>
-    <li><a href='/Home-Decor/cat/id/64' class="generic-anchor footer-list-anchor">HOME DECOR</a></li>
-    <li><a href='/Mugs/cat/id/32' class="generic-anchor footer-list-anchor">MUGS</a></li>
-    <li><a href='/Pet-Lover/cat/id/108' class="generic-anchor footer-list-anchor">PET LOVER</a></li>
-    <li><a href='/Ladies-Accessories/cat/id/117' class="generic-anchor footer-list-anchor" target="_blank">HANDBAGS & JEWELRY</a></li>
-  </ul>
-  <ul class="footer-list-top">
-    <li id='help'>
-      <h4 class="footer-list-header">Please Help Me</h4></li>
-    <li><a href='/shop/about-contact' class="generic-anchor footer-list-anchor" itemprop="significantLink">CONTACT</a></li>
-    <li><a href='/faq.html' class="generic-anchor footer-list-anchor" itemprop="significantLink">FAQ</a></li>
-    <li id='find-a-store'><a href='/shop/store-locator' class="generic-anchor footer-list-anchor" itemprop="significantLink">STORE LOCATOR</a></li>
-    <li id='user-registration'><a href='/shop/user-registration?URL=' class="generic-anchor footer-list-anchor" itemprop="significantLink">NEW USERS</a></li>
-    <li id='order-tracking'><a href='/shop/order-status' itemprop="significantLink" class="generic-anchor footer-list-anchor">ORDER STATUS</a></li>
-  </ul>
-  <section class="footer-social-section flex-rw">
-      <span class="footer-social-overlap footer-social-connect">
-      CONNECT <span class="footer-social-small">with</span> US
-      </span>
-      <span class="footer-social-overlap footer-social-icons-wrapper">
-      <a href="https://www.pinterest.com/paviliongift/" class="generic-anchor" target="_blank" title="Pinterest" itemprop="significantLink"><i class="fa fa-pinterest"></i></a>
-      <a href="https://www.facebook.com/paviliongift" class="generic-anchor" target="_blank" title="Facebook" itemprop="significantLink"><i class="fa fa-facebook"></i></a>
-      <a href="https://twitter.com/PavilionGiftCo" class="generic-anchor" target="_blank" title="Twitter" itemprop="significantLink"><i class="fa fa-twitter"></i></a>
-      <a href="http://instagram.com/paviliongiftcompany" class="generic-anchor" target="_blank" title="Instagram" itemprop="significantLink"><i class="fa fa-instagram"></i></a>
-      <a href="https://www.youtube.com/channel/UCYgUODvd0qXbu_LkUWpTVEg" class="generic-anchor" target="_blank" title="Youtube" itemprop="significantLink"><i class="fa fa-youtube"></i></a>
-      <a href="https://plus.google.com/+Paviliongift/posts" class="generic-anchor" target="_blank" title="Google Plus" itemprop="significantLink"><i class="fa fa-google-plus"></i></a>
-      </span>
-  </section>
-  <section class="footer-bottom-section flex-rw">
-<div class="footer-bottom-wrapper">   
-<i class="fa fa-copyright" role="copyright">
- 
-</i> 2021  <address class="footer-address" role="company address">Tehran, IR</address><span class="footer-bottom-rights"> - All Rights Reserved - </span>
-    </div>
-    <div class="footer-bottom-wrapper">
-    <a href="/terms-of-use.html" class="generic-anchor" rel="nofollow">Terms</a> | <a href="/privacy-policy.html" class="generic-anchor" rel="nofollow">Privacy</a>
-      </div>
-  </section>
-</footer>
+
+
+          </div>
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p>
+              <a href="mailto:nezhadlotfi@protonmail.com">info@ttcu.com</a>            </p>
+          </div>
+        </div>
+        <div class="footer-right col-md-4 col-sm-6">
+          <h2> TTCU<span> <img src="../../public/Icon.png"></span></h2>
+          <p class="menu">
+            <a href="../../public/index.html"> خانه</a> |
+            <a href="../about/about.html"> درباره ما</a> |
+            <a href="../contact-us/contact.html"> تماس با ما</a>
+          </p>
+          <p class="name"> SamFa &copy; 2021</p>
+        </div>
+      </footer>
+
+
 
 <script>
 loadUserInfo();
@@ -294,6 +290,7 @@ loadUserInfo();
     
     </script>
 <script src="../../src/app/enumConverter.js"></script>
+<script src="/ttcu/src/app/scroll.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="../../public/darkmode/darkmod.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

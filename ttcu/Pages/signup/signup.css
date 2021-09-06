@@ -12,7 +12,6 @@
   --main-color: #fff;
   --second-color: #347deb;
   --box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  
 
 }
 
@@ -55,7 +54,7 @@ body {
 #left, #right {
   margin: auto;
   width: 95%;
-  height: 96%;
+  height: 97%;
   border-radius: 10px;
 }
 
@@ -70,12 +69,12 @@ body {
 
 
 .signup {
-  padding-bottom:2%;
+
   padding-left:80%;
   font-size:15px;
-    padding-top:5%;
+    padding-top:3%;
   text-transform: uppercase;
-  font-weight:30%;
+  font-weight:10%;
   text-shadow: var(--box-shadow);
 
 }
@@ -83,9 +82,9 @@ body {
 
 .client-info {
   display: block;
-  margin: 20px auto;
+  margin: 5px auto;
   width: 60%;
-  height: 50px;
+  height: 25px;
   border: solid #999 1px;
   border-radius: 5px;
   text-indent: 15px;
@@ -98,7 +97,7 @@ body {
 
 label {
   position: absolute;
-	font-size: 12px;
+	font-size: 10px;
 	white-space: nowrap;
 	background: #fff;
 	padding: 0 5px;
@@ -107,14 +106,27 @@ label {
   text-shadow: var(--box-shadow);
 }
 
+.sbmt{
+    display: block;
+    margin: 10px auto;
+    width: 30%;
+    height: 35px;
+    border: solid #999 1px;
+    border-radius: 5px;
+    text-indent: 15px;
+    transition: all 200ms;
+    box-shadow: var(--box-shadow);
+    padding-bottom: -10px;
+    align-items: center;
 
+}
 
 #submit {
   text-align: center;
   border: none;
   background-color: #9055ff;
   color: white;
-  width: 60%;
+  width: 30%;
   align-items: center;
   font-family:'IranianSans' ;
 
@@ -131,7 +143,6 @@ label {
   #container {
     width: 600px;
     display: block;
-   
   }
   #left {
     display: none;
@@ -155,11 +166,11 @@ label {
  
   #container {
     width: 90vw;
-    height: 95vh;
+    height:104vh;
   }
   #signup {
     padding-top: 0%;
-    font-size: 30px;
+    font-size: 10px;
     padding-right :240px;
     padding-left :60px;
     padding-bottom:0px;
@@ -167,14 +178,14 @@ label {
   }
 
 #link{
-  font-size: 15px;
+  font-size: 10px;
   padding-bottom: 20px;
-padding-top: 2px;
+  padding-top: 2px;
 
 }
 
 #link2{
-font-size: 15px;
+font-size: 10px;
 padding-left: 0px;
 padding-bottom: 555px;
 }
@@ -199,12 +210,19 @@ input[type=text], input[type=password]{
   flex-direction: column;
   margin-bottom: 20px;
 }
-.select{
+
+select{
   width: 100%;
   display: inline-block;
   padding: 0px;
   font-size: 16px;
   box-shadow: var(--box-shadow);
+  position: relative;
+  min-width: 200px;
+  box-sizing: border-box;
+  margin: 5px auto;
+  width:80%px;
+
 }
 
 
@@ -225,7 +243,7 @@ color: rgb(194, 107, 209);
 }
 
 .linkhome{
-  font-size: 12px;
+  font-size: 10px;
 }
 
 
@@ -255,10 +273,24 @@ color: rgb(194, 107, 209);
   border-color: rgb(40, 238, 22);
 }
 
+
+
+.form-control.error select {
+  border-color: red;
+}
+
+.form-control.success select {
+  border-color: rgb(40, 238, 22);
+}
+
+
+
+
+
 .form-control.error small {
   color: red;
   visibility: visible;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .form-control input {
@@ -271,7 +303,7 @@ color: rgb(194, 107, 209);
   justify-content: center;
 }
 
-button {
+/* button {
   padding: 1rem 2rem;
   margin-top: 1rem;
   justify-content: center;
@@ -281,12 +313,14 @@ button {
   color: #fff;
   font-weight: bold;
   font-size: 1rem;
-}
+} */
 
 small {
   visibility: hidden;
   direction:rtl ;
   text-align: center;
+  background-color: transparent;
+  background: transparent;
 }
 
 
@@ -318,4 +352,13 @@ input:focus,select {
 @media screen and (max-width: 768px) {
   #primary { width:100%; }
   #secondary { width:100%; margin:0; border:none; }
+}
+
+
+
+
+.checkbox{
+direction: rtl;
+padding-right: 20%;
+font-size: 10px;
 }
