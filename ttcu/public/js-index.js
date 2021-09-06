@@ -40,7 +40,7 @@
   
 
 //   /**sroll to top***/
-//Get the button
+// Get the button
 
 
 
@@ -77,3 +77,73 @@ function showPage() {
   document.getElementById("myDiv").style.display = "block";
 
 }
+/**Typing Animation***/
+
+function typingEffect() {
+  const contactTexts = shuffleArray([
+    "اینجا راه تازه ای برای یادگیری است🚀",
+    "آیا دوست داری که از خدمات دانشجویی و فراخوان ها مطلع بشید؟📢",
+    "آیادوست داری بهترین پایان نامه را بخونید؟💯",
+    "آیا دوست دارید که از اخبار دانشگاه ها مطلع بشید؟🤓",
+    "آیا دوست دارید با رتبه های برتر  کنکور آشنا بشید ؟📚"
+
+
+
+  ]);
+  const typedtext = document.getElementsByClassName("typedtext")[0];
+  let removing = false;
+  let idx = (char = 0);
+
+  setInterval(() => {
+    // We define the interval of the typing speed
+
+    // If we do not reach the limit, we insert characters in the html
+    if (char < contactTexts[idx].length)
+      typedtext.innerHTML += contactTexts[idx][char];
+
+    // 15*150ms = time before starting to remove characters
+    if (char == contactTexts[idx].length + 15) removing = true;
+
+    // Removing characters, the last one always
+    if (removing)
+      typedtext.innerHTML = typedtext.innerHTML.substring(
+        0,
+        typedtext.innerHTML.length - 1
+      );
+
+    char++; // Next character
+
+    // When there is nothing else to remove
+    if (typedtext.innerHTML.length === 0) {
+      // If we get to the end of the texts we start over
+      if (idx === contactTexts.length - 1) idx = 0;
+      else idx++;
+
+      char = 0; // Start the next text by the first character
+      removing = false; // No more removing characters
+    }
+  }, 150); // Typing speed, 150 ms
+}
+typingEffect();
+function shuffleArray(array) {
+  let currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+/***/
+document.querySelector('.menu-btn').addEventListener('click', () => document.querySelector('.main-menu').classList.toggle('show'))
+/****************step********/

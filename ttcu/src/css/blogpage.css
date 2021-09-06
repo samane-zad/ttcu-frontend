@@ -50,6 +50,12 @@ nav.menu ul a:hover {
   text-decoration: underline;
 }
 
+.ax{
+background-image: url("https://s19.picofile.com/file/8438041568/Untitled_3.png"); 
+background-position: center ;
+background-size: cover;
+}
+
 /* .sidebar {
   width:275px;
   float:right;
@@ -106,6 +112,11 @@ nav.menu ul a:hover {
   min-width: 650px;
 }
 
+.conteudo video {
+  max-width: 100%;
+  min-width:100%;
+}
+
 .conteudo h1 {
   margin:0 0 15px;
   padding:0;
@@ -133,6 +144,8 @@ nav.menu ul a:hover {
   margin: -10px 0 15px;
   font-size: 12px;
   text-transform: uppercase;
+
+  
 }
 
 @media screen and (max-width: 960px) {
@@ -220,6 +233,7 @@ nav.menu ul a {
   .conteudo img {
   margin:-5% 0 25px -5%;
 }
-
-  
+.conteudo video {
+  margin:-5% 0 25px -5%;
+}
 }
