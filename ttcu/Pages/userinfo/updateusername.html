@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="/ttcu/src/css/mainstyle.css">
    <link rel="stylesheet" href="/ttcu/public/darkmode/moon.css">
    <link rel="stylesheet" href="/ttcu/src/footer.css">
-   <link rel="stylesheet"   href="/ttcu/src/css/modal.css">
-
    <link rel="stylesheet" href="../../src/css/userinfo.css">
+   <link rel="stylesheet"   href="../../src/css/modal.css">
+
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
    <link rel=icon href="../../src/Logo/ttcu-icon.ico">
    <link rel="stylesheet" href="/ttcu/src/css/scroll.css">
@@ -85,17 +85,15 @@
         <div class="col-md-6">
             <div class="profile-head" id="fullname">
                        
-              <h5 id="fullName"> haniye zadabbas</h5>
+              
                         <br>
                         
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">مشخصات فردی
-                        </a>
+                        <p class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">تغییر نام کاربری 
+                        </p>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">رشته دانشگاه</a>
-                    </li>
+                    
                 </ul>
             </div>
         </div>
@@ -106,79 +104,38 @@
     <div class="row">
         <div class="col-md-4">
             <div class="profile-work">
-                <p>منو</p>
-            
-                <a href="/ttcu/Pages/userinfo/updateusername.html">تغییر نام کاربری </a><br/>
-                <a href="/ttcu/Pages/userinfo//updatePassword.html">تغییر  گذرواژه </a><br/>
-                <a onclick="document.getElementById('modalbtn').click();" style="color: crimson;"> حذف حساب کاربری</a><br/>
+               <br/><br/>
+                <a onclick="updateUsername()">ثبت تغییرات </a><br/>
+
          
             </div>
         </div>
     
         <div class="col-md-8">
             <div class="tab-content profile-tab" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label>نام کاربری </label>
+                                    <label>  نام کاربری فعلی </label>
                                 </div>
                                 <div class="col-md-6"  >
-                                    <p id="username"></p>
+                                    <input id="oldUsername"  type="text1"  required   style="font-size: 25px;background-color:lavender"  autocomplete="off" /> 
                                 </div>
                             </div>
+                            <br/>
                             <div class="row">
                                 <div class="col-md-6" >
-                                    <label>نام</label>
+                                    <label> نام کاربری جدید  </label>
                                 </div>
                                 <div class="col-md-6" >
-                                    <p id="fName" ></p>
+                                    <input id="newUsername"  type="text1"  required   style="font-size: 25px;background-color:lavender"  autocomplete="off" /> 
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>نام خانوادگی</label>
-                                </div>
-                                <div class="col-md-6" >
-                                    <p id="lName"></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 ">
-                                    <label>نوع کاربر</label>
-                                </div>
-                                <div class="col-md-6" >
-                                    <p id="userType"></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                             
-                            </div>
-                </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="row">
-                                <div class="col-md-6" >
-                                    <label>رشته</label>
-                                </div>
-                                <div class="col-md-6" >
-                                    <p id="major"></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6" >
-                                    <label>دانشگاه</label>
-                                </div>
-                                <div class="col-md-6" >
-                                    <p id="uni"></p>
-                                </div>
-                            </div>
-                        
-                </div>
+                                       
             </div>
         </div>
     </div>
-</form>           
-</div>
-
+</form>  
 <div class="join">
     <button id="modalbtn" class="btn btn-join" onclick="" style="visibility: hidden;">
     </button>
@@ -187,24 +144,22 @@
     <div class="modal__locked">
       <div class="modal-body">
         <center>
-          <strong>حذف حساب کاربری</strong>
-          <br/>
-          <h7 style="text-align:right">آیا برای حذف حساب کاربری خود اطمینان دارید؟</h7>
+          <strong id="title"> </strong>
           
-<h8>این به معنای حذف تمامی اطلاعات شما می باشد
-و باید تمامی مراحل ثبت نام را مجددا طی کنید
-</h8>
-<br/>
-
+          <h4 id="desc">
+              
+          </h4>
+  
         </center>
       </div>
       <div class="modal-buttons">
-        <button class="btn btn-footer btn-purple" ><h6>انصراف</h6></button>
-        <button class="btn btn-footer btn-purple" onclick="deleteUser()" ><h6>حذف حساب </h6></button>
-
+        <button id="closebtn" class="btn btn-footer btn-purple" onclick="window.location.reload();">بستن</button>
+        <button id="loginbtn" class="btn btn-footer btn-purple" onclick="window.location='../login/login.html'" style="visibility: hidden;">ورود</button>
       </div>
     </div>
-  </div>
+  </div>         
+</div>
+
 
     <!---->
     <footer class="footer">
@@ -257,9 +212,12 @@
 
 
 <script>
-loadUserInfo();
-    function loadUserInfo(){
+
+    function updateUsername(){
     var detailArr={};
+    detailArr["oldUsername"]=document.getElementById("oldUsername").value;
+    detailArr["newUsername"]=document.getElementById("newUsername").value;
+
     var xmlhttp;
     if(window.XMLHttpRequest){
      xmlhttp=new XMLHttpRequest;
@@ -276,34 +234,29 @@ loadUserInfo();
       var response = JSON.parse(this.responseText);
         if(response.code == 200){
             console.log(response);
-            var info = response.object;
-            let username =info.username;
-            let fName =info.fName;
-            let lName =info.lName;
-            let userType =info.userType;
-            if(info.uniMajor!=null )
-            { 
-              let uni =info.uniMajor.uni;
-              let major =info.uniMajor.major;
-              document.getElementById("uni").innerHTML =convertUni(uni);
-              document.getElementById("major").innerHTML = convertMajor(major);
-            }
-           
-
-            document.getElementById("username").innerHTML = username;
-            document.getElementById("fName").innerHTML = fName;
-            document.getElementById("lName").innerHTML = lName;
-            document.getElementById("userType").innerHTML = convertUserType(userType);
-            document.getElementById("fullName").innerHTML = fName+" "+lName;
+            document.getElementById("title").innerHTML="تغییر نام کاربری با موفقیت انجام شد"
+            document.getElementById("desc").innerHTML="نام کاربری جدید :"+document.getElementById('newUsername').value;
+            document.getElementById('loginbtn').style.visibility='visible';
+            document.getElementById('closebtn').style.visibility='hidden';
+            document.getElementById("modalbtn").click();
+            
             
         
          
-        }else {
-          window.location = 'welcome.html';
-    
         }
         }
+        else if(xmlhttp.status==403) {
+            document.getElementById("title").innerHTML="تغییر نام کاربری انجام نشد"
+            document.getElementById("desc").innerHTML="لطفا از صحت اطلاعات ورودی اطمینان حاصل فرمایید";
+            document.getElementById("modalbtn").click();
     
+        }
+    else if(xmlhttp.status==400)
+    {
+        document.getElementById("title").innerHTML="تغییر نام کاربری انجام نشد"
+            document.getElementById("desc").innerHTML="لطفا از صحت اطلاعات ورودی اطمینان حاصل فرمایید";
+            document.getElementById("modalbtn").click(); 
+    }
     else{
       console.log("Hello");
     
@@ -312,7 +265,7 @@ loadUserInfo();
     }
     
     
-    xmlhttp.open('GET','http://127.0.0.1:8082/api/getUserInfo',true);
+    xmlhttp.open('POST','http://127.0.0.1:8082/api/updateUsername',true);
     xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     xmlhttp.setRequestHeader('Authorization',window.localStorage.getItem("Token"));
     
@@ -320,50 +273,6 @@ loadUserInfo();
     }
     
     </script>
-
-
-<script>
- 
-        function deleteUser(){
-            
-           
-        var detailArr={};
-        var xmlhttp;
-        if(window.XMLHttpRequest){
-         xmlhttp=new XMLHttpRequest;
-        }
-        else{
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange=respond;
-        function respond (){
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-          
-          var response = JSON.parse(this.responseText);
-            if(response.code == 200){
-                
-                window.location.assign('/ttcu/Pages/login/login.html');
-            
-             
-            }
-            }
-        
-        else{
-          console.log("Hello");
-        
-        }
-        
-        }
-        
-        
-        xmlhttp.open('POST','http://127.0.0.1:8082/api/deleteUser',true);
-        xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-        xmlhttp.setRequestHeader('Authorization',window.localStorage.getItem("Token"));
-        
-        xmlhttp.send(JSON.stringify(detailArr));
-        }
-        
-        </script>
 <script src="../../src/app/enumConverter.js"></script>
 <script src="/ttcu/src/app/scroll.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -371,6 +280,6 @@ loadUserInfo();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 <script src="../../src/app/userinfo.js"></script>
-<script src="/ttcu/src/app/modal.js"></script>
+<script src="../../src/app/modal.js"></script>
 </body>
 </html>
