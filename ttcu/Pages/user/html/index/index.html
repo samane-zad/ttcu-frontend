@@ -66,10 +66,10 @@
                     </ul>
                     <span class="navbar-text"> 
 
-
-                      <a id="adminpanelLink"  class="login" role="button" href="/ttcu/Pages/adminPanel/admin.html" style="visibility: hidden;" >پنل مدیریت</a>
-                      <a id="signupLink" class="btn btn-light action-button" role="button" href="../../../signup/Signup.html" style="visibility: hidden;">ثبت نام اعضاء</a>
+                      <a id="signupLink" class="btn btn-outline-secondary" role="button" href="../../../signup/Signup.html" style="visibility: hidden;width:100px ;font-size: small;color: mediumorchid;">ثبت نام اعضاء</a>
+                      <a id="adminpanelLink"  class="btn btn-outline-secondary"  href="/ttcu/Pages/adminPanel/admin.html" style="visibility: hidden;width:100px ;font-size: small;color: deepskyblue;"  >پنل مدیریت</a>
                       <a href="../../../userinfo/userinfo.html"  ><img src="../../../../src/img/per.PNG"></a>
+                      <a onclick="logout()"  ><img width="40" height="40" src="../../../../src/img/out.PNG"></a>
 
                     </span>
 
@@ -80,7 +80,14 @@
     </div>
 </div>
 </div>
+<script>
+  function logout()
+  {
+    localStorage.setItem("Token",null);
+    window.location.assign('/ttcu/Pages/login/login.html');
 
+  }
+</script>
 <div class="grid-container">
 <div class="grid-img">
 
@@ -180,7 +187,7 @@ if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
                      "<h5 class='card-title'>هیچ پستی برای نمایش یافت نشد</h5>"+
                      "<h7 class='card-text'>شما هنوز پستی در صفحه خود ایجاد نکرده اید، برای ایجاد پست لینک زیر را دنبال کنید</h7>"+
                      "<p></p>"+
-                     "<a href='../../../postpage/makepost.html' class='btn btn-primary'>ثبت پست جدید</a>"+
+                     "<a href='../../../postpage/makepost.html' class='btn btn-primary'><h6>ثبت پست جدید</h6></a>"+
                    "</div>"+
                 "</div>"
         }

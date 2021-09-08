@@ -53,9 +53,7 @@ function checkRequired(inputArray) {
 function checkLength(input, min, max) {
     if(input.value.length < min || input.value.length === "" ||input.value.trim() === "") {
         showError(input, ` تعداد کاراکتر ها حداقل باید  ${min} کاراکتر باشد`);
-    } else if(input.value.length > max) {
-        showError(input, `   تعداد کاراکتر ها حداکثر باید ${max}کاراکتر باشد `);
-    } else {
+    }  else {
         showSuccess(input);
     }
 }
