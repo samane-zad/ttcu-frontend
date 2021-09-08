@@ -247,10 +247,10 @@
       }
   
   }
-  else if( xmlhttp.status == 403){
-      window.location = '../../../login/login.html';
-    
-    } 
+  else if(xmlhttp.status==403||xmlhttp.status==404)
+        {
+            window.location.assign('/ttcu/Pages/login/login.html');
+        } 
   else{
     console.log("Hello");
   

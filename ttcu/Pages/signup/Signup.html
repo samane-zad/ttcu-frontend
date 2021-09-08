@@ -281,10 +281,12 @@ xmlhttp.send(detailArrstr);
           }
           }
       
-      else if( xmlhttp.status == 403){
-      window.location = '../Login/login.html';
+          else if(xmlhttp.status==403||xmlhttp.status==404)
+        {
+            window.location.assign('/ttcu/Pages/login/login.html');
+        }
     
-    } else{
+     else{
         console.log("Wait");
       
       }

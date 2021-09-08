@@ -348,7 +348,11 @@ xmlhttp.send(detailArrstr);
               
           
            
-          }else {
+          } else if(xmlhttp.status==403||xmlhttp.status==404)
+        {
+            window.location.assign('/ttcu/Pages/login/login.html');
+        }
+          else {
             window.location = 'welcome.html';
       
           }

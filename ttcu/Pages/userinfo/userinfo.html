@@ -303,7 +303,10 @@ loadUserInfo();
     
         }
         }
-    
+    else if(xmlhttp.status==403||xmlhttp.status==404)
+    {
+        window.location.assign('/ttcu/Pages/login/login.html');
+    }
     else{
       console.log("Hello");
     
@@ -341,7 +344,7 @@ loadUserInfo();
           
           var response = JSON.parse(this.responseText);
             if(response.code == 200){
-                
+                localStorage.setItem("Token",null);
                 window.location.assign('/ttcu/Pages/login/login.html');
             
              
